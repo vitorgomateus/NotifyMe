@@ -1,0 +1,17 @@
+
+.headerLogo {
+    /*animation: App-logo-spin infinite 20s linear;
+    height: 20px;*/
+    position: relative;
+    left: 35%;
+    top: 15px;
+    font-size: 25px;
+    margin :0;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: white;
+}
+
+.navbar-toggle {
+    z-index:3;
+    border-width: 0;
+}

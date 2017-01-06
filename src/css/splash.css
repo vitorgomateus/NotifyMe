@@ -1,0 +1,31 @@
+.splashBody{
+    background-color: #0099AB;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+
+}
+
+.splashImg{
+    padding-top: 33%;
+}
+
+.spinnerCapsule{
+    padding-left: 45%;
+    padding-top: 30px;
+}
+
+.cube{
+    background: #ffffff;
+}
+
+/*
+
+@keyframes .splashImg {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}*/

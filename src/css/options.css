@@ -1,0 +1,56 @@
+.opcoesAlignCenter{
+    text-align: center;
+    padding: 0 5%;
+}
+
+.opcoesAlignLeft{
+    text-align: left;
+    margin-top: 36px;
+}
+
+.pdr{
+    padding: 12px 0 0 15%;
+    margin: 0 24px 0 0;
+
+}
+
+.butino{
+    margin: 5px 0;
+}
+
+.n-pdr{
+    padding: 0;
+}
+
+.btpd{
+    margin-bottom: 0;
+}
+
+.teste{
+    background-color: white ;
+}
+
+legend{
+    margin: 0;
+}
+
+input[type="time"]{
+    background-color: #00847a;
+}
+
+@media (min-width: 768px) {
+    .form-horizontal {
+        max-width: 800px;
+        margin-bottom: 20px;
+    }
+    .opcoesAlignCenter{
+        text-align: center;
+        padding: 0 auto;
+        margin: 0 auto;
+    }
+    .pdr{
+        padding: 0 0 0 25%;
+    }
+
+
+}

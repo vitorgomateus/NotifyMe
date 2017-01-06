@@ -1,0 +1,12 @@
+.eppidrow{
+    height: 68px;
+    border-bottom: 2px solid whitesmoke;
+}
+
+.title{
+    text-align: right;
+}
+
+.eppnum{
+    text-align: left;
+}

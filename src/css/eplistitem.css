@@ -1,0 +1,56 @@
+/*comonents>Main.js*/
+.mainContainer{
+    text-align: center;
+    padding-left: 24px;
+    padding-right: 24px;/*
+    padding-left: 20px;
+    padding-right: 20px;*/
+}
+
+/*liscomp > ItemList.ja*/
+.lista{
+    text-align: left;
+}
+
+
+/*listcomp > EpListItem.js*/
+
+.linha{
+    padding: 20px 15px 0 ;
+    margin: 0;
+}
+
+.linhaTxt{
+    vertical-align: middle;
+    padding-left: 20px;
+}
+
+.pitem{
+    margin: 0;
+}
+
+.imgitem{
+    display: block;
+    width: 80%;
+    max-width: 100px;
+    min-width: 50px;
+    margin: 0 auto;
+}
+
+
+hr{
+    margin: 0;
+    border-bottom: 1px solid white;
+}
+
+
+
+/* var mainItemDiv = {
+            paddingLeft: 50,
+            paddingTop: 10,
+            paddingBottom: 10,
+            backgroundColor: "#222222",
+            color: "white",
+            borderBottomColor: "white",
+            borderBottomWidth: 5
+        }*/
