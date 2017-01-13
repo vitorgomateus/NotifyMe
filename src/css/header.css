@@ -3,7 +3,7 @@
     /*animation: App-logo-spin infinite 20s linear;
     height: 20px;*/
     position: relative;
-    left: 35%;
+    left: 36%;
     top: 15px;
     font-size: 25px;
     margin :0;
@@ -14,4 +14,22 @@
 .navbar-toggle {
     z-index:3;
     border-width: 0;
+}
+
+@media (min-width: 768px) {
+    .headerLogo {
+        /*animation: App-logo-spin infinite 20s linear;
+        height: 20px;*/
+        position: absolute;
+        left: 43%;
+        top: 15px;
+        font-size: 25px;
+        margin :0 auto;
+        font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        color: white;
+    }
+
+    .navbar-collapse{
+        float: right;
+    }
 }

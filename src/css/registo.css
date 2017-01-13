@@ -10,3 +10,8 @@
 input[type="text"]{
     background-color: #00847a;
 }
+
+.corpo-registo{
+    text-align: center;
+    padding: 0 5%;
+}

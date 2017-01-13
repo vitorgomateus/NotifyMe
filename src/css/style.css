@@ -288,6 +288,11 @@ input{
     background-color: #00847a;
 }
 
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%
+}
 /*
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

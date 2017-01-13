@@ -13,9 +13,9 @@ class Info extends Component {
 
         return(
 
-            <div className="container">
+            <div className="corpo-registo">
                 <h2>Efetuar o registo</h2>
-                <form>
+                <form action="#" method="post">
                     <div className="input-group col-xs-12">
                         <input type="text" className="form-control" placeholder="Nome de utilizador"/>
                     </div>
@@ -27,27 +27,26 @@ class Info extends Component {
                     <div className="input-group col-xs-12">
                         <input type="text" className="form-control" placeholder="Email"/>
                     </div>
-                </form>
-                <form>
+
                     <div className="input-group col-xs-12">
                         <input type="text" className="form-control" placeholder="Password"/>
                     </div>
-                </form>
-                <form>
+
                     <div className="input-group col-xs-12">
                         <input type="text" className="form-control" placeholder="Nº de Conta"/>
                     </div>
-                </form>
+
 
                 <div>
                     <Link to="/main">
-                        <button type="button" className="btn btn-primary col-xs-5" id="registo-buttons">
+                        <button type="submit" className="btn btn-primary col-xs-5" id="registo-buttons">
                             Registar
                         </button>
                     </Link>
                     <div className="col-xs-2"></div>
                     <button type="button" className="btn btn-default col-xs-5 facebook" id="registo-buttons">Registar Facebook</button>
                 </div>
+                </form>
             </div>
 
 

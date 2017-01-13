@@ -27,9 +27,9 @@ class EpListItem extends React.Component {
                 <Link to={`/epp/${this.props.episode.id}`} >
 
                     <div className="row linha">
-                        <div className="col-xs-4 ">
+                        <div className="col-xs-4 linhaimg">
 
-                            <img className = "img-responsive imgitem" id="progImages" src={imgSrc} />
+                            <img className="img-responsive imgitem" id="progImages" src={imgSrc} />
 
                         </div>
                         <div className="col-xs-8 linhaTxt">
@@ -42,10 +42,10 @@ class EpListItem extends React.Component {
 
 
                     <div className="row linha">
-                        <div className="col-xs-4">
+                        <div className="col-xs-4 linhaimg">
                             <hr/>
                         </div>
-                        <div className="col-xs-8">
+                        <div className="col-xs-8 linhadir">
                             <hr/>
                         </div>
                     </div>

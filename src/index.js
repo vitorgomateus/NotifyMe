@@ -6,7 +6,9 @@ import Epp from './components/Epp';
 import Main from './components/Main';
 import Splash from './components/Splash';
 import Info from './components/Registo';
-import Options from './components/Options'
+import Options from './components/Options';
+import Prefs from './components/Prefs';
+import MyModal from './components/MyModal'
 
 ReactDOM.render(
     (
@@ -17,6 +19,7 @@ ReactDOM.render(
             <Route path="epp/:id" component={Epp} />
             <Route path="info" component={Info} />
             <Route path="defs" component={Options} />
+            <Route path="prefs" component={Prefs} />
         </Route>
 
 

@@ -2,9 +2,8 @@
  * Created by VitorMaGo on 15/12/2016.
  */
 import React, { Component } from 'react';
-import menu from '../img/menuS.png';
-import { Link } from 'react-router'
-import '../css/style.css'
+import { Link } from 'react-router';
+import '../css/style.css';
 import '../css/header.css';
 
 class Header extends Component {
@@ -13,8 +12,6 @@ class Header extends Component {
     render (){
 
         return(
-
-
             <nav role="navigation" className="navbar navbar-default">
 
                 <div className="navbar-header">
@@ -27,17 +24,19 @@ class Header extends Component {
                     <h1 className="headerLogo"><b>Notify Me!</b></h1>
                 </div>
 
-                <div id="navbarCollapse" className="collapse navbar-collapse navbar-left">
+                <div id="navbarCollapse" className="collapse navbar-collapse navbar-right">
                     <ul className="nav navbar-nav navbar-left">
                         <li className="active"><Link to="/main">Home</Link></li>
-                        <li><Link to="/info">Login</Link></li>
                         <li><Link to="/defs">Definições</Link></li>
+
+                        {/*Deviam sair daqui*/}
+                        <li><Link to="/info">Login</Link></li>
+                        <li><Link to="/prefs">Preferências</Link></li>
                     </ul>
                     <ul className="nav navbar-nav">
                     </ul>
                 </div>
             </nav>
-
         );
     }
 }

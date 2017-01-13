@@ -3,8 +3,6 @@
  */
 import React, { Component } from 'react';
 
-import '../../css/idstripe.css';
-
 class IdStripe extends Component {
 
     render (){
@@ -13,12 +11,12 @@ class IdStripe extends Component {
 
         return(
             <div>
-                <div className="row eppidrow">
+                <div className="row epprow eppidrow">
                     <div className="col-xs-4"></div>
                     <h2 className="col-xs-8 title">{episodio}</h2>
                 </div>
 
-                <div className="row eppidrow">
+                <div className="row epprow eppidrow">
                     <div className="col-xs-8 eppnum">
                         <p>Temporada {this.props.se}</p>
                         <p>Ep. {this.props.ep}</p>

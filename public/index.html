@@ -1,82 +1,73 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <!--
-      Notice the use of %PUBLIC_URL% in the tag above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <!--
+    Notice the use of %PUBLIC_URL% in the tag above.
+    It will be replaced with the URL of the `public` folder during the build.
+    Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-
-
+    Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+    work correctly both with client-side routing and a non-root public URL.
+    Learn how to configure a non-root public URL by running `npm run build`.
+  -->
 
 
-    <link rel="stylesheet" type="text/css" href="btsp/css/bootstrap.min.css">
-
-    <!-- Custom CSS -->
-    <link href="btsp/css/half-slider.css" rel="stylesheet">
 
 
-    <!-- Theme CSS -->
-    <link href="btsp/css/clean-blog.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="btsp/css/bootstrap.min.css">
 
-    <!-- Optional Bootstrap theme Slate vitor-->
-    <link rel="stylesheet" href="btsp/css/theme.min.css">
-
-    <link rel="stylesheet" href="../src/css/style.css">
-
-    <!-- Custom Fonts -->
-    <link href="btsp/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-    <title>Notify Me</title>
-
-    <style>
-
-      mark{
-        background-color: #6d6d6d;
-        color:  #0099AB;
-
-      }
-
-    </style>
-  </head>
-  <body>
-
-    <div id="container"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start`.
-      To create a production bundle, use `npm run build`.
-    -->
+  <!-- Custom CSS -->
+  <link href="btsp/css/half-slider.css" rel="stylesheet">
 
 
-    <script src="btsp/js/jquery-3.1.1.min.js"></script>
-    <script src="btsp/js/bootstrap.min.js"></script>
-    <!-- Contact Form JavaScript -->
-    <script src="btsp/js/jqBootstrapValidation.js"></script>
-    <script src="btsp/js/contact_me.js"></script>
+  <!-- Theme CSS -->
+  <link href="btsp/css/clean-blog.min.css" rel="stylesheet">
 
-    <!-- Theme JavaScript -->
-    <script src="btsp/js/clean-blog.min.js"></script>
+  <!-- Optional Bootstrap theme Slate vitor-->
+  <link rel="stylesheet" href="btsp/css/theme.min.css">
 
+  <link rel="stylesheet" href="../src/css/style.css">
+
+  <!-- Custom Fonts -->
+  <link href="btsp/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <title>Notify Me</title>
+
+  <style>
+
+    mark{
+      background-color: #6d6d6d;
+      color:  #0099AB;
+
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="container"></div>
+
+<script src="btsp/js/jquery-3.1.1.min.js"></script>
+<script src="btsp/js/bootstrap.min.js"></script>
+<!-- Contact Form JavaScript -->
+<script src="btsp/js/jqBootstrapValidation.js"></script>
+<script src="btsp/js/contact_me.js"></script>
+
+<!-- Theme JavaScript -->
+<script src="btsp/js/clean-blog.min.js"></script>
+
+<!--o botão da navbar não volta a encolher, tentei resolver não consegui.-->
 <script>
-    $('.navbar-collapse a').click(function(){
+  $('.navbar-collapse a').click(function(){
     $(".navbar-collapse").collapse('hide');
-    });
+
+  });
 </script>
 
-  </body>
+</body>
 </html>

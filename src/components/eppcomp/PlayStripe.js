@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react';
 import Play from '../../img/play_btn.png';
-import '../../css/playstripe.css';
+import '../../css/eppplaystripe.css';
 
 class PlayStripe extends Component {
 
@@ -19,17 +19,29 @@ class PlayStripe extends Component {
 // etc.
 // Sendo que o resultado fica na var [datetime] para depois ser usado.
         var d = new Date();
-        var n = d.getTime();
+        var n = Math.round(d.getTime()/1000);
 
         var datetime;
-        var delta = n-horaNoAR;/*
-        if(delta<60){
-            datetime = "Há" + delta + "segundos.";
-        }else if(delta<3600){
-            datetime = "Há" + (delta/60) + "minutos.";
-        }else if(delta <72000){
-            datetime = "Há" + (delta/60/60) + "horas.";
-        }else{}*/
+        var deltaS = n-horaNoAR;
+        var deltaM = Math.round(deltaS/60);
+        var deltaH = Math.round(deltaM/60);
+        var textS = ((deltaS==1)?" segundo.":" segundos.");
+        var textM = ((deltaM==1)?" minuto.":" minutos.");
+        var textH = ((deltaH==1)?" hora.":" horas.");
+
+        if(deltaS<(-72000)){
+            datetime = "Daqui a " + (deltaH) + (textH);
+        }else if(deltaS<(-3600)){
+            datetime = "Há " + (deltaM) + (textM);
+        }else if (deltaS<(-60)){
+            datetime = "No ar daqui a " + deltaS + textS;
+        }else if(deltaS<60){
+            datetime = "No ar há " + deltaS + textS;
+        }else if(deltaS<3600){
+            datetime = "Há " + (deltaM) + textM;
+        }else if(deltaS <72000){
+            datetime = "Há " + (deltaH) + textS;
+        }else{
             var currentdate = new Date(horaNoAR*1000);
             datetime = currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/"
@@ -37,16 +49,16 @@ class PlayStripe extends Component {
                 + currentdate.getHours() + ":"
                 + (currentdate.getMinutes()<10?'0':'')
                 + currentdate.getMinutes();
-
+        }
 
 
 
 
         return(
-            <div>
+            <div className="epprow">
                 <p>{datetime}</p>
                 <div className="playArea">
-                    <img className="playBtn" src={Play}/>
+                    <img className="playBtn" src={Play} alt="Play this episode."/>
                 </div>
             </div>
         );

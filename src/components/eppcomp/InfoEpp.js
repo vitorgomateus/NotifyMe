@@ -2,7 +2,6 @@
  * Created by VitorMaGo on 03/01/2017.
  */
 import React, { Component } from 'react';
-import '../../css/infoepp.css'
 
 
 var details = [
@@ -40,13 +39,13 @@ class InfoEpp extends Component {
 
         return(
             <div>
-                <div className="min">
+                <div className="epprow min">
                     <h3><b>{nomeepp}</b></h3>
                     <p><b>Resumo do ep.</b><br/>
                         Vivamus in mi eu magna lacinia ultricies sit amet ut est. Donec rutrum eget turpis non maximus. Vestibulum sapien tortor, sagittis eu mi id, rutrum imperdiet magna. Maecenas volutpat viverra pretium. Nam ultricies dapibus lacus, vel laoreet odio rhoncus vel.
                     </p>
                 </div>
-                <div className="more">
+                <div className="epprow more">
                     <p>{genero}</p>
                     <p><b>Director</b><br/>
                         {director}</p>

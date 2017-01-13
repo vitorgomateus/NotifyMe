@@ -9,7 +9,8 @@
 
 /*liscomp > ItemList.ja*/
 .lista{
-    text-align: left;
+    text-align: center;
+    max-width: 1000px;
 }
 
 
@@ -21,6 +22,7 @@
 }
 
 .linhaTxt{
+    text-align: left;
     vertical-align: middle;
     padding-left: 20px;
 }
@@ -43,7 +45,14 @@ hr{
     border-bottom: 1px solid white;
 }
 
-
+@media (min-width: 768px) {
+    .linhaimg {
+        max-width: 200px;
+    }
+    .linhadir,.linhatxt{
+        max-width: 600px;
+    }
+}
 
 /* var mainItemDiv = {
             paddingLeft: 50,
