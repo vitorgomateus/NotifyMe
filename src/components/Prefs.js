@@ -1,64 +1,137 @@
 /**
  * Created by VitorMaGo on 12/01/2017.
  */
-import React, { Component } from 'react';
+import React from 'react';
+import {Component} from 'react';
 import ItemList from './listcomp/ItemList';
-import $ from 'jquery'
-import '../css/prefs.css';/*
- import { Link } from 'react-router';*/
+import DataStore from './DataStore';
 
-/*var CHANNELS = [
-    {id: '0', progrTitle: 'RTP', so:'02', ep:'03', canal:'FOX', airTime: '23:40', src:'brkbad.png'},
-    {id: '1', progrTitle: 'TVI', so:'02', ep:'04', canal:'FOX', airTime: '01:00', src:'brkbad.png'},
-    {id: '2', progrTitle: 'National Geographic', so:'04', ep:'07', canal:'SIC', airTime: '22:40', src:'theVoice.png'},
-    {id: '3', progrTitle: 'SIC', so:'01', ep:'02', canal:'Nat-Geo', airTime: '21:30', src:'Amormaior.png'},
-    {id: '4', progrTitle: 'Sci-fy', so:'2016', ep:'15/11', canal:'TVI', airTime: '20:00', src:'Tvi24logo.png'},
-    {id: '5', progrTitle: 'FOX Comedy', so:'2016', ep:'12/12', canal:'SIC', airTime: '20:00', src:'sicLogo.png'}
-];*/
+import { Link } from 'react-router';
+import $ from 'jquery';
+import '../css/prefs.css';
 
-class App extends Component {
+class Prefs extends Component {
 
-
+    // quando cria cria o state limpo
     constructor(props) {
         super(props);
 
-        this.state = {channel: []};
+        this.state = {channel: [], prefers: ["RTP1","TVI","RTPM","SPTV3"]};
+        this.setPref = this.setPref.bind(this);
     }
+/*
+    // envia a callback para o event listener da store fazer update deste componente
+    componentWillMount() {
+        DataStore.subscribe(this.updatePrefs);
+    }                                                                                                        ---DataStore
+
+    // reitra a callback para o event listener da store fazer update deste componente
+    componentWillUnmount() {
+        DataStore.unsubscribe(this.updatePrefs);
+    }*/
+
 
     componentDidMount() {
-        this.UserList();
+        this.ChannelList();
     }
 
-    UserList() {
+    // vai buscar os canais dados pela API da sapo meo
+    ChannelList() {
         return $.getJSON('http://services.sapo.pt/EPG/GetChannelListjson')
             .then((data) => {
                 this.setState({ channel: data.GetChannelListResponse.GetChannelListResult.Channel });
             });
     }
 
+    //a datastore chama isto para fazer re-render a este componente
+    updatePrefs(upprefs) {
+        /*this.setState({                                                                                   ---DataStore
+            prefers: DataStore.getPrefs()
+        });*/
+        this.setState({
+            prefers: upprefs
+        });
+    }
+
+    //chamado no click deum botão, recebe a sigla do canal desse butão
+    //confirma se ja tem a preferência  -> retira o canal das preferenias
+    //ELSE confirma se ja tem 4 preferÊncias  -> alert('max 4!')
+    //ELSE adiciona canal a prefrências e manda update pa store
+    setPref(canal) {
+
+        var prefremoved = false;
+        var userprefs = this.state.prefers;//["RTP1","TVI","RTPM","SPTV3"];
+
+        if(userprefs){
+            userprefs.forEach((itemo, u) => {
+                if (itemo === canal) {
+                    userprefs.splice(u, 1);
+                    //findElementById(canal).setClass("btn btn-default");        ---    setState faz isto automatico
+                    prefremoved = true;
+                }
+            });
+        }
+        if (!prefremoved) {
+            //if(userprefs)
+            if (userprefs.length === 4) {
+                alert("Máximo 4 preferÊncias");
+            } else {
+                userprefs.push(canal);
+                //findElementById(canal).setClass("btn btn-success")    ---    setState faz isto automatico
+
+            }
+        }
+/*                                                                                                          ---DataStore
+        DataStore.sendPrefs(userprefs);
+*/
+        this.updatePrefs(userprefs);
+        //this.setState({prefers: userprefs});          ---      feito depois em updatePrefs
+    }
+
     render() {
+
         const channels = this.state.channel.map((item, i) => {
-            return <div>
-                <h1>{item.Name}</h1>
-                <span>{item.Providers.Provider.Name}</span>
-            </div>
+            var classer = "btn-sm btn-default";
+            var pooper = item.Sigla;
+            var moreprefers = this.state.prefers;
+            if(moreprefers){
+                moreprefers.forEach(function(coolio){
+                    if(coolio===pooper){
+                        classer="btn-sm btn-success";
+                    }
+                });
+            }
+
+            return (
+                <div className="col-xs-4 col-sm-4 col-md-3 col-lg-2 celulas">
+                    <button id={pooper} type="button" className={ classer } onClick={() => this.setPref(pooper)}>
+                        {item.Name}<br/>
+                        {/*{moreprefers?"true":"false"}*/}
+                    </button>
+                </div>
+            );
         });
 
-        return <div id="layout-content" className="layout-content-wrapper">
-            <div className="panel-list">{ channels }</div>
-        </div>
+        return (
+            <div id="layout-content" className="layout-content-wrapper">
+                <h2>Destaque os seus canais favoritos:</h2>
+                <Link to="/defs"><button type="button" className="btn btn-primary">Finalizar Escolha</button></Link>
+                <p>(máx.: 4)</p>
+                <div className="panel-list">{ channels }</div>
+            </div>
+        );
     }
 
     /*render() {
 
-        return (
-            <div className="prefs">
-                <form action="#" method="post">
-                    <ItemList products={CHANNELS} />
-                </form>
-            </div>
-        );
-    }*/
+     return (
+     <div className="prefs">
+     <form action="#" method="post">
+     <ItemList products={CHANNELS} />
+     </form>
+     </div>
+     );
+     }*/
 }
 
-export default App;
+export default Prefs;

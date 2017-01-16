@@ -8,7 +8,6 @@ import Splash from './components/Splash';
 import Info from './components/Registo';
 import Options from './components/Options';
 import Prefs from './components/Prefs';
-import MyModal from './components/MyModal'
 
 ReactDOM.render(
     (

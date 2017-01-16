@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import MyModal from './MyModal';
 import question from '../img/question_btn.png';
+import { Link } from 'react-router';
 import { Button } from 'react-bootstrap/lib/Button';
 import '../css/options.css';
 
@@ -17,17 +18,21 @@ class Options extends Component {
         };
     }
 
+    handleClick(e){
+        this.setState({openmodal: false});
+    }
+
     render (){
 
         return(
             <div className="opcoesAlignCenter">
-                <form className="form-horizontal" action="#" method="post">
+                <form className="form-horizontal" >
                     <fieldset> <legend>Alterar definições </legend>
                         <fieldset className="opcoesAlignLeft">
                             <legend>Lembretes:
                                 <img className="question-mark" src={question} alt="What is this?" onClick={() =>{
                                     var check = this.state.openmodal;
-                                    this.setState.openmodal = !check;
+                                    this.setState({openmodal: !check});
                                     this.setState({wichmodal:1});
                                 }}/>
                             </legend>
@@ -54,16 +59,15 @@ class Options extends Component {
                             <legend>Sugestões:
                                 <img className="question-mark" src={question} alt="What is this?" onClick={() =>{
                                     var check = this.state.openmodal;
-                                    this.setState.openmodal = !check;
+                                    this.setState({openmodal: !check});
                                     this.setState({wichmodal:2});
                                 }}/>
                             </legend>
                             <div className="form-group pdr">
-                                {/*<label htmlFor="inputEmail" className="control-label col-xs-2">Sugestões</label>*/}
                                 <div className="col-xs-10">
                                     <label><input type="checkbox" id="checkSuges" /> Activar sugestões de contúdos novos</label><br/>
                                     <label><input type="checkbox" id="checkZapp" /> Activar opção de Zapping</label><br/>
-                                    <button className="btn-default btn butino" id="mudarPrefs" href="/prefs"> Mudar preferências</button>
+                                    <button className="btn-default btn butino" id="mudarPrefs"><Link to="/prefs"> Mudar preferências</Link></button>
                                 </div>
                             </div>
                         </fieldset>
@@ -72,7 +76,7 @@ class Options extends Component {
                             <legend>Radar Social:
                                 <img className="question-mark" src={question} alt="What is this?" onClick={() =>{
                                     var check = this.state.openmodal;
-                                    this.setState.openmodal = !check;
+                                    this.setState({openmodal: !check});
                                     this.setState({wichmodal:3});
                                 }}/>
                             </legend>
@@ -90,7 +94,7 @@ class Options extends Component {
                         <fieldset className="opcoesAlignLeft">
                             <div className="form-group">
                                 <div className="col-xs-offset-2 col-xs-10 n-pdr">
-                                    <button type="submit" className="btn btn-primary col-xs-8">Guardar Alterações</button>
+                                    <button type="button" className="btn btn-primary col-xs-8">Guardar Alterações</button>
                                 </div>
                             </div>
                         </fieldset>

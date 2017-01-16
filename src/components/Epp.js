@@ -58,7 +58,7 @@ class Epp extends Component {
 }
 
 Epp.defaultProps ={
-    params: {id: 'there.s no episode to display'}
+    params: {id: null}
 }
 
 export default Epp

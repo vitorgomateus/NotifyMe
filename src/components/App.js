@@ -1,9 +1,19 @@
 ﻿import React, { Component } from 'react';/*
-import { Link } from 'react-router';*/
+ import { Link } from 'react-router';*/
 
 import Header from './Header';
 
 class App extends Component {
+
+    constructor(){
+        super();
+
+        this.state = {
+            name: "",
+            email: "",
+        };
+    }
+
 
     render() {
 

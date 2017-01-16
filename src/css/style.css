@@ -293,6 +293,11 @@ body {
     overflow-x: hidden;
     width: 100%
 }
+
+img{
+    cursor: pointer;
+}
+
 /*
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

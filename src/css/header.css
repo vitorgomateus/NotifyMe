@@ -1,9 +1,14 @@
+.backarrow{
+   float: left;
+    margin: 5px 10px;
+    max-width: 30px;
+}
 
 .headerLogo {
     /*animation: App-logo-spin infinite 20s linear;
     height: 20px;*/
     position: relative;
-    left: 36%;
+    left: 26%;
     top: 15px;
     font-size: 25px;
     margin :0;

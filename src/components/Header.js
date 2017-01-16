@@ -1,8 +1,10 @@
 /**
  * Created by VitorMaGo on 15/12/2016.
  */
-import React, { Component } from 'react';
+import React from 'react';
+import {Component} from 'react';
 import { Link } from 'react-router';
+import Back from '../img/left_arrow.png';
 import '../css/style.css';
 import '../css/header.css';
 
@@ -21,6 +23,7 @@ class Header extends Component {
                         <span className="icon-bar"> </span>
                         <span className="icon-bar"> </span>
                     </button>
+                    <Link to="/main"><img className="backarrow" alt="Go back" src={Back}/></Link>
                     <h1 className="headerLogo"><b>Notify Me!</b></h1>
                 </div>
 

@@ -1,0 +1,58 @@
+.layout-content-wrapper{
+    padding: 24px 5%;
+    text-align: center;
+}
+.celulas{
+    padding: 1% 12px;
+}
+.celulas>button{
+    min-height: 40px;
+    border-radius: 10px;
+    border:0;
+    margin: 5px 0;
+}
+button:hover{
+    margin: 5px 0;
+    border:0;
+    transform: none;
+    outline:0;
+ }
+button:active{
+    margin: 5px 0;
+    border:0;
+    transform: none;
+    outline:0;
+}
+button:focus {
+    margin: 5px 0;
+    border:0;
+    transform: none;
+    outline:0;
+}
+
+.btn-success{
+    background-color:  #00847a;
+}
+
+.btn-sm{
+    width: 100%;
+    height: 100%;
+}
+.panel-list{
+    text-align: center;
+    margin-top: 24px;
+}
+
+h2{
+    padding: 24px 0;
+}
+
+@media (max-width: 491px){
+    .celulas{
+        min-width: 150px;
+    }
+    .celulas>button{
+        min-height: 64px;
+    }
+
+}

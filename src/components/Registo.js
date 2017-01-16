@@ -38,7 +38,7 @@ class Info extends Component {
 
 
                 <div>
-                    <Link to="/main">
+                    <Link to="/defs">
                         <button type="submit" className="btn btn-primary col-xs-5" id="registo-buttons">
                             Registar
                         </button>
