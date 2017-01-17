@@ -3,6 +3,7 @@
  */
 import React, { Component } from 'react';
 import ItemList from './listcomp/ItemList';
+import $ from 'jquery';
 
 
 var EPISODIOS = [
@@ -15,14 +16,73 @@ var EPISODIOS = [
 ];
 
 
+
 class Main extends Component {
+
+    constructor(props) {
+        super(props);
+
+        var x = JSON.parse(window.localStorage.getItem("userPrefs"));
+        var y = x?x:["RTP1","TVI","RTPM","SPTV3"];
+        this.state = {prefChannels: y, foundPrograms: []};
+
+        //console.log("@constructor:localStorage.userprefs.JSON.parse="+y);
+    }
+
+    componentDidMount() {
+        this.ChannelList();
+    }
+
+    // vai buscar os canais dados pela API da sapo meo
+    ChannelList() {
+
+
+
+        //determinar horas para meter na call à API da sapo
+
+        var n = new Date();                         //milliseconds
+        //var n = Math.round(d.getTime()/1000);       //seconds
+
+
+        //var d = new Date();
+        //document.getElementById("demo").innerHTML = d;
+        var a,d = n;
+        d.setHours(n.getHours()-1);
+        a.setHours(n.getHours()+2);
+        //x = now time ms
+        //a = plus time ms x+2h
+        //d = minus timems x-1h
+        var intervaloDatas = '&startDate='+d.getFullYear()+'-'+d.getMonth()+'-'+d.getDay()+' '+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds()+'&endDate='+a.getFullYear()+'-'+a.getMonth()+'-'+a.getDay()+' '+a.getHours()+':'+a.getMinutes()+':'+a.getSeconds();
+
+
+
+        var x = this.state.prefChannels;
+        var y = x?x:["RTP1","TVI","RTPM","SPTV3"];
+        //              --- checked,all good with 'y'
+        //      http://stackoverflow.com/questions/19323699/iterating-through-json-object-javascript
+        //               --- ERROR cannot read property 'forEach' of undefined
+        y.map((canal, i) => {
+            return $.getJSON('http://services.sapo.pt/EPG/GetProgramListByChannelDateIntervaljson?channelSigla='+canal+intervaloDatas)
+                .then((data) => {
+                    var p = this.state.foundPrograms;
+                    p=p?p:[];
+                    var w = data.GetProgramListByChannelDateIntervalResponse.GetProgramListByChannelDateIntervalResult.Program;
+                    //IMPLEMENT iterate through w to get flag and values out
+                    p.push(w);
+                    this.setState({ foundPrograms: p });
+                });
+        });
+        this.setState({ prefChannels: x});
+
+    }
+
     render (){
 
 
         return(
             <div className="mainContainer">
                 <h3>Os meus Programas</h3>
-                <ItemList products={EPISODIOS} />
+                <ItemList products={this.state.programs} />
             </div>
         );
     }

@@ -12,18 +12,21 @@
     margin: 5px 0;
 }
 button:hover{
+    background-color: #464545;
     margin: 5px 0;
     border:0;
     transform: none;
     outline:0;
  }
 button:active{
+    background-color: #464545;
     margin: 5px 0;
     border:0;
     transform: none;
     outline:0;
 }
 button:focus {
+    background-color: #464545;
     margin: 5px 0;
     border:0;
     transform: none;
@@ -32,6 +35,9 @@ button:focus {
 
 .btn-success{
     background-color:  #00847a;
+}
+.btn-primary:hover{
+    transform: none;
 }
 
 .btn-sm{
@@ -45,6 +51,25 @@ button:focus {
 
 h2{
     padding: 24px 0;
+}
+/*
+in sweet-alert.css
+substitui todos
+#F8BB86
+por:
+#ff8559*/
+
+.sweet-alert{
+    background-color:  #6d6d6d;
+}
+
+.sweet-alert>h2{
+    color: whitesmoke;
+}
+
+.sweet-alert>p{
+    color: whitesmoke;
+    margin-bottom: 24px;
 }
 
 @media (max-width: 491px){

@@ -19,12 +19,12 @@ class EpListItem extends React.Component {
          <span style={{color: 'red'}}>
          {this.props.product.name}
          </span>;*/
-        var name = this.props.episode.progrTitle + "  ";
+        var name = this.props.episode.Title + "  ";
         var imgSrc = require ('../../img/' + this.props.episode.src);
 
         return (
             <div className="row">
-                <Link to={`/epp/${this.props.episode.id}`} >
+                <Link to={`/epp/${this.props.episode.Id}`} >
 
                     <div className="row linha">
                         <div className="col-xs-4 linhaimg">
@@ -35,8 +35,8 @@ class EpListItem extends React.Component {
                         <div className="col-xs-8 linhaTxt">
 
                             <h4 className="pitem" > {name} <b>{this.props.episode.ep} </b></h4>
-                            <h4 className="pitem"> {this.props.episode.airTime} </h4>
-                            <h4 className="pitem"> {this.props.episode.canal} </h4>
+                            <h4 className="pitem"> {this.props.episode.StartTime} </h4>
+                            <h4 className="pitem"> {this.props.episode.ChannelName} </h4>
                         </div>
                     </div>
 

@@ -23,9 +23,9 @@ class Epp extends Component {
     render (){
 
         var episodio = [];
-        var episodioID = this.props.params.id;
+        var episodioID = this.props.params.Id;
         lista.forEach(function(episode) {
-            if (episode.id == episodioID) {
+            if (episode.Id == episodioID) {
                 episodio=episode;
             }
         });
@@ -38,7 +38,7 @@ class Epp extends Component {
 
         var source = episodio.src;
         var nomeprog = episodio.progrTitle;
-        var eppid = episodio.id;
+        var eppid = episodio.Id;
         var season = episodio.so;
         var epnum = episodio.ep;
         var airtime = episodio.airTime;
@@ -58,7 +58,7 @@ class Epp extends Component {
 }
 
 Epp.defaultProps ={
-    params: {id: null}
+    params: {Id: null}
 }
 
 export default Epp

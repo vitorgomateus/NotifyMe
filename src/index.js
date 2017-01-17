@@ -15,7 +15,7 @@ ReactDOM.render(
         <Route path="/" component={App}>
             <IndexRoute component={Splash} />
             <Route path="main" component={Main}/>
-            <Route path="epp/:id" component={Epp} />
+            <Route path="epp/:Id" component={Epp} />
             <Route path="info" component={Info} />
             <Route path="defs" component={Options} />
             <Route path="prefs" component={Prefs} />

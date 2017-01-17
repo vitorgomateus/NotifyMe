@@ -9,6 +9,7 @@ import '../css/registo.css'
 class Info extends Component {
 
 
+
     render (){
 
         return(

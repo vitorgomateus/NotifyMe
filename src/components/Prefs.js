@@ -5,6 +5,8 @@ import React from 'react';
 import {Component} from 'react';
 import ItemList from './listcomp/ItemList';
 import DataStore from './DataStore';
+import swal from 'sweetalert';
+import '../../node_modules/sweetalert/dist/sweetalert.css';
 
 import { Link } from 'react-router';
 import $ from 'jquery';
@@ -15,9 +17,12 @@ class Prefs extends Component {
     // quando cria cria o state limpo
     constructor(props) {
         super(props);
-
-        this.state = {channel: [], prefers: ["RTP1","TVI","RTPM","SPTV3"]};
+        //settings.setDomStorageEnabled(true);//                                                                ---LocalStorage---
+        var x = JSON.parse(window.localStorage.getItem("userPrefs"));
+        var y = x?x:["RTP1","TVI","RTPM","SPTV3"];
+        this.state = {channel: [], prefers: y};
         this.setPref = this.setPref.bind(this);
+        console.log("@constructor:localStorage.userprefs.JSON.parse="+x);
     }
 /*
     // envia a callback para o event listener da store fazer update deste componente
@@ -37,7 +42,7 @@ class Prefs extends Component {
 
     // vai buscar os canais dados pela API da sapo meo
     ChannelList() {
-        return $.getJSON('http://services.sapo.pt/EPG/GetChannelListjson')
+         return $.getJSON('http://services.sapo.pt/EPG/GetChannelListjson')
             .then((data) => {
                 this.setState({ channel: data.GetChannelListResponse.GetChannelListResult.Channel });
             });
@@ -51,6 +56,9 @@ class Prefs extends Component {
         this.setState({
             prefers: upprefs
         });
+        console.log("obj"+upprefs);
+        console.log("strg.obj"+JSON.stringify(upprefs));
+        window.localStorage.setItem("userPrefs",JSON.stringify(upprefs));//                                       ---LocalStorage
     }
 
     //chamado no click deum botão, recebe a sigla do canal desse butão
@@ -60,8 +68,8 @@ class Prefs extends Component {
     setPref(canal) {
 
         var prefremoved = false;
-        var userprefs = this.state.prefers;//["RTP1","TVI","RTPM","SPTV3"];
-
+        //var userprefs = this.state.prefers;//["RTP1","TVI","RTPM","SPTV3"];
+        var userprefs = JSON.parse(window.localStorage.getItem("userPrefs"));//                       ---LocalStorage
         if(userprefs){
             userprefs.forEach((itemo, u) => {
                 if (itemo === canal) {
@@ -74,7 +82,8 @@ class Prefs extends Component {
         if (!prefremoved) {
             //if(userprefs)
             if (userprefs.length === 4) {
-                alert("Máximo 4 preferÊncias");
+                //alert("Máximo 4 preferÊncias");
+                swal("Já chega!","A equipa pede desculpa mas de momento não é possível adicionar mais de 4 preferências.","warning"); //                                                    --- SWEETALERT
             } else {
                 userprefs.push(canal);
                 //findElementById(canal).setClass("btn btn-success")    ---    setState faz isto automatico
@@ -93,7 +102,8 @@ class Prefs extends Component {
         const channels = this.state.channel.map((item, i) => {
             var classer = "btn-sm btn-default";
             var pooper = item.Sigla;
-            var moreprefers = this.state.prefers;
+            //var moreprefers = this.state.prefers;
+            var moreprefers = JSON.parse(window.localStorage.getItem("userPrefs"));//                       ---LocalStorage
             if(moreprefers){
                 moreprefers.forEach(function(coolio){
                     if(coolio===pooper){
