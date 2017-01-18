@@ -46,33 +46,61 @@ class Main extends Component {
 
         //var d = new Date();
         //document.getElementById("demo").innerHTML = d;
-        var a,d = n;
-        d.setHours(n.getHours()-1);
-        a.setHours(n.getHours()+2);
+
+        var D = n.getTime()-(60*60*1000);
+        var A = n.getTime()+(2*60*60*1000);
+        //d.setHours(n.getHours()-1);
+        //a.setHours(n.getHours()+2);
+
+        var a = new Date(A);
+        var d = new Date(D);
+
+
+        var dM = d.getMonth()+1; dM= (dM>10)?dM:("0"+dM);
+        var dD = d.getDate(); dD= (dD>10)?dD:("0"+dD);
+        var aM = a.getMonth()+1; aM= (aM>10)?aM:("0"+aM);
+        var aD = a.getDate(); aD= (aD>10)?aD:("0"+aD);
+        //function addZ(n){return n<10? '0'+n:''+n;}
         //x = now time ms
         //a = plus time ms x+2h
         //d = minus timems x-1h
-        var intervaloDatas = '&startDate='+d.getFullYear()+'-'+d.getMonth()+'-'+d.getDay()+' '+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds()+'&endDate='+a.getFullYear()+'-'+a.getMonth()+'-'+a.getDay()+' '+a.getHours()+':'+a.getMinutes()+':'+a.getSeconds();
-
+        var intervaloDatas = '&startDate='+d.getFullYear()+'-'+dM+'-'+dD+' '+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds()+'&endDate='+a.getFullYear()+'-'+aM+'-'+aD+' '+a.getHours()+':'+a.getMinutes()+':'+a.getSeconds();
+        //console.log("prog request: " + "\n"+ n+"\n"+d+"\n"+a+"\n"+dM+"\n"+ dD+"\n"+aM+"\n"+aD+"\n"+intervaloDatas);
 
 
         var x = this.state.prefChannels;
         var y = x?x:["RTP1","TVI","RTPM","SPTV3"];
         //              --- checked,all good with 'y'
         //      http://stackoverflow.com/questions/19323699/iterating-through-json-object-javascript
-        //               --- ERROR cannot read property 'forEach' of undefined
+        //               --- ERROR cannot read property 'forEach' of undefined  --- fixed
         y.map((canal, i) => {
             return $.getJSON('http://services.sapo.pt/EPG/GetProgramListByChannelDateIntervaljson?channelSigla='+canal+intervaloDatas)
                 .then((data) => {
                     var p = this.state.foundPrograms;
                     p=p?p:[];
                     var w = data.GetProgramListByChannelDateIntervalResponse.GetProgramListByChannelDateIntervalResult.Program;
+                    //console.log(i+"chanel list get MEO API"+w[0].Title);
                     //IMPLEMENT iterate through w to get flag and values out
+                    /*const z = w.map((item, i) => {
+                        console.log(item);
+
+                    });*/
+                    for (var j = 0; j<w.length; j++){
+                        console.log(w[j].Flags);
+                        delete w[j].Flags;
+                        delete w[j].Values;
+                    }
                     p.push(w);
+                    console.log(p);
                     this.setState({ foundPrograms: p });
+                }).fail(()=> {
+                    console.log("getJSON FAILED MISERABLY"+i);
+                    this.setState({requestSuccess: false});
+
                 });
         });
-        this.setState({ prefChannels: x});
+        //console.log("chanel list get MEO API OUT \n"+this.state.foundPrograms[0][0].Title);
+        //this.setState({ prefChannels: x});//      wtf is this for?
 
     }
 
@@ -82,7 +110,7 @@ class Main extends Component {
         return(
             <div className="mainContainer">
                 <h3>Os meus Programas</h3>
-                <ItemList products={this.state.programs} />
+                <ItemList products={this.state.foundPrograms} />
             </div>
         );
     }

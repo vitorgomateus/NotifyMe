@@ -19,8 +19,13 @@ class EpListItem extends React.Component {
          <span style={{color: 'red'}}>
          {this.props.product.name}
          </span>;*/
-        var name = this.props.episode.Title + "  ";
-        var imgSrc = require ('../../img/' + this.props.episode.src);
+        var episodio = this.props.episode;
+        var name = episodio.Title + "  ";
+        var imgSrc = require('../../img/logo.png');//require ('../../img/' + this.props.episode.src);
+        var channel = episodio.ChannelName;
+        var xyz = episodio.StartTime;
+        var zyx = xyz.slice(11,16);
+        var startTime = zyx.replace(":","h");
 
         return (
             <div className="row">
@@ -34,9 +39,9 @@ class EpListItem extends React.Component {
                         </div>
                         <div className="col-xs-8 linhaTxt">
 
-                            <h4 className="pitem" > {name} <b>{this.props.episode.ep} </b></h4>
-                            <h4 className="pitem"> {this.props.episode.StartTime} </h4>
-                            <h4 className="pitem"> {this.props.episode.ChannelName} </h4>
+                            <h4 className="pitem" > {name} {/*<b>{this.props.episode.ep} </b>*/}</h4>
+                            <h4 className="pitem"> {startTime} </h4>
+                            <h4 className="pitem"> {channel} </h4>
                         </div>
                     </div>
 
