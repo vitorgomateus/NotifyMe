@@ -2,51 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5db0556c-3293-4384-992b-39e5a2202c06" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/css/eplistitem.css" afterPath="$PROJECT_DIR$/public/css/eplistitem.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/css/epp.css" afterPath="$PROJECT_DIR$/public/css/epp.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/css/eppimgstripe.css" afterPath="$PROJECT_DIR$/public/css/eppimgstripe.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/css/eppplaystripe.css" afterPath="$PROJECT_DIR$/public/css/eppplaystripe.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/css/header.css" afterPath="$PROJECT_DIR$/public/css/header.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/css/mymodal.css" afterPath="$PROJECT_DIR$/public/css/mymodal.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/css/options.css" afterPath="$PROJECT_DIR$/public/css/options.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/css/prefs.css" afterPath="$PROJECT_DIR$/public/css/prefs.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/css/registo.css" afterPath="$PROJECT_DIR$/public/css/registo.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/css/specialInput.css" afterPath="$PROJECT_DIR$/public/css/specialInput.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/css/splash.css" afterPath="$PROJECT_DIR$/public/css/splash.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/Amormaior.png" afterPath="$PROJECT_DIR$/public/img/Amormaior.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/Tvi24logo.png" afterPath="$PROJECT_DIR$/public/img/Tvi24logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/bluetooth.png" afterPath="$PROJECT_DIR$/public/img/bluetooth.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/brkbad.png" afterPath="$PROJECT_DIR$/public/img/brkbad.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/brothersAndSisters.png" afterPath="$PROJECT_DIR$/public/img/brothersAndSisters.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/greysAnatomy.png" afterPath="$PROJECT_DIR$/public/img/greysAnatomy.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/left_arrow.png" afterPath="$PROJECT_DIR$/public/img/left_arrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/logo.png" afterPath="$PROJECT_DIR$/public/img/logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/menuS.png" afterPath="$PROJECT_DIR$/public/img/menuS.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/play_btn.png" afterPath="$PROJECT_DIR$/public/img/play_btn.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/queridasManhas.png" afterPath="$PROJECT_DIR$/public/img/queridasManhas.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/question_btn.png" afterPath="$PROJECT_DIR$/public/img/question_btn.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/sicLogo.png" afterPath="$PROJECT_DIR$/public/img/sicLogo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/star.png" afterPath="$PROJECT_DIR$/public/img/star.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/swiper_left.png" afterPath="$PROJECT_DIR$/public/img/swiper_left.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/swiper_right.png" afterPath="$PROJECT_DIR$/public/img/swiper_right.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/theVoice.png" afterPath="$PROJECT_DIR$/public/img/theVoice.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/theWalkingDead.png" afterPath="$PROJECT_DIR$/public/img/theWalkingDead.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Epp.js" afterPath="$PROJECT_DIR$/src/components/Epp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Header.js" afterPath="$PROJECT_DIR$/src/components/Header.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Main.js" afterPath="$PROJECT_DIR$/src/components/Main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/MyModal.js" afterPath="$PROJECT_DIR$/src/components/MyModal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Options.js" afterPath="$PROJECT_DIR$/src/components/Options.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Prefs.js" afterPath="$PROJECT_DIR$/src/components/Prefs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Registo.js" afterPath="$PROJECT_DIR$/src/components/Registo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Splash.js" afterPath="$PROJECT_DIR$/src/components/Splash.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/eppcomp/IdStripe.js" afterPath="$PROJECT_DIR$/src/components/eppcomp/IdStripe.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/epp.css" afterPath="$PROJECT_DIR$/public/css/epp.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/prefs.css" afterPath="$PROJECT_DIR$/public/css/prefs.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/eppcomp/ImgStripe.js" afterPath="$PROJECT_DIR$/src/components/eppcomp/ImgStripe.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/eppcomp/PlayStripe.js" afterPath="$PROJECT_DIR$/src/components/eppcomp/PlayStripe.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/listcomp/EpListItem.js" afterPath="$PROJECT_DIR$/src/components/listcomp/EpListItem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/listcomp/ItemList.js" afterPath="$PROJECT_DIR$/src/components/listcomp/ItemList.js" />
     </list>
     <ignored path="third-proto.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,110 +27,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Options.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/Options.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
-              <folding>
-                <element signature="e#47#88#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ItemList.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/listcomp/ItemList.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="29" column="59" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EpListItem.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/listcomp/EpListItem.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
-              <folding>
-                <element signature="e#47#86#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="106" column="22" selection-start-line="106" selection-start-column="20" selection-end-line="114" selection-end-column="41" />
-              <folding>
-                <element signature="e#47#88#0" expanded="true" />
-                <element signature="e#5233#5885#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="eppimgstripe.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/eppimgstripe.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Splash.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Splash.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+            <state relative-caret-position="306">
+              <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IdStripe.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/eppcomp/IdStripe.js">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="epp.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/epp.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="18" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayStripe.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/eppcomp/PlayStripe.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#596#667#0" expanded="false" />
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="prefs.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/prefs.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImgStripe.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/eppcomp/ImgStripe.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+              <folding>
+                <element signature="e#47#88#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -193,8 +88,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/ComMain.js" />
-        <option value="$PROJECT_DIR$/src/components/ComEpp.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/public/btsp/css/App.css" />
         <option value="$PROJECT_DIR$/public/btsp/css/style.css" />
@@ -230,20 +123,22 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/css/header.css" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/components/eppcomp/ImgStripe.js" />
         <option value="$PROJECT_DIR$/src/components/eppcomp/PlayStripe.js" />
         <option value="$PROJECT_DIR$/src/components/Epp.js" />
         <option value="$PROJECT_DIR$/src/components/eppcomp/InfoEpp.js" />
         <option value="$PROJECT_DIR$/src/components/Prefs.js" />
-        <option value="$PROJECT_DIR$/src/components/Options.js" />
         <option value="$PROJECT_DIR$/src/css/epp.css" />
         <option value="$PROJECT_DIR$/src/components/eppcomp/IdStripe.js" />
         <option value="$PROJECT_DIR$/src/components/listcomp/ItemList.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/components/Main.js" />
         <option value="$PROJECT_DIR$/public/css/eppimgstripe.css" />
         <option value="$PROJECT_DIR$/src/components/Splash.js" />
+        <option value="$PROJECT_DIR$/src/components/Options.js" />
         <option value="$PROJECT_DIR$/src/components/listcomp/EpListItem.js" />
+        <option value="$PROJECT_DIR$/public/css/epp.css" />
+        <option value="$PROJECT_DIR$/public/css/prefs.css" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/components/eppcomp/ImgStripe.js" />
       </list>
     </option>
   </component>
@@ -263,8 +158,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="523" />
-    <option name="width" value="1404" />
+    <option name="x" value="973" />
+    <option name="width" value="954" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -371,7 +266,37 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="listcomp" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NotifyMe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NotifyMe" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eppcomp" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -386,10 +311,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -430,10 +351,10 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\VitorMaGo\Documents\GitHub\NotifyMe\public" />
+      <recent name="C:\Users\VitorMaGo\Documents\GitHub\NotifyMe\src" />
       <recent name="C:\Users\VitorMaGo\Documents\GitHub\third-proto\src\components" />
       <recent name="C:\Users\VitorMaGo\Documents\GitHub\third-proto\src\css" />
       <recent name="C:\Users\VitorMaGo\Documents\GitHub\third-proto\src" />
-      <recent name="C:\Users\VitorMaGo\Documents\GitHub\third-proto\public\btsp\css" />
     </key>
   </component>
   <component name="RunManager">
@@ -522,25 +443,25 @@
       <workItem from="1484764379617" duration="1606000" />
       <workItem from="1484775168813" duration="3386000" />
       <workItem from="1484836290479" duration="63000" />
-      <workItem from="1484839409911" duration="9905000" />
+      <workItem from="1484839409911" duration="12298000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205824000" />
+    <option name="totallyTimeSpent" value="208217000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="523" y="0" width="1404" height="1047" extended-state="0" />
-    <editor active="false" />
+    <frame x="973" y="0" width="954" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20461094" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30277187" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17716116" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4578442" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -691,13 +612,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/css/eppidstripe.css" />
     <entry file="file://$PROJECT_DIR$/src/css/eppinfo.css" />
-    <entry file="file://$PROJECT_DIR$/public/css/eppplaystripe.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/eplistitem.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -761,20 +675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/prefs.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/MyModal.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -817,16 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/eppcomp/ImgStripe.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-          <folding>
-            <element signature="e#47#88#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Epp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="488">
@@ -859,14 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/epp.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="18" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/eppcomp/IdStripe.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -893,14 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="454">
@@ -908,6 +782,26 @@
           <folding>
             <element signature="e#47#88#0" expanded="true" />
             <element signature="e#5233#5885#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Options.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-427">
+          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+          <folding>
+            <element signature="e#47#88#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/listcomp/EpListItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
+          <folding>
+            <element signature="e#47#86#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -928,20 +822,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/listcomp/EpListItem.js">
+    <entry file="file://$PROJECT_DIR$/public/css/eppplaystripe.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/epp.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="18" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#47#86#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Options.js">
+    <entry file="file://$PROJECT_DIR$/public/css/prefs.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+        <state relative-caret-position="340">
+          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/eppcomp/ImgStripe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
           <folding>
             <element signature="e#47#88#0" expanded="true" />
           </folding>

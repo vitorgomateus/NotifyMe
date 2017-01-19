@@ -11,7 +11,7 @@ class ImgStripe extends Component {
         var episodio = 'logo.png';//this.props.src;
 
 
-        var BBad = require( '../../img/' + episodio);
+        var BBad = require( '../../../public/img/' + episodio);
         var imgBg = {
             backgroundImage: `url(${BBad})`,
             backgroundSize: "cover"

@@ -11,21 +11,21 @@
     border:0;
     margin: 5px 0;
 }
-button:hover{
+.celulas>button:hover{
     background-color: #464545;
     margin: 5px 0;
     border:0;
     transform: none;
     outline:0;
  }
-button:active{
+.celulas>button:active{
     background-color: #464545;
     margin: 5px 0;
     border:0;
     transform: none;
     outline:0;
 }
-button:focus {
+.celulas>button:focus {
     background-color: #464545;
     margin: 5px 0;
     border:0;
