@@ -13,7 +13,9 @@ class IdStripe extends Component {
             <div>
                 <div className="row epprow eppidrow">
                     <div className="col-xs-4"></div>
-                    <h2 className="col-xs-8 title">{episodio}</h2>
+                    <div className="col-xs-8 eppidrow">
+                        <h2 className="title">{episodio}</h2>
+                    </div>
                 </div>
 
                 <div className="row epprow eppidrow">

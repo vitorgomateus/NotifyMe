@@ -85,7 +85,7 @@ class Prefs extends Component {
 
         var prefremoved = false;
         //var userprefs = this.state.prefers;//["RTP1","TVI","RTPM","SPTV3"];
-        var userprefs = JSON.parse(window.localStorage.getItem("userPrefs"));//                       ---LocalStorage
+        var userprefs = this.state.prefers;//JSON.parse(window.localStorage.getItem("userPrefs"));//                       ---LocalStorage
         if(userprefs){
             userprefs.forEach((itemo, u) => {
                 if (itemo === canal) {

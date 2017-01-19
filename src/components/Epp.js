@@ -101,6 +101,7 @@ class Epp extends Component {
 
             //-----------------INFO Stripe
             var descricao = program.Description;
+            var nomeEpp= program.ShortDescription;
 
         }
 
@@ -111,7 +112,7 @@ class Epp extends Component {
                 <div>
                     <IdStripe nm={nomeprog} />{/*se={season} ep={epnum}*/}
                     <PlayStripe ei={eppid} at={airTime}/>
-                    <InfoEpp dt={descricao}/>
+                    <InfoEpp dt={descricao} noepp={nomeEpp}/>
                 </div>
             </div>
         );

@@ -28,7 +28,7 @@ class Options extends Component {
         this.setState({openmodal: false});
     }
 
-    kickAmodal(x){
+    kickAmodal(x){    //onClick={() => this.kickAmodal(3)}
         /*var check = this.state.openmodal;//           usar com modal feita à mão -> MyModal.js
          this.setState({openmodal: !check});//          a solução a baixo é ligeiramentemais elegante
          this.setState({wichmodal: x});//               pode sernecessário alterar o conteudo nas variaveis 'titulo'e'texto'para strings.
@@ -39,16 +39,16 @@ class Options extends Component {
         var texto = "Não há esclarecimento para dar. Feche esta janela.";
         switch (x) {
             case 1:
-                texto=<p>Estes lembretes são notificações que enviámos sempre que algo estiver para começar. <br/>Ou quando tivermos uma sugestão para fazer.</p>;
-                titulo= <h4>Lembretes</h4>;
+                texto="Erro 1";//<p>Estes lembretes são notificações que enviámos sempre que algo estiver para começar. <br/>Ou quando tivermos uma sugestão para fazer.</p>;
+                titulo= "Erro 1";//<h4>Lembretes</h4>;
                 break;
             case 2:
-                texto=<p>Com a opção de sugestões activada, o nosso sistema usará os seus dados para encontrar algo novo e a seu gosto. <br/><br/>Se também activar os lembretes, receberá estas sugestões como notificações.<br/><br/>A opção de zapping enviará sugestões extra para que facilmente alternar entre opções.<br/><br/>Defina as suas preferências televisivas, para que lhe possamos proporcionar uma experiência de TV melhorada!</p>;
-                titulo= <h4>Sugestões</h4>;
+                texto="Erro 2" ;//<p>Com a opção de sugestões activada, o nosso sistema usará os seus dados para encontrar algo novo e a seu gosto. <br/><br/>Se também activar os lembretes, receberá estas sugestões como notificações.<br/><br/>A opção de zapping enviará sugestões extra para que facilmente alternar entre opções.<br/><br/>Defina as suas preferências televisivas, para que lhe possamos proporcionar uma experiência de TV melhorada!</p>;
+                titulo= "Erro 2";//<h4>Sugestões</h4>;
                 break;
             case 3:
-                texto=<p>Esta opção serve para saber se mais alguém que você conheça também esteja a ver o mesmo que vocÊ.<br/>Escolha a fonte dos contactos mais conveniente (pode criar um gruo nos seus contatos e adicionar só esse grupo) e estes estarão visíveis enquanto vê televisão.</p>;
-                titulo= <h4>Radar Social</h4>;
+                texto="Erro 3";//<p>Esta opção serve para saber se mais alguém que você conheça também esteja a ver o mesmo que vocÊ.<br/>Escolha a fonte dos contactos mais conveniente (pode criar um gruo nos seus contatos e adicionar só esse grupo) e estes estarão visíveis enquanto vê televisão.</p>;
+                titulo="Erro 3";// <h4>Radar Social</h4>;
                 break;
             default:
                 titulo = "Erro desconhecido";
@@ -65,7 +65,7 @@ class Options extends Component {
                     <fieldset> <legend>Alterar definições </legend>
                         <fieldset className="opcoesAlignLeft">
                             <legend>Lembretes:
-                                <img className="question-mark" src={question} alt="What is this?" onClick={() => this.kickAmodal(1)} />
+                                <img className="question-mark" src={question} alt="What is this?"  />
                             </legend>
                             <p className="btpd">Quando quer receber lembretes?</p>
                             <Button bsStyle="primary">Primary</Button>
@@ -88,7 +88,7 @@ class Options extends Component {
 
                         <fieldset className="opcoesAlignLeft">
                             <legend>Sugestões:
-                                <img className="question-mark" src={question} alt="What is this?" onClick={() => this.kickAmodal(2)} />
+                                <img className="question-mark" src={question} alt="What is this?"  />
                             </legend>
                             <div className="form-group pdr">
                                 <div className="col-xs-10">
@@ -101,7 +101,7 @@ class Options extends Component {
 
                         <fieldset className="opcoesAlignLeft">
                             <legend>Radar Social:
-                                <img className="question-mark" src={question} alt="What is this?" onClick={() => this.kickAmodal(3)} />
+                                <img className="question-mark" src={question} alt="What is this?"  />
                             </legend>
                             <p className="btpd">Como quer associar os seus contactos??</p>
                             <div className="form-group pdr">

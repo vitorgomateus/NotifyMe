@@ -19,23 +19,24 @@ class InfoEpp extends Component {
 
         var episodio = [];
         var episodioID = this.props.dt;
-        details.forEach(function(episode) {
+        console.log(episodioID);
+        /*details.forEach(function(episode) {
             if (episode.id == episodioID) {
                 episodio=episode;
             }
-        });
+        });*/
 
 
         if (episodio.progrTitle == null) {
             episodio.progrTitle = "No Episode to Display"
         };
 
-        var nomeepp = episodio.epName;
+        var nomeepp = this.props.noepp;
         var genero = details.genre;
         var director = details.direct;
         var escritor = details.writers;
         var actores = details.stars;
-        var descricao = this.props.params.dt;
+        var descricao = this.props.dt;
 
 
         return(
