@@ -7,6 +7,7 @@
 .headerLogo {
     /*animation: App-logo-spin infinite 20s linear;
     height: 20px;*/
+    width: 66%;
     position: relative;
     left: 26%;
     top: 15px;

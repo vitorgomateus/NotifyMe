@@ -1,4 +1,4 @@
-# third-proto
+# NotifyMe
 third try at a prototype for a masters incommunication @DeCA, Aveiro.
 
 TODO:
