@@ -106,10 +106,10 @@ class Epp extends Component {
 
         return(
             <div className="eppContainer">
-                <ImgStripe src={source}/>
+                {/*<ImgStripe src={source}/>*/}
 
                 <div>
-                   {/* <IdStripe nm={nomeprog} />/!*se={season} ep={epnum}*!/
+                    <IdStripe nm={nomeprog} />{/*se={season} ep={epnum}*/}
                     <PlayStripe ei={eppid} at={airTime}/>
                     <InfoEpp dt={descricao}/>*/}
                 </div>

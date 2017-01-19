@@ -4,11 +4,6 @@
     <list default="true" id="5db0556c-3293-4384-992b-39e5a2202c06" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Epp.js" afterPath="$PROJECT_DIR$/src/components/Epp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Main.js" afterPath="$PROJECT_DIR$/src/components/Main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/eppcomp/IdStripe.js" afterPath="$PROJECT_DIR$/src/components/eppcomp/IdStripe.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/eppcomp/InfoEpp.js" afterPath="$PROJECT_DIR$/src/components/eppcomp/InfoEpp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/eppcomp/PlayStripe.js" afterPath="$PROJECT_DIR$/src/components/eppcomp/PlayStripe.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/listcomp/EpListItem.js" afterPath="$PROJECT_DIR$/src/components/listcomp/EpListItem.js" />
     </list>
     <ignored path="third-proto.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,7 +27,7 @@
       <file leaf-file-name="Prefs.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Prefs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="119">
               <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="10" selection-end-column="23" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -45,7 +40,7 @@
       <file leaf-file-name="Main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1547">
+            <state relative-caret-position="1513">
               <caret line="93" column="22" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
               <folding>
                 <element signature="e#47#88#0" expanded="true" />
@@ -68,7 +63,7 @@
       <file leaf-file-name="EpListItem.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/listcomp/EpListItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="425">
               <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding />
             </state>
@@ -78,8 +73,8 @@
       <file leaf-file-name="Epp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Epp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="824">
-              <caret line="117" column="5" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
+            <state relative-caret-position="548">
+              <caret line="110" column="21" selection-start-line="110" selection-start-column="21" selection-end-line="110" selection-end-column="21" />
               <folding>
                 <element signature="e#47#88#0" expanded="true" />
                 <element signature="e#328#1097#0" expanded="false" />
@@ -113,7 +108,7 @@
       <file leaf-file-name="InfoEpp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/eppcomp/InfoEpp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
+            <state relative-caret-position="17">
               <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -198,8 +193,8 @@
         <option value="$PROJECT_DIR$/src/components/eppcomp/PlayStripe.js" />
         <option value="$PROJECT_DIR$/src/components/eppcomp/InfoEpp.js" />
         <option value="$PROJECT_DIR$/src/components/eppcomp/ImgStripe.js" />
-        <option value="$PROJECT_DIR$/src/components/Epp.js" />
         <option value="$PROJECT_DIR$/src/components/Main.js" />
+        <option value="$PROJECT_DIR$/src/components/Epp.js" />
       </list>
     </option>
   </component>
@@ -219,8 +214,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
+    <option name="x" value="774" />
+    <option name="width" value="1153" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -378,15 +373,17 @@
       <workItem from="1484648609771" duration="19048000" />
       <workItem from="1484764379617" duration="1606000" />
       <workItem from="1484775168813" duration="3386000" />
+      <workItem from="1484836290479" duration="63000" />
+      <workItem from="1484839409911" duration="462000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195856000" />
+    <option name="totallyTimeSpent" value="196381000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
-    <editor active="false" />
+    <frame x="774" y="0" width="1153" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22447102" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -395,7 +392,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17609392" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17716116" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -721,7 +718,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Prefs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="119">
           <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="10" selection-end-column="23" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -732,7 +729,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/eppcomp/InfoEpp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
+        <state relative-caret-position="17">
           <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -750,7 +747,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/listcomp/EpListItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="425">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
@@ -758,7 +755,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1547">
+        <state relative-caret-position="1513">
           <caret line="93" column="22" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
           <folding>
             <element signature="e#47#88#0" expanded="true" />
@@ -779,8 +776,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Epp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="824">
-          <caret line="117" column="5" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
+        <state relative-caret-position="548">
+          <caret line="110" column="21" selection-start-line="110" selection-start-column="21" selection-end-line="110" selection-end-column="21" />
           <folding>
             <element signature="e#47#88#0" expanded="true" />
             <element signature="e#328#1097#0" expanded="false" />
