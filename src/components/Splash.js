@@ -4,9 +4,9 @@
 import React, { Component } from 'react';
 import Spinner from 'react-spinkit';
 import {Link} from 'react-router';
-import splashLogo from '../img/logo.png'
+import splashLogo from '../../public/img/logo.png'
 
-import '../css/splash.css'
+import '../../public/css/splash.css'
 
 class Splash extends Component {
     render(){

@@ -2,7 +2,7 @@
  * Created by VitorMaGo on 09/01/2017.
  */
 import React, { Component } from 'react';
-import '../css/mymodal.css';
+import '../../public/css/mymodal.css';
 
 
 class MyModal extends Component{

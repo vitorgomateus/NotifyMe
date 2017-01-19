@@ -4,9 +4,9 @@
 import React from 'react';
 import {Component} from 'react';
 import { Link } from 'react-router';
-import Back from '../img/left_arrow.png';
-import '../css/style.css';
-import '../css/header.css';
+import Back from '../../public/img/left_arrow.png';
+import '../../public/css/style.css';
+import '../../public/css/header.css';
 
 class Header extends Component {
 

@@ -2,8 +2,8 @@
  * Created by VitorMaGo on 03/01/2017.
  */
 import React, { Component } from 'react';
-import Play from '../../img/play_btn.png';
-import '../../css/eppplaystripe.css';
+import Play from '../../../public/img/play_btn.png';
+import '../../../public/css/eppplaystripe.css';
 
 class PlayStripe extends Component {
 

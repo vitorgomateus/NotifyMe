@@ -2,7 +2,7 @@
  * Created by VitorMaGo on 03/01/2017.
  */
 import React, { Component } from 'react';
-import '../../css/eppimgstripe.css';
+import '../../../public/css/eppimgstripe.css';
 
 class ImgStripe extends Component {
 

@@ -9,7 +9,7 @@ import swal from 'sweetalert';
 import '../../node_modules/sweetalert/dist/sweetalert.css';
 import { Link } from 'react-router';
 import $ from 'jquery';
-import '../css/prefs.css';
+import '../../public/css/prefs.css';
 
 class Prefs extends Component {
 

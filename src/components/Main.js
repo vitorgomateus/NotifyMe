@@ -47,7 +47,7 @@ class Main extends Component {
         //var d = new Date();
         //document.getElementById("demo").innerHTML = d;
 
-        var D = n.getTime()-(60*60*1000);
+        var D = n.getTime()-(0.5*60*60*1000);
         var A = n.getTime()+(2*60*60*1000);
         //d.setHours(n.getHours()-1);
         //a.setHours(n.getHours()+2);
@@ -85,13 +85,42 @@ class Main extends Component {
                         console.log(item);
 
                     });*/
-                    for (var j = 0; j<w.length; j++){
+                    console.log("w de "+i+": "+w);
+                    var f = w.splice(0, 2);
+                    console.log("Devia confirmar isto, mas está a funcionar.\nOs parametros estão a funcionar ao contrário do que li na net mas olha, amigos na mesma.\nw.unspliced: \n"+
+                        w+"\n FFF.spliced: \n"+i+f);
+                    for (var j = 0; j<f.length; j++){
                         //console.log(w[j].Flags);
-                        delete w[j].Flags;
-                        delete w[j].Values;
+                        delete f[j].Flags;
+                        delete f[j].Values;
+                        p.push(f[j]);
+
                     }
-                    p.push(w);
-                    //console.log(p);
+
+                    console.log(p);
+
+
+
+
+
+
+                    /*function compare(a,b) {
+                        if (a.last_nom < b.last_nom)
+                            return -1;
+                        if (a.last_nom > b.last_nom)
+                            return 1;
+                        return 0;
+                    }
+
+                    objs.sort(compare);*/
+
+
+
+
+
+
+
+
                     this.setState({ foundPrograms: p });
                 }).fail(()=> {
                     console.log("getJSON FAILED MISERABLY"+i);

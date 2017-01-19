@@ -27,14 +27,14 @@ class ItemList extends React.Component {
         var programas = this.props.products;
         var variable;
         for (var j = 0; j<programas.length; j++){
-            for (var i = 0; i<programas[j].length; i++){
-                variable=programas[j][i];
+            /*for (var i = 0; i<programas[j].length; i++){}*/
+                variable=programas[j];
 
                 var count = Object.keys(variable).length;
                 //console.log("IL products variable: "+variable.Title);//               ---Success!!!
 
                 rows.push(<EpListItem episode={variable}/>);
-            }
+
         }
 
         //jsonString = JSON.stringify(rows[0][0], null, 2);

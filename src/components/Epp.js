@@ -8,7 +8,7 @@ import PlayStripe from './eppcomp/PlayStripe';
 import InfoEpp from './eppcomp/InfoEpp';
 import $ from 'jquery';
 
-import '../css/epp.css';
+import '../../public/css/epp.css';
 
 var lista = [
     {id: '0', progrTitle: 'Breaking Bad', so:'02', ep:'03', canal:'FOX', airTime: '1482696013', src:'brkbad.png', epName: 'Ozymandias'},

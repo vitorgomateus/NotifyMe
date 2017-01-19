@@ -5,9 +5,9 @@ import React, {Component} from 'react';
 
 import {Link} from 'react-router';
 
-import '../../css/eplistitem.css';
+import '../../../public/css/eplistitem.css';
 
-import BBad from '../../img/brkbad.png';
+import BBad from '../../../public/img/brkbad.png';
 
 
 
@@ -22,7 +22,7 @@ class EpListItem extends React.Component {
         var episodio = this.props.episode;
         var epID = episodio.Id;
         var name = episodio.Title + "  ";
-        var imgSrc = require('../../img/logo.png');//require ('../../img/' + this.props.episode.src);
+        var imgSrc = require('../../../public/img/logo.png');//require ('../../img/' + this.props.episode.src);
         var channel = episodio.ChannelName;
         var xyz = episodio.StartTime;
         var zyx = xyz.slice(11,16);

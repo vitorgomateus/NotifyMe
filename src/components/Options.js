@@ -3,10 +3,10 @@
  */
 import React, { Component } from 'react';
 import MyModal from './MyModal';
-import question from '../img/question_btn.png';
+import question from '../../public/img/question_btn.png';
 import { Link } from 'react-router';
 import { Button } from 'react-bootstrap/lib/Button';
-import '../css/options.css';
+import '../../public/css/options.css';
 
 import swal from 'sweetalert';
 import '../../node_modules/sweetalert/dist/sweetalert.css';

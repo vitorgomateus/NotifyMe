@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import '../css/registo.css'
+import '../../public/css/registo.css'
 
 
 class Info extends Component {
