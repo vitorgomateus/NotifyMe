@@ -95,7 +95,7 @@ class Epp extends Component {
             //-----------------PLAY Stripe
             var eppid = program.Id;
             var xyz = program.StartTime;
-            console.log(xyz);
+            console.log("XYZ: "+xyz);
             var airTime = xyz;//.slice(0,9);
             //var startTime = zyx.replace(":","h");
 

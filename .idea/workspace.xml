@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5db0556c-3293-4384-992b-39e5a2202c06" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/teste.zip" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Epp.js" afterPath="$PROJECT_DIR$/src/components/Epp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/eppcomp/ImgStripe.js" afterPath="$PROJECT_DIR$/src/components/eppcomp/ImgStripe.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/header.css" afterPath="$PROJECT_DIR$/src/css/header.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/eppcomp/PlayStripe.js" afterPath="$PROJECT_DIR$/src/components/eppcomp/PlayStripe.js" />
     </list>
     <ignored path="third-proto.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,11 +60,23 @@
       <file leaf-file-name="Epp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Epp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="108" column="44" selection-start-line="108" selection-start-column="44" selection-end-line="108" selection-end-column="44" />
+            <state relative-caret-position="488">
+              <caret line="97" column="30" selection-start-line="97" selection-start-column="30" selection-end-line="97" selection-end-column="30" />
               <folding>
                 <element signature="e#47#88#0" expanded="true" />
                 <element signature="e#328#1097#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayStripe.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/eppcomp/PlayStripe.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+              <folding>
+                <element signature="e#576#647#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -85,7 +94,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InfoEpp.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="InfoEpp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/eppcomp/InfoEpp.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
@@ -93,16 +102,6 @@
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayStripe.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/eppcomp/PlayStripe.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="709">
-              <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -167,14 +166,14 @@
         <option value="$PROJECT_DIR$/src/components/listcomp/ItemList.js" />
         <option value="$PROJECT_DIR$/src/components/listcomp/EpListItem.js" />
         <option value="$PROJECT_DIR$/src/components/eppcomp/IdStripe.js" />
-        <option value="$PROJECT_DIR$/src/components/eppcomp/PlayStripe.js" />
         <option value="$PROJECT_DIR$/src/components/eppcomp/InfoEpp.js" />
         <option value="$PROJECT_DIR$/src/components/Main.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/css/header.css" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/components/Epp.js" />
         <option value="$PROJECT_DIR$/src/components/eppcomp/ImgStripe.js" />
+        <option value="$PROJECT_DIR$/src/components/Epp.js" />
+        <option value="$PROJECT_DIR$/src/components/eppcomp/PlayStripe.js" />
       </list>
     </option>
   </component>
@@ -457,12 +456,12 @@
       <workItem from="1484764379617" duration="1606000" />
       <workItem from="1484775168813" duration="3386000" />
       <workItem from="1484836290479" duration="63000" />
-      <workItem from="1484839409911" duration="2198000" />
+      <workItem from="1484839409911" duration="5634000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198117000" />
+    <option name="totallyTimeSpent" value="201553000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="774" y="0" width="1153" height="1047" extended-state="0" />
@@ -771,16 +770,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/eppcomp/InfoEpp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/listcomp/ItemList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -843,17 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Epp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="108" column="44" selection-start-line="108" selection-start-column="44" selection-end-line="108" selection-end-column="44" />
-          <folding>
-            <element signature="e#47#88#0" expanded="true" />
-            <element signature="e#328#1097#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/eppcomp/ImgStripe.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -864,11 +842,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Epp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="97" column="30" selection-start-line="97" selection-start-column="30" selection-end-line="97" selection-end-column="30" />
+          <folding>
+            <element signature="e#47#88#0" expanded="true" />
+            <element signature="e#328#1097#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/eppcomp/PlayStripe.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="709">
-          <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="527">
+          <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+          <folding>
+            <element signature="e#576#647#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/eppcomp/InfoEpp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
