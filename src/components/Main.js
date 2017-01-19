@@ -86,12 +86,12 @@ class Main extends Component {
 
                     });*/
                     for (var j = 0; j<w.length; j++){
-                        console.log(w[j].Flags);
+                        //console.log(w[j].Flags);
                         delete w[j].Flags;
                         delete w[j].Values;
                     }
                     p.push(w);
-                    console.log(p);
+                    //console.log(p);
                     this.setState({ foundPrograms: p });
                 }).fail(()=> {
                     console.log("getJSON FAILED MISERABLY"+i);

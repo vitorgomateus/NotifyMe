@@ -6,6 +6,7 @@ import ImgStripe from './eppcomp/ImgStripe';
 import IdStripe from './eppcomp/IdStripe';
 import PlayStripe from './eppcomp/PlayStripe';
 import InfoEpp from './eppcomp/InfoEpp';
+import $ from 'jquery';
 
 import '../css/epp.css';
 
@@ -18,42 +19,102 @@ var lista = [
     {id: '5', progrTitle: 'Jornal da Noite', so:'2016', ep:'12/12', canal:'SIC', airTime: '1212696013', src:'sicLogo.png'}
 ];
 
+
 class Epp extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {propId: this.props.params.Id, program: {}};
+
+        //console.log("@constructor:localStorage.JSON="+y);
+    }
+
+    componentDidMount() {
+        this.GetProgramDetails();
+    }
+
+    // vai buscar os canais dados pela API da sapo meo
+    GetProgramDetails() {
+
+
+        var pid= this.props.params.Id;
+        console.log("propId: "+pid);
+
+        return $.getJSON('http://services.sapo.pt/EPG/GetProgramByIdjson?programId='+pid)
+            .then((data) => {
+
+                var x = data.GetProgramByIdResponse.GetProgramByIdResult;
+                delete x.Flags;
+                delete x.Values;
+                //console.log(i+"chanel list get MEO API"+w[0].Title);
+                //IMPLEMENT iterate through w to get flag and values out
+                /*const z = w.map((item, i) => {
+                 console.log(item);
+
+                 });*/
+                //console.log(x);
+                //console.log(JSON.stringify(x, null, 2));
+                this.setState({program: x})
+
+            }).fail(()=> {
+                console.log("getJSON FAILED MISERABLY");
+            });
+
+        //console.log("chanel list get MEO API OUT \n"+this.state.foundPrograms[0][0].Title);
+
+    }
+
 
     render (){
 
-        var episodio = [];
-        var episodioID = this.props.params.Id;
-        lista.forEach(function(episode) {
-            if (episode.Id == episodioID) {
-                episodio=episode;
-            }
-        });
+
+        /*lista.forEach(function(episode) {
+         if (episode.Id == episodioID) {
+         episodio=episode;
+         }
+         });*/
+
+        var program = this.state.program;
+        console.log("render pre.if: "+program);
+        if(program.Title){
+
+            console.log("render in.if: "+program);
+            //-----------------IMG Stripe
+            var source = 'logo.png';//program.src;
+
+            //-----------------ID Stripe
+            var nomeprog = program.Title;
+            if (nomeprog == null) {
+                nomeprog = "No Episode to Display"
+            };
+            var season = program.so;//                               --- not needed
+            var epnum = program.ep;//                               --- not needed
 
 
-        if (episodio.progrTitle == null) {
-            episodio.progrTitle = "No Episode to Display"
-        };
+            //-----------------PLAY Stripe
+            var eppid = program.Id;
+            var xyz = program.StartTime;
+            console.log(xyz);
+            var airTime = xyz;//.slice(0,9);
+            //var startTime = zyx.replace(":","h");
 
+            //-----------------INFO Stripe
+            var descricao = program.Description;
 
-        var source = episodio.src;
-        var nomeprog = episodio.progrTitle;
-        var eppid = episodio.Id;
-        var season = episodio.so;
-        var epnum = episodio.ep;
-        var airtime = episodio.airTime;
+        }
 
         return(
             <div className="eppContainer">
                 <ImgStripe src={source}/>
 
                 <div>
-                    <IdStripe nm={nomeprog} se={season} ep={epnum}/>
-                <PlayStripe ei={eppid} at={airtime}/>
-                <InfoEpp dt={eppid}/>
+                   {/* <IdStripe nm={nomeprog} />/!*se={season} ep={epnum}*!/
+                    <PlayStripe ei={eppid} at={airTime}/>
+                    <InfoEpp dt={descricao}/>*/}
+                </div>
             </div>
-    </div>
-    );
+        );
     }
 }
 

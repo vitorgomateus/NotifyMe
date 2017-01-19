@@ -20,6 +20,7 @@ class EpListItem extends React.Component {
          {this.props.product.name}
          </span>;*/
         var episodio = this.props.episode;
+        var epID = episodio.Id;
         var name = episodio.Title + "  ";
         var imgSrc = require('../../img/logo.png');//require ('../../img/' + this.props.episode.src);
         var channel = episodio.ChannelName;
@@ -29,7 +30,7 @@ class EpListItem extends React.Component {
 
         return (
             <div className="row">
-                <Link to={`/epp/${this.props.episode.Id}`} >
+                <Link to={`/epp/${epID}`} >
 
                     <div className="row linha">
                         <div className="col-xs-4 linhaimg">

@@ -31,10 +31,11 @@ class InfoEpp extends Component {
         };
 
         var nomeepp = episodio.epName;
-        var genero = episodio.genre;
-        var director = episodio.direct;
-        var escritor = episodio.writers;
-        var actores = episodio.stars;
+        var genero = details.genre;
+        var director = details.direct;
+        var escritor = details.writers;
+        var actores = details.stars;
+        var descricao = this.props.params.dt;
 
 
         return(
@@ -42,7 +43,7 @@ class InfoEpp extends Component {
                 <div className="epprow min">
                     <h3><b>{nomeepp}</b></h3>
                     <p><b>Resumo do ep.</b><br/>
-                        Vivamus in mi eu magna lacinia ultricies sit amet ut est. Donec rutrum eget turpis non maximus. Vestibulum sapien tortor, sagittis eu mi id, rutrum imperdiet magna. Maecenas volutpat viverra pretium. Nam ultricies dapibus lacus, vel laoreet odio rhoncus vel.
+                        {descricao}
                     </p>
                 </div>
                 <div className="epprow more">

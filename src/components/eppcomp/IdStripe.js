@@ -18,8 +18,8 @@ class IdStripe extends Component {
 
                 <div className="row epprow eppidrow">
                     <div className="col-xs-8 eppnum">
-                        <p>Temporada {this.props.se}</p>
-                        <p>Ep. {this.props.ep}</p>
+                        <p>Temporada {/*{this.props.se}*/}</p>
+                        <p>Ep. {/*{this.props.ep}*/}</p>
                     </div>
                     <div className="col-xs-4"></div>
                 </div>

@@ -51,6 +51,7 @@ class PlayStripe extends Component {
                 + currentdate.getMinutes();
         }
 
+        datetime= "Dev.Erro";
 
 
 
