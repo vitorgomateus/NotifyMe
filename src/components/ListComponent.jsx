@@ -6,15 +6,13 @@ const ListComponent = ({items}) => {
 
     //by Vitor
     return (
-        <ul className="gif-list">
+        <div className="lista">
             {items.map((item, key) => {
                 return (
-                    <li key={key} className="">
                         <Item key={key} item={item} />
-                    </li>
                 );
             })}
-        </ul>
+        </div>
     );
 };
 

@@ -16,7 +16,7 @@ class Callback extends Component {
         var url = "http://samuelbf94.ddns.net/oauth/token";
         var params = "grant_type=authorization_code";
             params += '&client_id=3';
-            params += '&client_secret=q07U8sJorHXtnt0KvBbFEXqgxmA6HoqaXv46ssK3';
+            params += '&client_secret=PQhIMghkcKIPbNAUT0YAlhNifNCCkGpu86l0Qrd1';
             params += '&redirect_uri=http://localhost:3000/callback';//http://notifyme-react.ddns.net/#/main'; //http://localhost:3000/Callback.jsx';
             params += '&code='+code;
 

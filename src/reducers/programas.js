@@ -5,70 +5,89 @@ const initState = {
     query: '',
     counter: '',
     number: 0,
+    reset: false,
     fprogramas: []
 }
 
 const programs = (state = initState, action) => {
+
     switch (action.type) {
 
         case types.RESET_PROGRAMS:
-            return Object.assign({}, state, {
-                number: action.number
+            var emptyArray = [];
+            var objecta=  Object.assign({}, state, {
+                reset: true,
+                counter: 0,
+                fprogramas: emptyArray
             });
+            console.log("RED RES PROG", objecta);
+            return objecta;
+
 
         case types.REQUEST_PROGRAMS:
             // console.info('reducer REQUEST_CONTACTS', state, action);
             return Object.assign({}, state, {
-                isFetching: true
+                isFetching: true,
+                number: action.number
             });
+
+
         case types.RECEIVE_PROGRAMS:
             // console.info('reducer RECEIVE_CONTACTS', state, action);
 
 
-
+            var doingFetch = state.isFetching;
             var contador = state.counter;
-
-
-            var t = state.fprogramas;
-            var doingFetch = true;
             var numero = state.number;
+            var reseter = state.reset;
+            var t = state.fprogramas;
 
-            console.log("M.RED.PROG temos:", t.length, doingFetch, contador, "numero"+numero);
+            var iteracao = action.items.iter;
 
-            if(contador===numero){
+            console.log("M.RED.PROG temos:", t.length, "fetch:"+doingFetch, "puxados:"+contador, "Canais"+numero, "iteracao"+iteracao);
+
+            //      ------------------------------------------------------------------------------- started a new fetch
+            if(iteracao === 0){
+                doingFetch = true;
+                contador = 0;
+                reseter = false;
                 t = [];
-                numero = 0;
             }
+            console.log("M.RED.PROG isto devia...:", t.length, "fetch:"+doingFetch, "puxados:"+contador, "Canais"+numero, "iteracao"+iteracao);
 
 
-
-
+            //      ------------------------------------------------------------------ get the programs from first fetch
             var d = action.items.d;
+            //      ---------------------------------------------------------------- push them into the collective array
             d.forEach(function(palhaco){
                 t.push(palhaco);
             });
-            t.sort(function(a, b) {
-                //"/Date(1485806400000)/"
-                var w = a.StartDate.slice(6,19);
-                var vv = b.StartDate.slice(6,19);
-                return parseFloat(w) - parseFloat(vv);
-            });
 
+
+            //      -------------------------------------------------------------- count another iteration of this fetch
             contador++;
             var p = t;
+            //      --------------------------------------- if this is last iteration, stop fetching, and sort and slice, reset counter
             if(contador===numero) {
                 doingFetch = false;
                 contador = 0;
-                p=t.slice(0,7);// ------------------------------------------------------------------ DEV DO
+                t.sort(function(a, b) {
+                    // --- "/Date(1485806400000)/"
+                    var w = a.StartDate.slice(6,19);
+                    var vv = b.StartDate.slice(6,19);
+                    return parseFloat(w) - parseFloat(vv);
+                });
+                p=t.slice(0,7);
+                t = [];
             }
-            console.log("M.RED.PROG e agora temos:", t.length, "fetch:"+doingFetch, "puxados:"+contador, "Canais:"+numero);
+            console.log("M.RED.PROG e agora temos:", p.length, "fetch:"+doingFetch, "puxados:"+contador, "Canais:"+numero, "iteracao"+iteracao);
 
 
             return Object.assign({}, state, {
                 isFetching: doingFetch,
                 fprogramas: p,
                 counter: contador,
-                number: numero
+                reset: reseter
             });
 
 

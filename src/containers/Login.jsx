@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Spinner from 'react-spinkit';
-import '../components/Login';
+//import '../components/Login';
 
 class Login extends Component {
     //console.info('component List', items);
@@ -18,7 +18,15 @@ class Login extends Component {
     render() {
         console.log("Login Container");
         return (
+            <div>
+                {/*http://samuelbf94.ddns.net/oauth/authorize?
+                client_id=3&
+                redirect_uri=http://localhost:3000/callback&
+                response_type=code&
+                scope*/}
+                <a href="http://samuelbf94.ddns.net/oauth/authorize?client_id=3&redirect_uri=http://localhost:3000/callback&response_type=code&scope">yo yo mama, do da LOGIN</a>
             <Spinner spinnerName="cube-grid"/>
+            </div>
         );
     }
 }

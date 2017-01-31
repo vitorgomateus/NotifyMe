@@ -39,21 +39,23 @@ export function resetPrograms(num) {
     // console.info('action requestContactById');
     return {
         type: types.RESET_PROGRAMS,
-        number: num
+        reset: true
     }
 }
-export function requestPrograms() {
+export function requestPrograms(quantos) {
     // console.info('action requestContactById');
     return {
-        type: types.REQUEST_PROGRAMS
+        type: types.REQUEST_PROGRAMS,
+        number: quantos
     }
 }
 
-export function receivePrograms(json) {
-    // console.info('ACTION receiveContactById', json);
+export function receivePrograms(json, vir) {
+     console.info('ACTION receivePrograms', json, vir);
     return {
         type: types.RECEIVE_PROGRAMS,
-        items: json
+        items: json,
+        iter: vir
     }
 }
 
@@ -122,9 +124,9 @@ export function fetchPrefs() {
 }
 
 //      ------------------------------------------------------------------------------------------------------- PROGRAMS
-export function fetchPrograms(progString) {
+export function fetchPrograms(progString, quantos, vur) {
     return function(dispatch) {
-        dispatch(requestPrograms());
+        dispatch(requestPrograms(quantos));
 
         // o url pode estar todo na string
         //var startString= `http://services.online.meo.pt/Data/2013/11/programs/EpgLiveChannelPrograms?$top=4&$orderby=StartDate%20asc&$filter=CallLetter%20eq%20%27`;
@@ -133,7 +135,7 @@ export function fetchPrograms(progString) {
         //console.log("-----RED FPROG tString:", progString);
         return fetch(progString)
             .then(response => response.json())
-            .then(json => dispatch(receivePrograms(json)));
+            .then(json => dispatch(receivePrograms(json, vur)));
     }
 }
 

@@ -23,10 +23,9 @@ class List extends Component {
 
         //console.log('LIST RENDER props', this.props);
         if (!isFetching) {
-            console.log('LIST RENDER propsYAYAYAYAYAYA', this.props);
+            //console.log('LIST RENDER propsYAYAYAYAYAYA', this.props);
             return (
-                <div>
-                    {/*<h2>Os meus List programas</h2>*/}
+                <div className="mainContainer">
                     <ListComponent items={this.props.programs}/>
                 </div>
             );
@@ -55,7 +54,7 @@ List.propTypes = {
 
 const mapStateToProps = (state, ownProps) => {
     //console.info('container List mapStateToProps state', state);
-    console.log('LIST-STP props', state, ownProps);
+    //console.log('LIST-STP props', state, ownProps);
     return {programs: state.programs.fprogramas, progFetcher: state.programs.isFetching, preferences: state.preferences.upreferencias, prefFetcher: state.preferences.isFetchingPrefs};
 }
 

@@ -16,22 +16,23 @@ class ListFunction extends Component {
     constructor(props) {
         super(props);
         this.ProgrList = this.ProgrList.bind(this);
+
         //console.log("LIST_FUNC HAPPENS", this.props);
     }
 
     componentDidMount() {
         this.ProgrList();
-    }/*
-    componentWillReceiveProps(){
+    }
+    componentDidUpdate(){
         this.ProgrList();
-    }*/
+    }
     ProgrList(){
 
         const {dispatch} = this.props;
-        //dispatch(resetPrograms());
+        dispatch(resetPrograms());
         var n = new Date();
 
-        var D = n.getTime() - (0.5 * 60 * 60 * 1000);       //desde
+        var D = n.getTime() - (0.2 * 60 * 60 * 1000);       //desde
         var d = new Date(D);
 
         var dM = d.getMonth() + 1;
@@ -51,10 +52,11 @@ class ListFunction extends Component {
         var prefsReady = !this.props.preferences.isFetchingPrefs;
         //console.log("LIST_FUNC.isFetch.PPP:", prefsReady);
         if(prefsReady) {
+
             //console.log("LIST_FUNC.isFetch: ", prefsReady);
             var moreprefers = this.props.preferences.upreferencias;
             //      -------------------------------------------------------------------- record in state number of prefs
-            dispatch(resetPrograms(moreprefers.length));
+
             //console.log("1.1.LIST_FUNC morePrefers_X", x);
             //var moreprefers = x ? x : ["RTP1", "RTPM", "HOLHD"];
             console.log("1.2.LIST_FUNC moreprefers ", moreprefers.length);
@@ -67,12 +69,16 @@ class ListFunction extends Component {
                 var totalProgrString = ``+startString +``+prefCallLetter+``+ intervaloDatas+``;
                 //k.push(totalProgrString);
                 //console.log("2.2."+j+"LIST_FUNC pref_ITE fetchP_St ", totalProgrString);
-                dispatch(fetchPrograms(totalProgrString));
+
                 itemsProcessed++;
-                /*if(itemsProcessed === moreprefers.length) {
+                if(itemsProcessed === moreprefers.length) {
                     console.log("PROGRAMS RESET!",itemsProcessed,moreprefers.length);
-                    //dispatch(resetPrograms(moreprefers.length));
-                }*/
+
+                    dispatch(resetPrograms());
+                }
+
+                dispatch(fetchPrograms(totalProgrString, moreprefers.length, j));
+
             });
 
             //var totalProgrString = `` + startString + `` + moreprefers[0] + `` + intervaloDatas + ``;
@@ -81,8 +87,8 @@ class ListFunction extends Component {
             //dispatch(fetchPrograms(totalProgrString));
         }else{
             console.log("Why it don't work?");/*
-            //this.forceUpdate();
-            var timerDone = false;
+             //this.forceUpdate();
+             var timerDone = false;
              if(!timerDone) {
              setTimeout(function () {
              dispatch(fetchPrefs());
@@ -135,18 +141,18 @@ class ListFunction extends Component {
         const {dispatch} = this.props;
         var k = [];
         /*var sA;
-        var sB;
-        var sC;
-        var sD;*/
+         var sB;
+         var sC;
+         var sD;*/
         if (moreprefers[0]) {
             /*for(var j=0;j<moreprefers.length;j++){
-                var startString= `http://services.online.meo.pt/Data/2013/11/programs/EpgLiveChannelPrograms?$top=4&$orderby=StartDate%20asc&$filter=CallLetter%20eq%20%27`;
-                var totalProgrString = ``+startString +``+moreprefers[j]+``+ intervaloDatas+``;
+             var startString= `http://services.online.meo.pt/Data/2013/11/programs/EpgLiveChannelPrograms?$top=4&$orderby=StartDate%20asc&$filter=CallLetter%20eq%20%27`;
+             var totalProgrString = ``+startString +``+moreprefers[j]+``+ intervaloDatas+``;
 
-                k[j]= totalProgrString;
-                console.log("2.LIST_FUNC pref_ITE fetchP_St"+j+": ", totalProgrString);
-                //dispatch(fetchPrograms(totalProgrString));
-            }*/
+             k[j]= totalProgrString;
+             console.log("2.LIST_FUNC pref_ITE fetchP_St"+j+": ", totalProgrString);
+             //dispatch(fetchPrograms(totalProgrString));
+             }*/
 
 
 
@@ -166,15 +172,15 @@ class ListFunction extends Component {
             dispatch(fetchPrograms(totalProgrString));
 
             console.log("2.2.LIST_FUNC k:",k);
-/*
-            sA = k[0];
-            dispatch(fetchPrograms(sA));
-            sB = k[1];
-            dispatch(fetchPrograms(sB));
-            sC = k[2];
-            dispatch(fetchPrograms(sC));
-            sD = k[3];
-            dispatch(fetchPrograms(sD));*/
+            /*
+             sA = k[0];
+             dispatch(fetchPrograms(sA));
+             sB = k[1];
+             dispatch(fetchPrograms(sB));
+             sC = k[2];
+             dispatch(fetchPrograms(sC));
+             sD = k[3];
+             dispatch(fetchPrograms(sD));*/
 
         }
 
@@ -214,18 +220,27 @@ class ListFunction extends Component {
     render() {
 
         //console.log('LIST_FUNC RENDER props', this.props.preferences);
-        this.ProgrList();
+        //this.ProgrList();
 
         var prefsReady = !this.props.preferences.isFetchingPrefs;
-        console.log('4.LIST_FUNC RENDER props', this.props);
+        var quntPrefs = this.props.preferences.upreferencias.length;
+        //console.log('4.LIST_FUNC RENDER props', this.props);
 
         if (prefsReady) {
-            return (
-                <div>
-                    <h2>Os meus programas</h2>
-                    <List /> {/*items={this.programs.fprogramas}*/}
-                </div>
-            );
+            if(quntPrefs===0){
+                return (
+                    <div>
+                        <h2>Defina as suas preferências para ver uma lista de programas</h2>
+                    </div>
+                );
+            }else {
+                return (
+                    <div>
+                        <h2>Os meus programas</h2>
+                        <List />
+                    </div>
+                );
+            }
         } else {
             return (
                 <div className="progrsLoading">

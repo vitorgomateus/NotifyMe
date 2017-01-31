@@ -19,6 +19,11 @@
 .linha{
     padding: 20px 15px 0 ;
     margin: 0;
+    width: 100%;
+}
+
+a{
+    width: 100%;
 }
 
 .linhaTxt{
@@ -43,6 +48,12 @@
 hr{
     margin: 0;
     border-bottom: 1px solid white;
+}
+
+
+.time{
+    padding-left: 50%;
+    text-align: right;
 }
 
 @media (min-width: 768px) {
