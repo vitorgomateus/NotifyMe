@@ -1,0 +1,15 @@
+export const REQUEST_CHANNELS = 'REQUEST_CHANNELS';
+export const RECEIVE_CHANNELS = 'RECEIVE_CHANNELS';
+
+export const REQUEST_PROGRAMS = 'REQUEST_PROGRAMS';
+export const RECEIVE_PROGRAMS = 'RECEIVE_PROGRAMS';
+export const RESET_PROGRAMS = 'RESET_PROGRAMS';
+
+export const REQUEST_PREFS = 'REQUEST_PREFS';
+export const RECEIVE_PREFS = 'RECEIVE_PREFS';
+/*  --- something about the users's data
+export const REQUEST_CHANNELS = 'REQUEST_CHANNELS';
+export const RECEIVE_CHANNELS = 'RECEIVE_CHANNELS';*/
+// this probably goes to shit
+export const REQUEST_CONTACT_BY_ID = 'REQUEST_CONTACT_BY_ID';
+export const RECEIVE_CONTACT_BY_ID = 'RECEIVE_CONTACT_BY_ID';

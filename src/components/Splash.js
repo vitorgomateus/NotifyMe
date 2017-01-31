@@ -3,10 +3,9 @@
  */
 import React, { Component } from 'react';
 import Spinner from 'react-spinkit';
-import {Link} from 'react-router';
 import splashLogo from '../../public/img/logo.png'
 
-import '../../public/css/splash.css'
+import '../css/splash.css'
 
 class Splash extends Component {
     render(){
@@ -14,12 +13,11 @@ class Splash extends Component {
         return (
 
             <div className="splashBody" >
-                <Link to="/info">
                     <img src={splashLogo} className="splashImg" alt="logo" />
                     <div className="spinnerCapsule">
                         <Spinner spinnerName="cube-grid" />
                     </div>
-                </Link>
+
             </div>
 
         )

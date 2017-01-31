@@ -1,0 +1,73 @@
+.prefs-wrapper{
+    padding: 24px 5%;
+    text-align: center;
+}
+.celulas{
+    padding: 1% 12px;
+}
+.celulas>button{
+    min-height: 40px;
+    border-radius: 10px;
+    border:0;
+    margin: 5px 0;
+}
+.celulas>.btn-default:hover, .celulas>.btn-default:active, .celulas>.btn-default:focus{
+    background-color: whitesmoke;
+    margin: 5px 0;
+    border:0;
+    transform: none;
+    outline:0;
+ }
+
+.celulas>.btn-success:hover, .celulas>.btn-success:active, .celulas>.btn-success:focus{
+    background-color: #5cb85c;
+    margin: 5px 0;
+    border:0;
+    transform: none;
+    outline:0;
+}
+.btn-primary:hover{
+    transform: none;
+}
+
+.btn-sm{
+    width: 100%;
+    height: 100%;
+}
+.prefs-list{
+    text-align: center;
+    margin-top: 24px;
+}
+
+h2{
+    padding: 24px 0;
+}
+/*
+in sweet-alert.css
+substitui todos
+#F8BB86
+por:
+#ff8559*/
+
+.sweet-alert{
+    background-color:  #6d6d6d;
+}
+
+.sweet-alert>h2{
+    color: whitesmoke;
+}
+
+.sweet-alert>p{
+    color: whitesmoke;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 491px){
+    .celulas{
+        min-width: 150px;
+    }
+    .celulas>button{
+        min-height: 64px;
+    }
+
+}

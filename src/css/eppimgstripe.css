@@ -1,0 +1,28 @@
+/*.imgInStripr{
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}*/
+
+.stripe{
+    position: relative;
+    height: 280px;
+    padding: 0;
+    border-bottom: 2px solid whitesmoke;
+    margin: 0;
+}
+
+.swpCont{
+}
+/*
+
+.swpLeft{
+    background-image: url('../img/swiper_left.png');
+}
+
+.swpRight{
+    background-image: url('../img/swiper_right.png');
+}
+
+
+*/

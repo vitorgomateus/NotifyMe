@@ -1,0 +1,307 @@
+/* style loading */
+#main_loading {
+    background-color: #009AAD;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+
+
+#logo_screen {
+
+    /*!* Ir buscar logo *!*/
+    background-image: url('../img/logo.png');
+    /*width:50%;*/
+    /*height:50%;*/
+    background-repeat: no-repeat;
+
+    /*!*Alinhar div ao centro *!*/
+    position:fixed;
+    top: 30%;
+    left: 50%;
+    width:30em;
+    height:20em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+
+}
+
+#bluetooth_screen {
+
+    /*!* Ir buscar logo *!*/
+    background-image: url('../img/bluetooth.png');
+    /*width:50%;*/
+    /*height:50%;*/
+    background-repeat: no-repeat;
+
+    /*!*Alinhar div ao centro *!*/
+    position:fixed;
+    top: 50%;
+    left: 95%;
+    width:30em;
+    height:20em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+
+}
+
+.ligar_blue_btn {
+
+    background-color: #009AAD;
+    border:0;
+    color: #FFFFFF;
+    font-size: 40px;
+
+    position:fixed;
+    top: 70%;
+    left: 20%;
+    width:60%;
+    height:5%;
+
+}
+
+
+
+.entrarbtn {
+
+    background-color: #009AAD;
+    border:0;
+    color: #FFFFFF;
+    font-size: 40px;
+
+    /*!*Alinhar div ao centro *!*/
+    position:fixed;
+    top: 65%;
+    left: 49%;
+    width:30em;
+    height:5em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+
+}
+
+#threelinesmenu {
+    background-color: #009AAD;
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    height: 8%;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 50px;
+    vertical-align: bottom;
+}
+
+.title {
+    vertical-align: bottom;
+}
+
+.sandwich {
+    float:left;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/* style registo */
+#main_registo {
+
+    /*background-color: #000000;*/
+    /*height: 100%;*/
+    /*width: 50%;*/
+    /*position: fixed;*/
+
+    position:fixed;
+    top: 30%;
+    left: 50%;
+    width:50em;
+    height:50em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+
+}
+
+#dados_registo {
+    position: fixed;
+    top: 40%;
+    left: 90%;
+    width:15em;
+    height:10em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    font-size: 50px;
+}
+
+.input_registo {
+
+    background-color: #00857A;
+    border-color: black;
+    width:  100%;
+    height: 25%;
+    margin-bottom:1%;
+
+}
+
+.regbutton {
+    background-color: #009AAD;
+    border:0;
+    height: 25%;
+    width: 50%;
+    color: #FFFFFF;
+    font-size: 40px;
+
+}
+
+.regfbbutton {
+    background-color: #22599B;
+    border:0;
+    height: 25%;
+    width: 48%;
+    color: #FFFFFF;
+    text-align: left;
+    font-size: 40px;
+
+}
+
+
+.titulo_registo {
+    color: #009AAD;
+    font-size: 100%;
+
+}
+
+::-webkit-input-placeholder {
+    color: white;
+    font-size: 40px;
+    padding-left: 10px;
+}
+
+/*Login */
+
+.fgtpw {
+    background-color: black;
+    color: #FFFFFF;
+    border:0;
+    color: #FFFFFF;
+    text-align: right;
+    font-size: 30px;
+    margin-left: 10%;
+}
+
+
+
+/* Bluetooth */
+
+.titulo_blue {
+    color: #FFFFFF;
+    font-size: 100%;
+
+}
+
+.blue_word {
+    color: #009AAD;
+    font-size: 100%;
+}
+
+#liga_blue {
+
+    /*!*Alinhar div ao centro *!*/
+    /*position:fixed;*/
+    /*top: 35%;*/
+    /*left: 100%;*/
+    /*width:30em;*/
+    /*height:20em;*/
+    /*margin-top: -9em; !*set to a negative number 1/2 of your height*!*/
+    /*margin-left: -15em; !*set to a negative number 1/2 of your width*!*/
+
+    text-align: center;
+}
+
+
+
+/*Bootstrap - fabio*/
+
+::-webkit-input-placeholder {
+    font-size: 14px;
+    font-weight: bold;
+
+}
+
+
+#registo-buttons{
+    margin-top: 15px;
+    border-radius: 0px;
+
+}
+
+
+.container-fluid{
+    text-align: center;
+    background-color: #0099AB;
+    border-color: #0099AB;
+}
+
+
+
+/* Vitor */
+
+body{
+    background-color: #0F0F0F;
+}
+
+.container{
+    text-align: center;
+    padding: 0 5%;
+}
+
+.splashBody{
+    height: 100%;
+}
+
+.container{
+    color: white;
+
+}
+
+    /*Links*/
+a:link {
+    color: white;
+}
+
+/* visited link */
+a:visited {
+    color: whitesmoke;
+}
+
+/* mouse over link */
+a:hover {
+    color: deepskyblue;
+}
+
+/* selected link */
+a:active {
+    color:  #00847a;
+}
+
+input{
+    background-color: #00847a;
+}
+
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%
+}
+
+img{
+    cursor: pointer;
+}
+
+/*
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}*/
+
+

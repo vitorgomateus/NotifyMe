@@ -1,0 +1,19 @@
+.facebook{
+    background-color: #3B5998;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.input-group{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input[type="text"]{
+    background-color: #00847a;
+}
+
+.corpo-registo{
+    text-align: center;
+    padding: 0 5%;
+}
