@@ -20,7 +20,7 @@ const programs = (state = initState, action) => {
                 counter: 0,
                 fprogramas: emptyArray
             });
-            console.log("RED RES PROG", objecta);
+            //console.log("RED RES PROG", objecta);
             return objecta;
 
 
@@ -44,7 +44,7 @@ const programs = (state = initState, action) => {
 
             var iteracao = action.items.iter;
 
-            console.log("M.RED.PROG temos:", t.length, "fetch:"+doingFetch, "puxados:"+contador, "Canais"+numero, "iteracao"+iteracao);
+            //console.log("M.RED.PROG temos:", t.length, "fetch:"+doingFetch, "puxados:"+contador, "Canais"+numero, "iteracao"+iteracao);
 
             //      ------------------------------------------------------------------------------- started a new fetch
             if(iteracao === 0){
@@ -53,7 +53,7 @@ const programs = (state = initState, action) => {
                 reseter = false;
                 t = [];
             }
-            console.log("M.RED.PROG isto devia...:", t.length, "fetch:"+doingFetch, "puxados:"+contador, "Canais"+numero, "iteracao"+iteracao);
+            //console.log("M.RED.PROG isto devia...:", t.length, "fetch:"+doingFetch, "puxados:"+contador, "Canais"+numero, "iteracao"+iteracao);
 
 
             //      ------------------------------------------------------------------ get the programs from first fetch
@@ -80,7 +80,7 @@ const programs = (state = initState, action) => {
                 p=t.slice(0,7);
                 t = [];
             }
-            console.log("M.RED.PROG e agora temos:", p.length, "fetch:"+doingFetch, "puxados:"+contador, "Canais:"+numero, "iteracao"+iteracao);
+            //console.log("M.RED.PROG e agora temos:", p.length, "fetch:"+doingFetch, "puxados:"+contador, "Canais:"+numero, "iteracao"+iteracao);
 
 
             return Object.assign({}, state, {

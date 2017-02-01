@@ -1,8 +1,18 @@
-import React, {Component} from 'react';/*
-import {connect} from 'react-redux';*/
+import React, {Component} from 'react';
+import { browserHistory } from 'react-router';
+/*
+ import {connect} from 'react-redux';*/
 import Splash from '../components/Splash';
 
 class Callback extends Component {
+
+    componentWillMount(){
+        var code= window.localStorage.getItem("userToken");
+        console.log("userToken: ",code);
+        if(code) {
+            browserHistory.push('/home');
+        }
+    }
 
     render() {
 
@@ -44,6 +54,7 @@ class Callback extends Component {
 
                     // este é o token que devemos guardar para enviar em todas as chamas daqui para a frente
                     var token = "Bearer "+response.access_token;
+                    window.localStorage.setItem("userToken",token);
 
                     // exemplo de uma chamada para obter o utilizador autenticado
                     var http2 = new XMLHttpRequest();
@@ -87,13 +98,13 @@ class Callback extends Component {
 }
 export default Callback
 /*
-Callback.propTypes = {
-    items: PropTypes.array
-}
+ Callback.propTypes = {
+ items: PropTypes.array
+ }
 
-const mapStateToProps = (state, ownProps) => {
-    // console.info('container List mapStateToProps', state, ownProps);
-    return state.lists;
-}
+ const mapStateToProps = (state, ownProps) => {
+ // console.info('container List mapStateToProps', state, ownProps);
+ return state.lists;
+ }
 
-export default connect(mapStateToProps)(Callback);*/
+ export default connect(mapStateToProps)(Callback);*/

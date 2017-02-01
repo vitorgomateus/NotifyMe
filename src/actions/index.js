@@ -51,7 +51,7 @@ export function requestPrograms(quantos) {
 }
 
 export function receivePrograms(json, vir) {
-     console.info('ACTION receivePrograms', json, vir);
+     //console.info('ACTION receivePrograms', json, vir);
     return {
         type: types.RECEIVE_PROGRAMS,
         items: json,

@@ -2,7 +2,7 @@ import React from 'react';
 import Item from './Item';
 
 const ListComponent = ({items}) => {
-    console.info('component List', items);
+    //console.info('component List', items);
 
     //by Vitor
     return (

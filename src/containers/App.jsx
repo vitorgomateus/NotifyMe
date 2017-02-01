@@ -1,9 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import Header from '../components/Header';
-import Main from './ListFunction';
 
-import {fetchPrograms} from '../actions';
 import {fetchPrefs} from '../actions';
 
 class App extends Component {

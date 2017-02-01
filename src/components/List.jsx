@@ -6,10 +6,6 @@ import Splash from './Splash';
 
 class List extends Component {
 
-
-    constructor(props) {
-        super(props);
-    }
     /*componentWillReceiveProps(){
         this.render();
     }*/
@@ -17,7 +13,7 @@ class List extends Component {
     render() {
 
         const isFetching = this.props.progFetcher;
-        //console.log('PREFS_RNDR state',this.props);
+        console.log('LIST RNDR state',this.props);
 
 
 

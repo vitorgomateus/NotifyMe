@@ -1,14 +1,11 @@
 import React from 'react';
 import {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
-import Main from '../components/List';
 /*
- import '../css/btsp/js/jquery-3.1.1.min';*/
-import Splash from '../components/Splash';
+import Splash from '../components/Splash';*/
 import List from '../components/List';
 
 import {fetchPrograms, resetPrograms} from '../actions';
-import {fetchPrefs} from '../actions';
 
 class ListFunction extends Component {
 
@@ -59,7 +56,7 @@ class ListFunction extends Component {
 
             //console.log("1.1.LIST_FUNC morePrefers_X", x);
             //var moreprefers = x ? x : ["RTP1", "RTPM", "HOLHD"];
-            console.log("1.2.LIST_FUNC moreprefers ", moreprefers.length);
+            //console.log("1.2.LIST_FUNC moreprefers ", moreprefers.length);
 
             var startString = `http://services.online.meo.pt/Data/2013/11/programs/EpgLiveChannelPrograms?$top=4&$orderby=StartDate%20asc&$filter=CallLetter%20eq%20%27`;
             var itemsProcessed = 0;
@@ -68,11 +65,11 @@ class ListFunction extends Component {
                 //var startString= `http://services.online.meo.pt/Data/2013/11/programs/EpgLiveChannelPrograms?$top=4&$orderby=StartDate%20asc&$filter=CallLetter%20eq%20%27`;
                 var totalProgrString = ``+startString +``+prefCallLetter+``+ intervaloDatas+``;
                 //k.push(totalProgrString);
-                //console.log("2.2."+j+"LIST_FUNC pref_ITE fetchP_St ", totalProgrString);
+                console.log("2.2."+j+"LIST_FUNC pref_ITE fetchP_St ", totalProgrString);
 
                 itemsProcessed++;
                 if(itemsProcessed === moreprefers.length) {
-                    console.log("PROGRAMS RESET!",itemsProcessed,moreprefers.length);
+                    //console.log("PROGRAMS RESET!",itemsProcessed,moreprefers.length);
 
                     dispatch(resetPrograms());
                 }
@@ -86,7 +83,8 @@ class ListFunction extends Component {
             //console.log("2.2.2.LIST_FUNC pref_ITE fetchP_St ", totalProgrString);
             //dispatch(fetchPrograms(totalProgrString));
         }else{
-            console.log("Why it don't work?");/*
+            //console.log("Why it don't work?");
+            /*
              //this.forceUpdate();
              var timerDone = false;
              if(!timerDone) {
@@ -129,13 +127,13 @@ class ListFunction extends Component {
         //var intervaloDatas = '%27%20and%20StartDate%20ge%20datetime%27'+d.getFullYear()+'-'+dM+'-'+dD+'T'+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds()+'%27%20and%20EndDate%20le%20datetime%27'+a.getFullYear()+'-'+aM+'-'+aD+'T'+a.getHours()+':'+a.getMinutes()+':'+a.getSeconds()+'%27&$format=JSON';
         var intervaloDatas = `%27%20and%20StartDate%20ge%20datetime%27` + d.getFullYear() + `-` + dM + `-` + dD + `T` + dHo + `:` + dMi + `:` + dSe + `%27&$format=JSON`;
 
-        console.log("1.LIST_FUNC intervalo Datas ", intervaloDatas);
+        //console.log("1.LIST_FUNC intervalo Datas ", intervaloDatas);
 
         //-----------------------------------------------------------pegar em preferências e user default caso não hajam
         var x = this.props.preferences.upreferencias;
-        console.log("1.1.LIST_FUNC morePrefers_X", x);
+        //console.log("1.1.LIST_FUNC morePrefers_X", x);
         var moreprefers = x ? x : ["RTP1", "RTPM", "HOLHD"];
-        console.log("1.2.LIST_FUNC moreprefers ", moreprefers);
+        //console.log("1.2.LIST_FUNC moreprefers ", moreprefers);
 
         //------------------------------------------------------------ a call à API da sapo deverá ser algo deste género
         const {dispatch} = this.props;
@@ -168,10 +166,10 @@ class ListFunction extends Component {
             var startString= `http://services.online.meo.pt/Data/2013/11/programs/EpgLiveChannelPrograms?$top=4&$orderby=StartDate%20asc&$filter=CallLetter%20eq%20%27`;
             var totalProgrString = ``+startString +``+moreprefers[0]+``+ intervaloDatas+``;
             k.push(totalProgrString);
-            console.log("2.2.2.LIST_FUNC pref_ITE fetchP_St: ", totalProgrString);
+            //console.log("2.2.2.LIST_FUNC pref_ITE fetchP_St: ", totalProgrString);
             dispatch(fetchPrograms(totalProgrString));
 
-            console.log("2.2.LIST_FUNC k:",k);
+            //console.log("2.2.LIST_FUNC k:",k);
             /*
              sA = k[0];
              dispatch(fetchPrograms(sA));
