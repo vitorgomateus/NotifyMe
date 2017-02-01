@@ -14,7 +14,7 @@ const channels = (state = initState, action) => {
                 isFetching: true
             });
         case types.RECEIVE_CHANNELS:
-            //console.info('reducer RECEIVE_CHANNELS', state, action);
+            console.info('reducer RECEIVE_CHANNELS', state, action);
             return Object.assign({}, state, {
                 isFetching: false,
                 tcanais: action.items.value

@@ -38,9 +38,10 @@ class Prefs extends Component {
 
 
     //isto possivelmente deixará de existir. aqui só se coordena as preferÊncias com a localStorage, poruqe na API são feitas por cadaacção nos botões
-    updatePrefs(upprefs) {
+    updatePrefs(upprefs, uprefsId) {
         //console.log("updatePrefs",upprefs);
         window.localStorage.setItem("userPrefs",JSON.stringify(upprefs));//                                       ---LocalStorage
+        window.localStorage.setItem("userPrefsId",JSON.stringify(uprefsId));//                                       ---LocalStorage
     //    this.forceUpdate();
         const {dispatch} = this.props;
         dispatch(fetchPrefs());
@@ -50,15 +51,17 @@ class Prefs extends Component {
     //confirma se ja tem a preferência  -> retira o canal das preferenias
     //ELSE confirma se ja tem 4 preferÊncias  -> alert('max 4!')
     //ELSE adiciona canal a prefrências e manda update pa store
-    setPref(canal) {
+    setPref(canal, canalId) {
 
         var prefremoved = false;
         //var userprefs = this.state.prefers;//["RTP1","TVI","RTPM","SPTV3"];
         var userprefs = this.props.preferences.upreferencias; //JSON.parse(window.localStorage.getItem("userPrefs"));                   ---LocalStorage
+        var userprefsIds = this.props.preferences.upreferenciasId;
         if(userprefs){
             userprefs.forEach((itemo, u) => {
                 if (itemo === canal) {
                     userprefs.splice(u, 1);
+                    userprefsIds.splice(u, 1);
                     prefremoved = true;
                 }
             });
@@ -70,11 +73,12 @@ class Prefs extends Component {
                 swal("Já chega!","A equipa pede desculpa mas de momento não é possível adicionar mais de 4 preferências.","warning"); //                                                    --- SWEETALERT
             } else {
                 userprefs.push(canal);
+                userprefsIds.push(canalId);
 
             }
         }
 
-        this.updatePrefs(userprefs);
+        this.updatePrefs(userprefs, userprefsIds);
     }
 
     render() {
@@ -89,6 +93,7 @@ class Prefs extends Component {
                 var classer = "btn-sm btn-default";
 
                 var canalCallLetter = item.CallLetter;
+                var canalCatalogNumber = item.CatalogOrderNumber;
 
                 var x = this.props.preferences.upreferencias;
                 //var x = JSON.parse(window.localStorage.getItem("userPrefs"));
@@ -104,7 +109,7 @@ class Prefs extends Component {
 
                 return (
                     <div className="col-xs-4 col-sm-4 col-md-3 col-lg-2 celulas">
-                        <button id={canalCallLetter} type="button" className={ classer } onClick={() => this.setPref(canalCallLetter)}>
+                        <button id={canalCallLetter} type="button" className={ classer } onClick={() => this.setPref(canalCallLetter, canalCatalogNumber)}>
                             {item.Name}<br/>
                             {/*{moreprefers?"true":"false"}*/}
                         </button>

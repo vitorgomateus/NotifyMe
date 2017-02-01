@@ -26,11 +26,12 @@ export function requestPreferences() {
     }
 }
 
-export function receivePreferences(json) {
+export function receivePreferences(json, nosj) {
     //console.info('action receivePreferences', json);
     return {
         type: types.RECEIVE_PREFS,
-        items: json
+        items: json,
+        itemsId: nosj
     }
 }
 
@@ -115,8 +116,9 @@ export function fetchPrefs() {
         dispatch(requestPreferences());
 
         var json2 = JSON.parse(window.localStorage.getItem("userPrefs"));
+        var json3 = JSON.parse(window.localStorage.getItem("userPrefsId"));
         //console.log("fetchPrefs json2", json2);
-        return dispatch(receivePreferences(json2));
+        return dispatch(receivePreferences(json2, json3));
         /*return fetch(`http://samuelbf94.ddns.net/api/user`)
             .then(response => response.json();)
             .then(json => dispatch(receivePreferences(json)));*/

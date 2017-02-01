@@ -3,7 +3,8 @@ import * as types from '../constants/actionTypes';
 const initState = {
     isFetchingPrefs: true,
     query: '',
-    upreferencias: []
+    upreferencias: [],
+    upreferenciasId: []
 }
 
 const preferences = (state = initState, action) => {
@@ -19,7 +20,8 @@ const preferences = (state = initState, action) => {
             //console.log("RED.PREFS PreferÊncias Fetched!!", action);
             return Object.assign({}, state, {
                 isFetchingPrefs: false,
-                upreferencias: (action.items)?action.items:["RTP1","TVI","HOLHD"]
+                upreferencias: (action.items) ? action.items : ["SICHD","SICRHD","SPTV"],
+                upreferenciasId: (action.items) ? action.items : [1, 2, 3]
             });
 
         default:
