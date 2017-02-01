@@ -70,6 +70,11 @@ body{
 }
 
 
+/*Main List*/
+.lista-title{
+    margin: 0 24px;
+}
+
 /*Links*/
 a:link {
     color: white;
@@ -109,6 +114,34 @@ img{
 .cube-grid{
     margin: 15% 47%;
 }
+
+
+.login-wrapper{
+    background-color: #0F0F0F;
+    color: whitesmoke;
+    text-align: center;
+    padding: 24px 15%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+}
+.login-welcome{
+    margin: 12px 0;
+}
+
+.login-btn{
+    margin-bottom: 24px;
+}
+
+.login-text{
+    text-align: left;
+}
+
+
+
 /*
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

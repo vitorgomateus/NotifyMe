@@ -216,6 +216,7 @@ class ListFunction extends Component {
     }
 
     render() {
+        var userNome = window.localStorage.getItem("userName");
 
         //console.log('LIST_FUNC RENDER props', this.props.preferences);
         //this.ProgrList();
@@ -228,13 +229,13 @@ class ListFunction extends Component {
             if(quntPrefs===0){
                 return (
                     <div>
-                        <h2>Defina as suas preferências para ver uma lista de programas</h2>
+                        <h2 className="lista-title">Defina as suas preferências para ver uma lista de programas</h2>
                     </div>
                 );
             }else {
                 return (
                     <div>
-                        <h2>Olá 'nome do utilizador'<br/>a sua programação de agora</h2>
+                        <h2 className="lista-title">Olá {userNome}<br/>a sua programação de agora</h2>
                         <List />
                     </div>
                 );
@@ -242,7 +243,7 @@ class ListFunction extends Component {
         } else {
             return (
                 <div className="progrsLoading">
-                    <h1 >Loading Programs</h1>{/*style="position:relative;z-index:10;"*/}
+                    <h2 className="lista-title">Loading Programs</h2>{/*style="position:relative;z-index:10;"*/}
                     {/*<Splash />*/}
                 </div>
             );

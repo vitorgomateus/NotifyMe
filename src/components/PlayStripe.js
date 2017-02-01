@@ -58,9 +58,9 @@ class PlayStripe extends Component {
         var deltaS = as-ds;// diferença de horas em segundos
         var deltaM = Math.round(deltaS/60);// em mins
         var deltaH = Math.round(deltaM/60);// e em horas
-        var textS = ((deltaS==1)?" segundo.":" segundos.");
-        var textM = ((deltaM==1)?" minuto.":" minutos.");
-        var textH = ((deltaH==1)?" hora.":" horas.");
+        var textS = (( deltaS === 1 ) ? " segundo." : " segundos.");
+        var textM = (( deltaM === 1 ) ? " minuto." : " minutos.");
+        var textH = (( deltaH === 1 ) ? " hora." : " horas.");
 
 
 

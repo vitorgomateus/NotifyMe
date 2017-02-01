@@ -10,6 +10,8 @@ import swal from 'sweetalert';
 import '../../node_modules/sweetalert/dist/sweetalert.css';
 import '../css/prefs.css';
 
+import Constants from '../constants/constNum';
+
 import {fetchChannels} from '../actions';
 import {fetchPrefs} from '../actions';
 
@@ -56,6 +58,8 @@ class Prefs extends Component {
     //ELSE adiciona canal a prefrências e manda update pa store
     setPref(canal, canalId) {
 
+        var numDePref = Constants.numPref;
+
         var prefremoved = false;
         //var userprefs = this.state.prefers;//["RTP1","TVI","RTPM","SPTV3"];
         var userprefs = this.props.preferences.upreferencias; //JSON.parse(window.localStorage.getItem("userPrefs"));                   ---LocalStorage
@@ -74,9 +78,9 @@ class Prefs extends Component {
         }
         if (!prefremoved) {
             //if(userprefs)
-            if (userprefs.length === 4) {
+            if (userprefs.length === numDePref) {
                 //alert("Máximo 4 preferÊncias");
-                swal("Já chega!","A equipa pede desculpa mas de momento não é possível adicionar mais de 4 preferências.","warning"); //                                                    --- SWEETALERT
+                swal("Já chega!","A equipa pede desculpa mas de momento não é possível adicionar mais de "+numDePref+" preferências.","warning"); //                                                    --- SWEETALERT
             } else {
                 userprefs.push(canal);
                 userprefsIds.push(canalId);
@@ -88,6 +92,9 @@ class Prefs extends Component {
     }
 
     render() {
+
+
+        //console.log("PREFS numPrefs", Constants.numPref);
 
         const isFetching = this.props.channels.isFetching;
         //console.log(this.state, 'prefs state');
@@ -115,7 +122,7 @@ class Prefs extends Component {
 
                 //console.log("P0.PREFS RNDR", "upprefs", canalCallLetter, "upprefsId", canalCatalogNumber);
                 return (
-                    <div className="col-xs-4 col-sm-4 col-md-3 col-lg-2 celulas">
+                    <div key={i} className="col-xs-4 col-sm-4 col-md-3 col-lg-2 celulas">
                         <button id={canalCallLetter} type="button" className={ classer } onClick={() => this.setPref(canalCallLetter, canalCatalogNumber)}>
                             {item.Name}<br/>
                             {/*{moreprefers?"true":"false"}*/}
@@ -130,7 +137,7 @@ class Prefs extends Component {
                     <Link to="/home">
                         <button type="button" className="btn btn-primary">Finalizar Escolha</button>
                     </Link>
-                    <p>(máx.: 4)</p>
+                    <p>(máx.: {Constants.numPref})</p>
                     <div className="prefs-list">{ channels }</div>
                 </div>
             );

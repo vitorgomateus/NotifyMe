@@ -96,12 +96,13 @@ class Header extends Component {
 
                 <div id="navbarCollapse" className="collapse navbar-collapse navbar-right">
                     <ul className="nav navbar-nav navbar-left">
-                        <li className="active"><Link to="/home">Home</Link></li>
+                        <li><Link to="/home">Home</Link></li>
                         {/*<li><Link to="/defs">Definições</Link></li>*/}
 
                         {/*Deviam sair daqui*/}
                         {/*<li><Link to="/info">Login</Link></li>*/}
                         <li><Link to="/prefs">Preferências</Link></li>
+                        <li><a href="#"><span className="glyphicon glyphicon-log-out"></span> Logout</a></li>
                     </ul>
                     <ul className="nav navbar-nav">
                     </ul>
