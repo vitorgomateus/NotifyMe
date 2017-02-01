@@ -116,8 +116,10 @@ export function fetchPrefs() {
         dispatch(requestPreferences());
 
         var json2 = JSON.parse(window.localStorage.getItem("userPrefs"));
-        var json3 = JSON.parse(window.localStorage.getItem("userPrefsId"));
-        //console.log("fetchPrefs json2", json2);
+        var json3 = JSON.parse(window.localStorage.getItem("userPrefsId"));/*
+        window.localStorage.removeItem("userPrefs");
+        window.localStorage.removeItem("userPrefsId");*/
+        //console.log("P2.ACTION PREF", "json2", json2, "json3", json3);
         return dispatch(receivePreferences(json2, json3));
         /*return fetch(`http://samuelbf94.ddns.net/api/user`)
             .then(response => response.json();)

@@ -12,6 +12,7 @@ import InfoEpp from '../components/InfoEpp';
 
 import '../css/epp.css';
 
+var programa;
 //-----------------IMG Stripe
 var source;
 //-----------------ID Stripe
@@ -46,13 +47,13 @@ class Epp extends Component {
     GetProgramDetails() {
 
         var esteId= this.props.params.id;
-        console.log("propId: ", esteId);
+        //console.log("propId: ", esteId);
         var todosProgs = this.props.programs;
-        console.log("EPP PROPS", this.props);
-        var programa;
+        //console.log("EPP PROPS", this.props);
+        programa;
         todosProgs.forEach(function(cadaProg){
             if(cadaProg.Id===esteId){
-                console.log("EPP ID", "esteId"+esteId, "esteProgId"+cadaProg.Id, todosProgs);
+                //console.log("EPP ID", "esteId"+esteId, "esteProgId"+cadaProg.Id, todosProgs);
                 programa = cadaProg;
             }
         });
@@ -99,7 +100,7 @@ class Epp extends Component {
 
                 <div>
                     <IdStripe pn={nomeProg} enu={eppNum}/>{/* es={season} */}
-                    <PlayStripe ei={eppId} st={startTime} sts={startTimeStamp}/>
+                    <PlayStripe ei={eppId} st={startTime} sts={startTimeStamp} item={programa}/>
                     <InfoEpp en={nomeEpp} ed={descricao}/>
                 </div>
             </div>

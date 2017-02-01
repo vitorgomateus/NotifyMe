@@ -17,11 +17,11 @@ const preferences = (state = initState, action) => {
 
         case types.RECEIVE_PREFS:
             //console.info('reducer RECEIVE_PREFS', state, action);
-            //console.log("RED.PREFS PreferÊncias Fetched!!", action);
+            //console.log("P3.RED.PREFS PreferÊncias Fetched!!", action);
             return Object.assign({}, state, {
                 isFetchingPrefs: false,
                 upreferencias: (action.items) ? action.items : ["SICHD","SICRHD","SPTV"],
-                upreferenciasId: (action.items) ? action.items : [1, 2, 3]
+                upreferenciasId: (action.itemsId) ? action.itemsId : [1, 2, 3]
             });
 
         default:

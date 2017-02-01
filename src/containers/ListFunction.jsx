@@ -65,7 +65,7 @@ class ListFunction extends Component {
                 //var startString= `http://services.online.meo.pt/Data/2013/11/programs/EpgLiveChannelPrograms?$top=4&$orderby=StartDate%20asc&$filter=CallLetter%20eq%20%27`;
                 var totalProgrString = ``+startString +``+prefCallLetter+``+ intervaloDatas+``;
                 //k.push(totalProgrString);
-                console.log("2.2."+j+"LIST_FUNC pref_ITE fetchP_St ", totalProgrString);
+                //console.log("2.2."+j+"LIST_FUNC pref_ITE fetchP_St ", totalProgrString);
 
                 itemsProcessed++;
                 if(itemsProcessed === moreprefers.length) {
@@ -234,7 +234,7 @@ class ListFunction extends Component {
             }else {
                 return (
                     <div>
-                        <h2>Os meus programas</h2>
+                        <h2>Olá 'nome do utilizador'<br/>a sua programação de agora</h2>
                         <List />
                     </div>
                 );

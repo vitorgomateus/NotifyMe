@@ -38,11 +38,14 @@ class Prefs extends Component {
 
 
     //isto possivelmente deixará de existir. aqui só se coordena as preferÊncias com a localStorage, poruqe na API são feitas por cadaacção nos botões
-    updatePrefs(upprefs, uprefsId) {
-        //console.log("updatePrefs",upprefs);
-        window.localStorage.setItem("userPrefs",JSON.stringify(upprefs));//                                       ---LocalStorage
-        window.localStorage.setItem("userPrefsId",JSON.stringify(uprefsId));//                                       ---LocalStorage
-    //    this.forceUpdate();
+    updatePrefs(uprefs, uprefsId) {
+        //console.log("P1.PREFS setItem", "upprefs", uprefs, "upprefsId", uprefsId);
+        window.localStorage.removeItem("userPrefs");
+        window.localStorage.removeItem("userPrefsId");
+        window.localStorage.setItem("userPrefs", JSON.stringify(uprefs));//                                       ---LocalStorage
+        window.localStorage.setItem("userPrefsId", JSON.stringify(uprefsId));//                                       ---LocalStorage
+
+        //    this.forceUpdate();
         const {dispatch} = this.props;
         dispatch(fetchPrefs());
     }
@@ -57,6 +60,9 @@ class Prefs extends Component {
         //var userprefs = this.state.prefers;//["RTP1","TVI","RTPM","SPTV3"];
         var userprefs = this.props.preferences.upreferencias; //JSON.parse(window.localStorage.getItem("userPrefs"));                   ---LocalStorage
         var userprefsIds = this.props.preferences.upreferenciasId;
+        //console.log("P4.PREFS setPref", "upprefs", userprefs, "upprefsId", userprefsIds);
+
+
         if(userprefs){
             userprefs.forEach((itemo, u) => {
                 if (itemo === canal) {
@@ -85,7 +91,7 @@ class Prefs extends Component {
 
         const isFetching = this.props.channels.isFetching;
         //console.log(this.state, 'prefs state');
-        console.log('prefs props',this.props);
+        //console.log('prefs props',this.props.preferences.upreferencias, this.props.upreferenciasId);
 
         if(!isFetching) {
             const channels = this.props.channels.tcanais.map((item, i) => {
@@ -107,6 +113,7 @@ class Prefs extends Component {
                     });
                 }
 
+                //console.log("P0.PREFS RNDR", "upprefs", canalCallLetter, "upprefsId", canalCatalogNumber);
                 return (
                     <div className="col-xs-4 col-sm-4 col-md-3 col-lg-2 celulas">
                         <button id={canalCallLetter} type="button" className={ classer } onClick={() => this.setPref(canalCallLetter, canalCatalogNumber)}>

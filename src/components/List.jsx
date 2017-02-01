@@ -13,7 +13,7 @@ class List extends Component {
     render() {
 
         const isFetching = this.props.progFetcher;
-        console.log('LIST RNDR state',this.props);
+        console.log('LIST RNDR props',this.props);
 
 
 
@@ -45,13 +45,14 @@ List.propTypes = {
     programs: PropTypes.array,
     progFetcher: PropTypes.bool,
     preferences: PropTypes.array,
+    preferencesId: PropTypes.array,
     prefFetcher: PropTypes.bool
 }
 
 const mapStateToProps = (state, ownProps) => {
     //console.info('container List mapStateToProps state', state);
     //console.log('LIST-STP props', state, ownProps);
-    return {programs: state.programs.fprogramas, progFetcher: state.programs.isFetching, preferences: state.preferences.upreferencias, prefFetcher: state.preferences.isFetchingPrefs};
+    return {programs: state.programs.fprogramas, progFetcher: state.programs.isFetching, preferences: state.preferences.upreferencias, preferencesId: state.preferences.upreferenciasId, prefFetcher: state.preferences.isFetchingPrefs};
 }
 
 export default connect(mapStateToProps)(List);

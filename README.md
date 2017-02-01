@@ -5,7 +5,8 @@ third try at a prototype for a masters in communication @DeCA, Aveiro.
 
 #### Features
 * Registo/Login:
-*    Introduzir dados de identificação
+    * ecrã com logo e mensagem de introdução. butões login/registo.
+    *    Introduzir dados de identificação ?
 *    Definir opções de visualização:
      *   des)ligar sugestões
          *   Escolher preferências de conteúdos
@@ -19,7 +20,7 @@ third try at a prototype for a masters in communication @DeCA, Aveiro.
          *   Associação de outras pessoas
          *   Por contactos Google
          *   Por contactos Facebook
-Consultar sugestões/agendamentos
+Consultar sugestões/agendamentos X
 
 #### Cenas fiches
 * Mostrar quanto tempo falta ou há quanto já começou um programa.
