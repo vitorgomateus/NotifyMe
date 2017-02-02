@@ -6,19 +6,19 @@ import Splash from '../components/Splash';
 
 class Callback extends Component {
 
-    componentWillMount(){
+    /*componentWillMount(){
         var code= window.localStorage.getItem("userToken");
         console.log("userToken: ",code);
         if(code) {
             browserHistory.push('/home');
         }
-    }
+    }*/
 
     render() {
 
         var code = document.location.search.substring(6);
 
-        console.log("1CALLBACK: "+code);
+        console.log("1CALLBACK_code: "+code);
         window.localStorage.setItem("codigo",code);
 
         // criar a chamada AJAX para obter o token, atenção aos parâmetros, novamente têm ce ser iguais aos criados no laravel

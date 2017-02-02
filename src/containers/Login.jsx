@@ -24,10 +24,12 @@ class Login extends Component {
     }
 
     goLogin(){
-        window.localStorage.setItem("userName", nome);
-        var code= window.localStorage.getItem("userToken");
-        console.log("userToken: ",code);
-        if(!code) {
+        if(nome){
+            window.localStorage.setItem("userName", nome);
+        }
+        var token = window.localStorage.getItem("userToken");
+        console.log("userToken: ", token);
+        if(!token) {
             window.location.replace('http://samuelbf94.ddns.net/oauth/authorize?client_id=3&redirect_uri=http://localhost:3000/callback&response_type=code&scope');
 
         }else{

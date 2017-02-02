@@ -2,7 +2,9 @@
  * Created by VitorMaGo on 15/12/2016.
  */
 import React from 'react';
-import {Component} from 'react';/*
+import {Component} from 'react';
+import {browserHistory} from 'react-router';
+/*
 import {Router, Redirect, BrowserHistory} from 'react-router';*/
 
 /*react-bootstrap*/
@@ -21,6 +23,10 @@ import '../css/header.css';
 
 class Header extends Component {
 
+    constructor(props){
+        super(props);
+        this.Logout = this.Logout.bind(this);
+    }
 
     /*<nav role="navigation" className="navbar navbar-default">
 
@@ -75,6 +81,12 @@ class Header extends Component {
      </Navbar.Collapse>
      </Navbar>*/
 
+    Logout(){
+        window.localStorage.removeItem("userToken");
+        window.localStorage.removeItem("userName");
+        browserHistory.push('/');
+    }
+
 
     render (){
 
@@ -102,7 +114,7 @@ class Header extends Component {
                         {/*Deviam sair daqui*/}
                         {/*<li><Link to="/info">Login</Link></li>*/}
                         <li><Link to="/prefs">Preferências</Link></li>
-                        <li><a href="#"><span className="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                        <li onClick={() => this.Logout()}><a href="#"><span className="glyphicon glyphicon-log-out"></span> Logout</a></li>
                     </ul>
                     <ul className="nav navbar-nav">
                     </ul>

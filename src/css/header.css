@@ -7,7 +7,7 @@
 .headerLogo {
     /*animation: App-logo-spin infinite 20s linear;
     height: 20px;*/
-    width: 66%;
+    width: 25%;
     position: relative;
     left: 26%;
     top: 15px;
@@ -20,6 +20,10 @@
 .navbar-toggle {
     z-index:3;
     border-width: 0;
+}
+
+.navbar-collapse{
+    padding-right: 0;
 }
 
 @media (min-width: 768px) {

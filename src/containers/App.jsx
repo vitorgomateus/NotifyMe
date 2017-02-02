@@ -1,10 +1,23 @@
 import React, {Component, PropTypes} from 'react';
+import { browserHistory } from 'react-router';
 import {connect} from 'react-redux';
 import Header from '../components/Header';
 
 import {fetchPrefs} from '../actions';
 
 class App extends Component {
+
+    componentWillMount(){
+        var token = window.localStorage.getItem("userToken");
+        var name= window.localStorage.getItem("userName");
+        console.log("APP CHECK TOKEN", name, token);
+        if(!token) {
+            console.log("YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO DEV DEV DEV DEV DEV DEV DEV DEV DEV DEV DEV", "APP componentWillMount() > historyPush login")
+            browserHistory.push('/home');// /login
+        }else{
+            browserHistory.push('/home');
+        }
+    }
 
     componentDidMount() {
         const {dispatch} = this.props;
