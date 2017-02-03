@@ -21,12 +21,12 @@ class Callback extends Component {
         console.log("1CALLBACK_code: "+code);
         window.localStorage.setItem("codigo",code);
 
-        // criar a chamada AJAX para obter o token, atenção aos parâmetros, novamente têm ce ser iguais aos criados no laravel
+        // criar a chamada AJAX para obter o token, atenção aos parâmetros, novamente têm de ser iguais aos criados no laravel
         var http = new XMLHttpRequest();
         var url = "http://samuelbf94.ddns.net/oauth/token";
         var params = "grant_type=authorization_code";
-            params += '&client_id=3';
-            params += '&client_secret=PQhIMghkcKIPbNAUT0YAlhNifNCCkGpu86l0Qrd1';
+            params += '&client_id=2';
+            params += '&client_secret=q07U8sJorHXtnt0KvBbFEXqgxmA6HoqaXv46ssK3';//PQhIMghkcKIPbNAUT0YAlhNifNCCkGpu86l0Qrd1
             params += '&redirect_uri=http://localhost:3000/callback';//http://notifyme-react.ddns.net/#/main'; //http://localhost:3000/Callback.jsx';
             params += '&code='+code;
 

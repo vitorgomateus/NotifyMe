@@ -14,6 +14,7 @@ import Constants from '../constants/constNum';
 
 import {fetchChannels} from '../actions';
 import {fetchPrefs} from '../actions';
+import {postPref, deletePref} from '../actions';
 
 class Prefs extends Component {
 
@@ -49,7 +50,7 @@ class Prefs extends Component {
 
         //    this.forceUpdate();
         const {dispatch} = this.props;
-        dispatch(fetchPrefs());
+        //dispatch(fetchPrefs());
     }
 
     //chamado no click deum botão, recebe a sigla do canal desse butão
@@ -58,6 +59,8 @@ class Prefs extends Component {
     //ELSE adiciona canal a prefrências e manda update pa store
     setPref(canal, canalId) {
 
+
+        const {dispatch} = this.props;
         var numDePref = Constants.numPref;
 
         var prefremoved = false;
@@ -73,6 +76,7 @@ class Prefs extends Component {
                     userprefs.splice(u, 1);
                     userprefsIds.splice(u, 1);
                     prefremoved = true;
+                    dispatch(deletePref(canal));
                 }
             });
         }
@@ -84,11 +88,12 @@ class Prefs extends Component {
             } else {
                 userprefs.push(canal);
                 userprefsIds.push(canalId);
+                dispatch(postPref(canal));
 
             }
         }
 
-        this.updatePrefs(userprefs, userprefsIds);
+        //this.updatePrefs(userprefs, userprefsIds);
     }
 
     render() {
@@ -98,7 +103,7 @@ class Prefs extends Component {
 
         const isFetching = this.props.channels.isFetching;
         //console.log(this.state, 'prefs state');
-        //console.log('prefs props',this.props.preferences.upreferencias, this.props.upreferenciasId);
+        console.log('prefs props',this.props.preferences.upreferencias, this.props.upreferenciasId);
 
         if(!isFetching) {
             const channels = this.props.channels.tcanais.map((item, i) => {

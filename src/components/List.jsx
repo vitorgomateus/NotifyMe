@@ -13,7 +13,7 @@ class List extends Component {
     render() {
 
         const isFetching = this.props.progFetcher;
-        console.log('LIST RNDR props',this.props);
+        //console.log('LIST RNDR props',this.props);
 
 
 

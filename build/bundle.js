@@ -1,1 +1,0 @@
-console.error("\nC:\\Users\\VitorMaGo\\Documents\\GitHub\\NotifyMe\\src\\index.js:1\nimport React from 'react';\r\n^\nParseError: 'import' and 'export' may appear only with 'sourceType: module'");

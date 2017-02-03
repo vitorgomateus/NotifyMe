@@ -1,4 +1,7 @@
 import * as types from '../constants/actionTypes';
+import Constants from '../constants/constNum';
+
+const numProgramas = Constants.numProg;
 
 const initState = {
     isFetching: true,
@@ -77,7 +80,7 @@ const programs = (state = initState, action) => {
                     var vv = b.StartDate.slice(6,19);
                     return parseFloat(w) - parseFloat(vv);
                 });
-                p=t.slice(0,7);
+                p=t.slice(0,numProgramas);
                 t = [];
             }
             //console.log("M.RED.PROG e agora temos:", p.length, "fetch:"+doingFetch, "puxados:"+contador, "Canais:"+numero, "iteracao"+iteracao);

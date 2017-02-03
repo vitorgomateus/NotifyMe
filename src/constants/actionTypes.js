@@ -7,6 +7,8 @@ export const RESET_PROGRAMS = 'RESET_PROGRAMS';
 
 export const REQUEST_PREFS = 'REQUEST_PREFS';
 export const RECEIVE_PREFS = 'RECEIVE_PREFS';
+export const RECEIVE_POST_PREF = 'RECEIVE_POST_PREF';
+export const RECEIVE_DELETE_PREF = 'RECEIVE_DELETE_PREF';
 /*  --- something about the users's data
 export const REQUEST_CHANNELS = 'REQUEST_CHANNELS';
 export const RECEIVE_CHANNELS = 'RECEIVE_CHANNELS';*/

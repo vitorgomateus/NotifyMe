@@ -18,23 +18,6 @@ export function receiveChannels(json) {
     }
 }
 
-//      ---------------------------------------------------------------------------------------------------------- PREFS
-export function requestPreferences() {
-    // console.info('action requestContactById');
-    return {
-        type: types.REQUEST_PREFS
-    }
-}
-
-export function receivePreferences(json, nosj) {
-    //console.info('action receivePreferences', json);
-    return {
-        type: types.RECEIVE_PREFS,
-        items: json,
-        itemsId: nosj
-    }
-}
-
 //      ------------------------------------------------------------------------------------------------------- PROGRAMS
 export function resetPrograms(num) {
     // console.info('action requestContactById');
@@ -52,11 +35,60 @@ export function requestPrograms(quantos) {
 }
 
 export function receivePrograms(json, vir) {
-     //console.info('ACTION receivePrograms', json, vir);
+    //console.info('ACTION receivePrograms', json, vir);
     return {
         type: types.RECEIVE_PROGRAMS,
         items: json,
         iter: vir
+    }
+}
+
+//      ---------------------------------------------------------------------------------------------------------- PREFS
+export function requestPreferences() {
+    // console.info('action requestContactById');
+    return {
+        type: types.REQUEST_PREFS
+    }
+}
+
+export function receivePreferences(json) {
+    //console.info('ACTION receivePreferences', json);
+    var _ = require('lodash');
+    console.info('ACTION receivePreferences', _.map(json, 'programa_id'));
+    var json2 = _.map(json, 'programa_id');
+    //var json2 = JSON.parse(window.localStorage.getItem("userPrefs"));
+    var json3 = JSON.parse(window.localStorage.getItem("userPrefsId"));
+    return {
+        type: types.RECEIVE_PREFS,
+        items: json2,
+        itemsId: json3
+    }
+}
+
+export function receivePostPref(json) {
+    console.info('ACTION receivePostPrefs', json);
+    return {
+        type: types.RECEIVE_POST_PREF,
+        items: json
+    }
+}
+
+export function receiveDeletePref(json) {
+    console.info('ACTION receiveDeletePrefs', json);
+
+    //      ------------------------------------------------------------------------------------------ CHECK IF OK
+    //      ------------------------------------------------------------------------------------------ CHECK IF OK
+    //      ------------------------------------------------------------------------------------------ CHECK IF OK
+    //      ------------------------------------------------------------------------------------------ CHECK IF OK
+    //      ------------------------------------------------------------------------------------------ CHECK IF OK
+    //      ------------------------------------------------------------------------------------------ CHECK IF OK
+    //      ------------------------------------------------------------------------------------------ CHECK IF OK
+    //      ------------------------------------------------------------------------------------------ CHECK IF OK
+    //      ------------------------------------------------------------------------------------------ CHECK IF OK
+
+    return {
+        type: types.RECEIVE_DELETE_PREF,
+        items: json
     }
 }
 
@@ -68,30 +100,44 @@ export function receivePrograms(json, vir) {
 
 //      ---------------------------------------------------------------------------------------------------------- PREFS
 // enviar uma pref do util para a API
-export function postPrefLS(data) {
+export function postPref(data) {
     return function(dispatch) {
 
-        return fetch(`http://samuelbf94.ddns.net/api/user`, {
+        console.log("T.ACTION PostP", data);
+        //data = "id_programa=KSICHD";
+
+
+
+        var FormData = require('form-data');
+        var form = new FormData();
+        form.append('id_programa', data);
+
+
+
+        return fetch(`http://samuelbf94.ddns.net/api/regpref`, {
             method: 'POST',
-            body: data
+            body: form
         })
-            .then(response => response.json());
+            .then(response => dispatch(receivePostPref(response)));/*
+         .then(response => response.json())
+         .then(json => dispatch(receivePostPref(json)));*/
     }
 }
 
-// isto tem de passaer a ser method:DELETE, removePref
-export function removePref(id, data) {
-    console.log(id, data);
-
+export function deletePref( data) {
     return function(dispatch) {
-        return fetch(`http://samuelbf94.ddns.net/api/user${id}`, {
-                method: 'DELETE',
-                  headers: {
-                    'Content-Type': 'application/json'
-                  },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json());
+
+        console.log("T.ACTION DelP", data);
+        //data = 'DISNY';
+
+        /*var FormData = require('form-data');
+        var form = new FormData();
+        form.append('id_programa', 'ABOLA');
+*/
+        return fetch(`http://samuelbf94.ddns.net/api/delpref/${data}`, {
+            method: 'DELETE'
+        })
+            .then(response => dispatch(receiveDeletePref(response)));
     }
 }
 
@@ -115,15 +161,14 @@ export function fetchPrefs() {
     return function(dispatch) {
         dispatch(requestPreferences());
 
-        var json2 = JSON.parse(window.localStorage.getItem("userPrefs"));
-        var json3 = JSON.parse(window.localStorage.getItem("userPrefsId"));/*
-        window.localStorage.removeItem("userPrefs");
-        window.localStorage.removeItem("userPrefsId");*/
+        /*
+         window.localStorage.removeItem("userPrefs");
+         window.localStorage.removeItem("userPrefsId");*/
         //console.log("P2.ACTION PREF", "json2", json2, "json3", json3);
-        return dispatch(receivePreferences(json2, json3));
-        /*return fetch(`http://samuelbf94.ddns.net/api/user`)
-            .then(response => response.json();)
-            .then(json => dispatch(receivePreferences(json)));*/
+        //return dispatch(receivePreferences(json2, json3));
+        return fetch(`http://samuelbf94.ddns.net/api/getpref`)
+            .then(response => response.json())
+            .then(json => dispatch(receivePreferences(json)));
     }
 }
 

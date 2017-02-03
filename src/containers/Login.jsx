@@ -30,7 +30,7 @@ class Login extends Component {
         var token = window.localStorage.getItem("userToken");
         console.log("userToken: ", token);
         if(!token) {
-            window.location.replace('http://samuelbf94.ddns.net/oauth/authorize?client_id=3&redirect_uri=http://localhost:3000/callback&response_type=code&scope');
+            window.location.replace('http://samuelbf94.ddns.net/oauth/authorize?client_id=2&redirect_uri=http://localhost:3000/callback&response_type=code&scope');
 
         }else{
             browserHistory.push('/home');
@@ -59,7 +59,13 @@ class Login extends Component {
 
                 <h3 className="login-welcome"> Bem vindo à experiência</h3>
                 <h2 className="login-welcome"> Notify Me </h2>
-                <div className="btn btn-primary login-btn" onClick={() => this.goLogin()}>Login/Registo</div>
+
+                <div className="col-xs-1"></div>
+                <div className="btn btn-primary login-btn col-xs-5" onClick={() => this.goLogin()}>Login/Registo</div>
+                <div className="col-xs-1"></div>
+                <div className="btn btn-default login-btn col-xs-4" onClick={() => browserHistory.push('/home')}>Guest</div>
+                <div className="col-xs-1"></div>
+
                 <input type="text" placeholder="O seu lindo nome aqui!" onChange={ this.handleChange } />
                 <div className="login-text">
                     <p>Já se sentiu frustrado com o catálogo TV, inúmeros canais e programas e de perder mais tempo a escolher o que ver do que a gozar a televisão?</p>

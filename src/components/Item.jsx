@@ -12,7 +12,7 @@ const Item = ({item}) => {
     //var source = "http://proxycache.app.iptv.telecom.pt:8080/MeoHandler/ImageProxy.ashx?width=200&url=2/logos/pos/"+item.LogoUri+".png";
     //console.log("V- LogoUri:",item);
 
-
+//console.log("ITME.jsx key", key, item.Title);
 
 var x = item.StartTime;
 

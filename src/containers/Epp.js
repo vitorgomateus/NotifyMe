@@ -10,9 +10,20 @@ import IdStripe from '../components/IdStripe';
 import PlayStripe from '../components/PlayStripe';
 import InfoEpp from '../components/InfoEpp';
 
+import Swipe from 'react-easy-swipe';
+import swal from 'sweetalert';
+
+
+import Constants from '../constants/constNum';
+
+const numProgramas = Constants.numProg;
+
 import '../css/epp.css';
 
+var todosProgs;
 var programa;
+var posEpp;
+var esteId;
 //-----------------IMG Stripe
 var source;
 //-----------------ID Stripe
@@ -27,11 +38,84 @@ var startTimeStamp;
 var nomeEpp;
 var descricao;
 
+
+//-----------------Swipes
+var sX;
+var sY;
+
+var swipeMove; // 0=nada, 1= direita, -1=esquerda
+var nMove = 0;
+var moveR = 1;
+var moveL = -1;
+
 class Epp extends Component {
 
     constructor(props) {
         super(props);
+        this.GetProgramDetails = this.GetProgramDetails.bind(this);
+        this.ChangeProgram = this.ChangeProgram.bind(this);
     }
+
+
+
+    onSwipeStart(event) {
+        //console.log('Start swiping...', event);
+    }
+    onSwipeMove(position, event) {
+        //console.log(`Moved ${position.x} pixels horizontally`, event);
+        //console.log(`Moved ${position.y} pixels vertically`, event);
+
+        sX = position.x;
+        sY = position.y;
+
+    }
+
+    onSwipeEnd(event) {
+        console.log('End swiping...', sX, sY, event);
+        //-300 20
+
+        swipeMove = nMove;
+        if (sY > (-80) && sY < 80) {
+            if (sX > 20) { // && sX < 120
+                swipeMove = moveL;
+                console.log("Move Left", sX, sY);
+            } else if(sX < (-20)) { // && sX < 120
+                swipeMove = moveR;
+                console.log("Move Right", sX, sY);
+            }
+        }
+        this.ChangeProgram(swipeMove);
+        // var progArray = this.props.programs;
+
+
+    }
+
+
+
+    ChangeProgram(novo){
+        fateId = "end of caroussel.";
+        if(todosProgs && novo!==nMove){
+            if((novo >0 && posEpp <6)||(novo < 0 && posEpp > 0)){
+                var fP = posEpp+novo;
+                var fateId = todosProgs[fP].Id;
+                //browserHistory.push(`/epp/`+fateId+``);
+                //replace({pathname: blabla
+                browserHistory.replace({pathname: `/epp/`+fateId+``})
+            }else{
+                swal("Não há mais :/","A equipa pede desculpa mas de momento só são gerados "+numProgramas+" sugestões. Se não concordar convide-se a comunicar com a equipa de produção, eles são mais simpáticos do que parecem :)","warning");
+            }
+        }
+        console.log("SWIPE CHECK", esteId, fateId, posEpp, swipeMove, fP);
+        todosProgs = 0;
+        programa = 0;
+        posEpp = 0;
+        esteId = 0;
+        sX = 0;
+        sY = 0;
+        swipeMove = 0;
+
+    }
+
 
     /*componentDidMount() {
      this.GetProgramDetails();
@@ -40,28 +124,37 @@ class Epp extends Component {
         this.GetProgramDetails();
     }
 
-    // vai buscar os canais dados pela API da sapo meo      -------------- JÀ NÔ È PRECISO
-    //      Afinal é só em caso a página faça refresh porque aparentemente os props não estão
-    //      disponíveis quando a página faz refresh.        ----------------------------------------------------- DEV DO
-    //          EDIT ---    agora também retira todos os dadozinhos para construir a view. yay
+// vai buscar os canais dados pela API da sapo meo      -------------- JÀ NÔ È PRECISO
+//      Afinal é só em caso a página faça refresh porque aparentemente os props não estão
+//      disponíveis quando a página faz refresh.        ----------------------------------------------------- DEV DO
+//          EDIT ---    agora também retira todos os dadozinhos para construir a view. yay
     GetProgramDetails() {
 
-        var esteId= this.props.params.id;
+        esteId= this.props.params.id;
         //console.log("propId: ", esteId);
-        var todosProgs = this.props.programs;
-        //console.log("EPP PROPS", this.props);
-        programa;
-        todosProgs.forEach(function(cadaProg){
+
+        //      componente sórecebe o Id, por isso vai pelos props e saca o restodos detalhes do programa
+        todosProgs = this.props.programs;
+        console.log("EPP PROPS", this.props);
+
+        todosProgs.forEach(function(cadaProg, k){
             if(cadaProg.Id===esteId){
                 //console.log("EPP ID", "esteId"+esteId, "esteProgId"+cadaProg.Id, todosProgs);
                 programa = cadaProg;
+                posEpp = k;
             }
         });
         console.log("PROGRAMA", programa);
         if(!programa){
-            //console.log("Should have pushed");        //      volta pà home se não houver conteúdo --- SUCCESS
+            console.log("Should have pushed");        //      volta pà home se não houver conteúdo --- SUCCESS
             browserHistory.push('/home');
         }
+
+
+
+
+
+
 
         //-----------------IMG Stripe
         var strung = programa.ImageUri;//program.src;
@@ -95,14 +188,22 @@ class Epp extends Component {
     render (){
         return(
             <div className="eppContainer">
+                <div className="btn-sm col-xs-2" style={{zIndex: 3}} onClick={() => this.ChangeProgram(-1)}>previous</div>
+                <div className="col-xs-8"></div>
+                <div className="btn-sm col-xs-2" style={{zIndex: 3}} onClick={() => this.ChangeProgram(1)}>next</div>
+                <Swipe
+                    onSwipeStart={this.onSwipeStart}
+                    onSwipeMove={this.onSwipeMove}
+                    onSwipeEnd={this.onSwipeEnd}>
 
-                <ImgStripe src={source}/>
+                    <ImgStripe src={source}/>
 
-                <div>
-                    <IdStripe pn={nomeProg} enu={eppNum}/>{/* es={season} */}
-                    <PlayStripe ei={eppId} st={startTime} sts={startTimeStamp} item={programa}/>
-                    <InfoEpp en={nomeEpp} ed={descricao}/>
-                </div>
+                    <div>
+                        <IdStripe pn={nomeProg} enu={eppNum}/>{/* es={season} */}
+                        <PlayStripe ei={eppId} st={startTime} sts={startTimeStamp} item={programa}/>
+                        <InfoEpp en={nomeEpp} ed={descricao}/>
+                    </div>
+                </Swipe>
             </div>
         );
 
@@ -121,7 +222,7 @@ Epp.propTypes = {
 
 const mapStateToProps = (state, ownProps) => {
     //console.info('container List mapStateToProps state', state);
-    //console.log('LIST-STP props', state, ownProps);
+    console.log('LIST-STP props', ownProps);
     return {programs: state.programs.fprogramas, progFetcher: state.programs.isFetching};
 }
 
