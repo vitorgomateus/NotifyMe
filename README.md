@@ -1,7 +1,18 @@
-# NotifyMe
+﻿# NotifyMe
 third try at a prototype for a masters in communication @DeCA, Aveiro.
 
 ##TODO:
+
+    login
+    swipe
+    check post, delete
+        Funciona mas 3:
+        -Não consegui com que a mensagem do SwAl tente a alteração de novo;
+        -A página faz reload e a posição do scroll vai à vida, muito frustrante para o utilizador;
+        -Por alguma razão, depois de fazer o pedido de alteração à API, e antes de alterar o state com esse resultado, state já está alterado;
+    css
+    build
+    cordova
 
 #### Features
 * Registo/Login:
@@ -25,21 +36,21 @@ third try at a prototype for a masters in communication @DeCA, Aveiro.
 #### Cenas fiches
 * Mostrar quanto tempo falta ou há quanto já começou um programa.
     * Lista
-    * Epp
+    * Epp - tá quase, dá um erro
 * Mostrar duração do programa
-    * Lista
+    * Lista - X
 * Eliminar duplicações de canais com e sem HD
 (parece-me suficiente manter só os HD disponíveis e ter uma opção para isso nas definições, só pela paranoia :P)
     
 #### Comunicações com API
-* Preferências
+* Preferências      ---     All Done     
     * Push
     * Delete
     * Get
-        * Fazer com Id's ou Siglas do canal?
+        * Fazer com Id's ou Siglas do canal? - Siglas
 * Dados do Utilizador
     * Fazer registo
     * Get user details
-* Definições de utilização da app
+* Definições de utilização da app       ---     NaN
     * Get
     * Push

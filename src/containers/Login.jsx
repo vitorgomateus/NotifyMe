@@ -23,13 +23,13 @@ class Login extends Component {
         // this.goLogin = this.goLogin().bind(this);
     }
 
-    goLogin(){
+    goLogin(user){
         if(nome){
             window.localStorage.setItem("userName", nome);
         }
         var token = window.localStorage.getItem("userToken");
         console.log("userToken: ", token);
-        if(!token) {
+        if(!token && user) {
             window.location.replace('http://samuelbf94.ddns.net/oauth/authorize?client_id=2&redirect_uri=http://localhost:3000/callback&response_type=code&scope');
 
         }else{
@@ -49,7 +49,7 @@ class Login extends Component {
 
         var logo = require('../../public/img/logo.png');
         return (
-            <div className="login-wrapper">
+            <div className="fullscreen-wrapper">
                 {/*http://samuelbf94.ddns.net/oauth/authorize?
                  client_id=3&
                  redirect_uri=http://localhost:3000/callback&
@@ -60,23 +60,30 @@ class Login extends Component {
                 <h3 className="login-welcome"> Bem vindo à experiência</h3>
                 <h2 className="login-welcome"> Notify Me </h2>
 
-                <div className="col-xs-1"></div>
-                <div className="btn btn-primary login-btn col-xs-5" onClick={() => this.goLogin()}>Login/Registo</div>
-                <div className="col-xs-1"></div>
-                <div className="btn btn-default login-btn col-xs-4" onClick={() => browserHistory.push('/home')}>Guest</div>
-                <div className="col-xs-1"></div>
+                <div className="col-sm-1 col-md-3"></div>
+                <div className="btn btn-primary login-btn col-sm-4 col-md-2" onClick={() => this.goLogin(true)}>Login/Registo</div>
+                <div className="col-sm-1 col-md-1"></div>
+                <div className="col-sm-1 col-md-1"></div>
+                <div className="btn btn-default login-btn col-sm-4 col-md-2" onClick={() => this.goLogin(false)}>Guest</div>
+                <div className="col-sm-1 col-md-3"></div>
 
-                <input type="text" placeholder="O seu lindo nome aqui!" onChange={ this.handleChange } />
-                <div className="login-text">
-                    <p>Já se sentiu frustrado com o catálogo TV, inúmeros canais e programas e de perder mais tempo a escolher o que ver do que a gozar a televisão?</p>
-                    <br/>
-                    <p>Tem saudades da experiência de televisão confortável de ligar a TV, fazer zapping eencontrar algo para ver em minutos?</p>
-                    <br/>
-                    <p>Não desespere! <br/>
-                        Registe-se na nossa aplicação para ver TV como deve de ser! <br/>
-                        Vai ver que a vida é muito simples na verdade.
-                    </p>
-                    <br/>
+                <div className="row">
+                    <div className="col-sm-1 col-md-3"></div>
+                    <input type="text" className="col-xs-12 col-sm-10 col-md-6" placeholder="O seu lindo nome aqui!" onChange={ this.handleChange } />
+                    <div className="col-sm-1 col-md-3"></div>
+                </div>
+                <div className="row">
+                    <div className="login-text">
+                        <p>Já se sentiu frustrado com o catálogo TV, inúmeros canais e programas e de perder mais tempo a escolher o que ver do que a gozar a televisão?</p>
+                        <br/>
+                        <p>Tem saudades da experiência de televisão confortável de ligar a TV, fazer zapping eencontrar algo para ver em minutos?</p>
+                        <br/>
+                        <p>Não desespere! <br/>
+                            Registe-se na nossa aplicação para ver TV como deve de ser! <br/>
+                            Vai ver que a vida é muito simples na verdade.
+                        </p>
+                        <br/>
+                    </div>
                 </div>
 
                 {/*<Spinner spinnerName="cube-grid"/>*/}

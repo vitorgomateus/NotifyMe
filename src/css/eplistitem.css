@@ -27,6 +27,7 @@ a{
 }
 
 .linhaTxt{
+    position: relative;
     text-align: left;
     vertical-align: middle;
     padding-left: 20px;
@@ -51,9 +52,14 @@ hr{
 }
 
 
-.time{
+.item-right{
     padding-left: 50%;
     text-align: right;
+}
+
+.item-bottom{
+    position: absolute;
+    bottom: 0;
 }
 
 @media (min-width: 768px) {

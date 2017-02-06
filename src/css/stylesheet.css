@@ -116,7 +116,7 @@ img{
 }
 
 
-.login-wrapper{
+.fullscreen-wrapper{
     background-color: #0F0F0F;
     color: whitesmoke;
     text-align: center;
@@ -127,6 +127,9 @@ img{
     z-index: 3;
     height: 100%;
     width: 100%;
+}
+.fullscreen-blue{
+    background-color: #0099AB;
 }
 .login-welcome{
     margin: 12px 0;

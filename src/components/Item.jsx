@@ -18,6 +18,10 @@ var x = item.StartTime;
 
     var startTime = x.replace(":","h");
 
+    var y = item.EndDate.slice(6,19);;
+    var z = item.StartDate.slice(6,19);
+
+    var duracao = (y-z)/1000/60 + " mins.";
 
     return (
     <div className="row">
@@ -31,9 +35,11 @@ var x = item.StartTime;
                 </div>
                 <div className="col-xs-8 linhaTxt">
 
-                    <h4 className="pitem" > {item.Title} {/*<b>{this.props.episode.ep} </b>*/}</h4>
-                    <div className="time"><h4 className="pitem"> {startTime} </h4></div>
-                    <h4 className="pitem"> {item.CallLetter} </h4>
+                    <div className="time col-sm-8"><h4 className="pitem" > {item.Title} {/*<b>{this.props.episode.ep} </b>*/}</h4></div>
+                    <div className="time item-right col-sm-4"><h4 className="pitem"> {startTime} </h4></div>
+                    <div className="col-sm-12"></div>
+                    <div className="item-bottom col-sm-8"><h4 className="pitem"> {item.CallLetter} </h4></div>
+                    <div className="item-bottom item-right col-sm-4"><h4 className="pitem"> {duracao} </h4></div>
                 </div>
             </div>
 

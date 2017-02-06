@@ -12,7 +12,7 @@ class Splash extends Component {
 
         return (
 
-            <div className="splashBody" >
+            <div className="fullscreen-wrapper fullscreen-blue" >
                     <img src={splashLogo} className="splashImg" alt="logo" />
                     <div className="spinnerCapsule">
                         <Spinner spinnerName="cube-grid" />

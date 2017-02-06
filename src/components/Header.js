@@ -84,7 +84,7 @@ class Header extends Component {
     Logout(){
         window.localStorage.removeItem("userToken");
         window.localStorage.removeItem("userName");
-        browserHistory.push('/');
+        browserHistory.push('/login');
     }
 
 

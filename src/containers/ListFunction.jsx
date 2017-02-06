@@ -234,7 +234,7 @@ class ListFunction extends Component {
                 );
             }else {
                 return (
-                    <div>
+                    <div className="prefs-wrapper">
                         <h2 className="lista-title">Olá {userNome}<br/>a sua programação de agora</h2>
                         <List />
                     </div>

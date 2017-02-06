@@ -28,7 +28,7 @@ class App extends Component {
     render() {
         //console.info('App props', this.props);
         return(
-            <div className="pacoteApp">
+            <div className="app-wrapper">
                 <Header />
                 {this.props.children}
             </div>
