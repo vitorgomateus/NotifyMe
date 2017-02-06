@@ -72,7 +72,6 @@ class Epp extends Component {
 
     onSwipeEnd(event) {
         console.log('End swiping...', sX, sY, event);
-        //-300 20
 
         swipeMove = nMove;
         if (sY > (-80) && sY < 80) {
@@ -85,9 +84,6 @@ class Epp extends Component {
             }
         }
         //this.ChangeProgram(swipeMove);
-        // var progArray = this.props.programs;
-
-
     }
 
 
@@ -99,7 +95,6 @@ class Epp extends Component {
                 var fP = posEpp+novo;
                 var fateId = todosProgs[fP].Id;
                 browserHistory.push(`/epp/`+fateId+``);
-                //replace({pathname: blabla
                // browserHistory.replace({pathname: `/epp/`+fateId+``})
             }else{
                 swal("Não há mais :/","A equipa pede desculpa mas de momento só são gerados "+numProgramas+" sugestões. Se não concordar convide-se a comunicar com a equipa de produção, eles são mais simpáticos do que parecem :)","warning");
@@ -127,15 +122,8 @@ class Epp extends Component {
 
     componentWillUpdate(){
         this.GetProgramDetails();
-        /*if(!programa){
-            console.log("Should have pushed");        //      volta pà root se não houver conteúdo --- SUCCESS
-            browserHistory.push('/');
-        }*/
     }
-// vai buscar os canais dados pela API da sapo meo      -------------- JÀ NÔ È PRECISO
-//      Afinal é só em caso a página faça refresh porque aparentemente os props não estão
-//      disponíveis quando a página faz refresh.        ----------------------------------------------------- DEV DO
-//          EDIT ---    agora também retira todos os dadozinhos para construir a view. yay
+
     GetProgramDetails() {
 
         esteId = this.props.params.id;
@@ -147,7 +135,6 @@ class Epp extends Component {
 
         todosProgs.forEach(function(cadaProg, k){
             if(cadaProg.Id === esteId){
-                //console.log("EPP ID", "esteId"+esteId, "esteProgId"+cadaProg.Id, todosProgs);
                 programa = cadaProg;
                 posEpp = k;
             }
@@ -194,9 +181,9 @@ class Epp extends Component {
     render (){
         return(
             <div className="eppContainer">
-                <div className="btn-sm col-xs-2" style={{zIndex: 3}} onClick={() => this.ChangeProgram(-1)}>previous</div>
+                <div className="btn-sm col-xs-2" style={{zIndex: 2}} onClick={() => this.ChangeProgram(-1)}> </div>
                 <div className="col-xs-8"></div>
-                <div className="btn-sm col-xs-2" style={{zIndex: 3}} onClick={() => this.ChangeProgram(1)}>next</div>
+                <div className="btn-sm col-xs-2" style={{zIndex: 2}} onClick={() => this.ChangeProgram(1)}> </div>
                 <Swipe
                     onSwipeStart={this.onSwipeStart}
                     onSwipeMove={this.onSwipeMove}
@@ -235,47 +222,3 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 export default connect(mapStateToProps)(Epp);
-
-/*npm install react-easy-swipe --save
-
- Usage
- import React, {Component} from 'react';
- import ReactDOM from 'react-dom';
- import Swipe from './react-swipe';
-
- class MyComponent extends Component {
- onSwipeStart(event) {
- console.log('Start swiping...', event);
- }
-
- onSwipeMove(position, event) {
- console.log(`Moved ${position.x} pixels horizontally`, event);
- console.log(`Moved ${position.y} pixels vertically`, event);
- }
-
- onSwipeEnd(event) {
- console.log('End swiping...', event);
- }
-
- render() {
- const boxStyle = {
- width: '100%',
- height: '300px',
- border: '1px solid black',
- background: '#ccc',
- padding: '20px',
- fontSize: '3em'
- };
-
- return (
- <Swipe
- onSwipeStart={this.onSwipeStart}
- onSwipeMove={this.onSwipeMove}
- onSwipeEnd={this.onSwipeEnd}>
- <div style={boxStyle}>Open the console and swipe me</div>
- </Swipe>
- );
- }
- }
-
- ReactDOM.render(<MyComponent/>, document.getElementById('root'));*/

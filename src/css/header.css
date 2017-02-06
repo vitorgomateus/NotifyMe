@@ -21,6 +21,7 @@
 
 .floater{
     position: absolute;
+    left: 0;
 }
 
 .altura{
@@ -28,7 +29,7 @@
 }
 
 .botao{
-    position: absolute;
+    /*position: absolute;*/
     top: -55px;
 }
 

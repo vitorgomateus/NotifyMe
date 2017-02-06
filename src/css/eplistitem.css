@@ -61,47 +61,29 @@ hr{
     text-align: right;
 }
 
-@media (min-width: 768px) {
-    .linhaimg {
-        max-width: 200px;
-    }
-    .linhadir,.linhatxt{
-        max-width: 600px;
-    }
-}
-
-/* var mainItemDiv = {
-            paddingLeft: 50,
-            paddingTop: 10,
-            paddingBottom: 10,
-            backgroundColor: "#222222",
-            color: "white",
-            borderBottomColor: "white",
-            borderBottomWidth: 5
-        }*/
 
 
 @media (max-width: 2560px) {
-    .programText{
+    .programText, .title{
         font-size:2.0em;
     }
 }
 
 @media (max-width: 1440px) {
-    .programText{
+    .programText, .title{
         font-size: 2.0em;
     }
 }
 
 @media (max-width: 1024px) {
-    .programText{
-        font-size:1.8em;
+    .programText, .title{
+        font-size:2.0em;
     }
 }
 
 @media (max-width: 768px) {
     .programText{
-        font-size:1.5em;
+        font-size:1.0em;
     }
 
     .imageResize{
@@ -113,7 +95,7 @@ hr{
 
 @media (max-width: 425px) {
     .programText{
-        font-size:1.4em;
+        font-size:1.0em;
     }
     .imageResize{
         width: 300px;
@@ -131,7 +113,7 @@ hr{
 
 @media (max-width: 320px) {
     .programText{
-        font-size:0.8em;
+        font-size:1.0em;
     }
     .imageResize{
         width: 300px;

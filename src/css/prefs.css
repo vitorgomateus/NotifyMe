@@ -67,14 +67,27 @@ por:
 }
 
 @media (max-width: 491px){
+    /*.prefs-wrapper{
+        padding: 24px 5%;
+    }*/
     .celulas{
         min-width: 150px;
+        margin-right: 5%;
+        margin-left: 5%;
     }
     .celulas>button{
         min-height: 64px;
     }
 
 }
+
+@media (max-width: 399px){
+    .celulas{
+        margin-right: 2%;
+        margin-left: 2%;
+    }
+}
+
 
 .canaisFav{
     margin-bottom: 0;

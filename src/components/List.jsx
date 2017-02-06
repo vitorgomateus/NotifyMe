@@ -6,18 +6,10 @@ import Splash from './Splash';
 
 class List extends Component {
 
-    /*componentWillReceiveProps(){
-        this.render();
-    }*/
 
     render() {
 
         const isFetching = this.props.progFetcher;
-        //console.log('LIST RNDR props',this.props);
-
-
-
-        //console.log('LIST RENDER props', this.props);
         if (!isFetching) {
             return (
                 <div className="col-xs-12 item-align-center npd">

@@ -12,9 +12,9 @@ import Callback from '../containers/Callback';
 
 
 export default (
-    <Route path="/" component={App}>{/*
-        <IndexRoute component={Login}/>,*/}
-        <Route path="/login" component={Login} />
+    <Route path="/" component={App}>
+        <IndexRoute component={Login}/>,{/*
+        <Route path="/login" component={Login} />*/}
         <Route path="/home" component={List} />
         <Route path="/epp/:id" component={Epp} />
         <Route path="/prefs" component={Prefs} />

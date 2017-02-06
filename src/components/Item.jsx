@@ -3,17 +3,6 @@ import {Link} from 'react-router';
 import '../css/eplistitem.css';
 
 const Item = ({item}) => {
-    // console.info('component Item', item);
-    //http://services.online.meo.pt/Data/2013/11/programs/media/image/9427372/M
-    //http://services.online.meo.pt/Data/2013/11/programs/media/image/chn_mcm_p/M           --- nahhh
-    //http://proxycache.app.iptv.telecom.pt:8080/MeoHandler/ImageProxy.ashx?width=235&url=2/logos/pos/chn_sptv.png
-    //Sim, é um path deste género, mas neste caso acho que variar o M no final não tem nenhum efeito e a imagem tem uma cercadura à volta
-    //http://services.online.meo.pt/Data/2013/11/catalog/media/image/LiveChannel/chn_sptv/M
-    //var source = "http://proxycache.app.iptv.telecom.pt:8080/MeoHandler/ImageProxy.ashx?width=200&url=2/logos/pos/"+item.LogoUri+".png";
-    //console.log("V- LogoUri:",item);
-
-
-
     var x = item.StartTime;
 
     var startTime = x.replace(":","h");
@@ -25,17 +14,18 @@ const Item = ({item}) => {
     var z = item.StartDate.slice(6,19);
     var duracaoMinutos = (y-z)/1000/60;
     var duracao;
+    var minutos;
 
     function setDuracao(){
 
         if(duracaoMinutos >= 60 && duracaoMinutos < 120){
-            var minutos = duracaoMinutos - 60;
+            minutos = duracaoMinutos - 60;
             duracao = "1h" + minutos + "min";
             return duracao;
         }
 
         else if(duracaoMinutos >=120 && duracaoMinutos < 180){
-            var minutos = duracaoMinutos - 120;
+            minutos = duracaoMinutos - 120;
             duracao = "2h" + minutos + "min";
             return duracao;
         }
@@ -81,8 +71,10 @@ const Item = ({item}) => {
                     </div>
                 </div>
 
+                {/*//      ------------------------------------------------------------------------------------------------*/}
 
-                <div className="col-xs-12 visible-xs-block npd">
+                <div className="col-xs-1"></div>
+                <div className="col-xs-10 visible-xs-block npd">
                     <div className="col-xs-12 npd">
                         <img className="img-rounded pdb" src={item.ImageUri} alt={item.Title}/>
 
@@ -109,6 +101,7 @@ const Item = ({item}) => {
                         </div>
                     </div>
                 </div>
+                <div className="col-xs-1"></div>
                 <div className="col-xs-12 visible-xs-block visible-sm-block npd">
                     <hr/>
                 </div>

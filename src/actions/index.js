@@ -57,11 +57,8 @@ export function resetWaitPref() {
     }
 }
 export function receivePreferences(json) {
-    //console.info('ACTION receivePreferences', json);
     var _ = require('lodash');
-    //console.info('ACTION receivePreferences', _.map(json, 'programa_id'));
     var json2 = _.map(json, 'programa_id');
-    // var json3 = JSON.parse(window.localStorage.getItem("userPrefsId"));
 
     return {
         type: types.RECEIVE_PREFS,

@@ -22,9 +22,9 @@ class IdStripe extends Component {
 
         return(
             <div>
-                <div className="row epprow eppidrow">
-                    <div className="col-xs-4"></div>
-                    <div className="col-xs-8">
+                <div className="row epprow eppidrow">{/*
+                    <div className="col-xs-4"></div>*/}
+                    <div className="col-xs-12">
                         <h3 className="title">{progNome}</h3>
                     </div>
                 </div>

@@ -12,7 +12,6 @@ class App extends Component {
         var name= window.localStorage.getItem("userName");
         console.log("APP CHECK TOKEN", name, token);
         if(!token) {
-            //console.log("YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO DEV DEV DEV DEV DEV DEV DEV DEV DEV DEV DEV", "APP componentWillMount() > historyPush login")
             browserHistory.push('/login');// /login
         }else{
             browserHistory.push('/home');
@@ -22,11 +21,9 @@ class App extends Component {
     componentDidMount() {
         const {dispatch} = this.props;
         dispatch(fetchPrefs());
-        //console.log("APP props", this.props);
     }
 
     render() {
-        //console.info('App props', this.props);
         return(
             <div className="app-wrapper">
                 <Header />
@@ -44,8 +41,6 @@ App.propTypes = {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    //console.info('APP-STP state', state, ownProps);
-    //console.info('APP-STP props',  ownProps);
     return {preferences: state.preferences.upreferencias, fetcher: state.preferences.isFetchingPrefs};
 }
 

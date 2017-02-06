@@ -20,13 +20,7 @@ class ImgStripe extends Component {
         };
 
         return(
-            <div className="jumbotron stripe" style={imgBg}>{/*
-                <img src={BBad} className="imgInStripe"/>*/}
-                {/*<div className="row">
-                    <img className="col-xs-1 swp swpLeft"/>
-                    <div className="col-xs-10"></div>
-                    <img className="col-xs-1 swp swpRight" />
-                </div>*/}
+            <div className="jumbotron stripe" style={imgBg}>
             </div>
         );
     }

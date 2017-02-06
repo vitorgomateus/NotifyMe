@@ -6,14 +6,6 @@ import Splash from '../components/Splash';
 
 class Callback extends Component {
 
-    /*componentWillMount(){
-        var code= window.localStorage.getItem("userToken");
-        console.log("userToken: ",code);
-        if(code) {
-            browserHistory.push('/home');
-        }
-    }*/
-
     render() {
 
         var code = document.location.search.substring(6);
@@ -26,7 +18,7 @@ class Callback extends Component {
         var url = "http://samuelbf94.ddns.net/oauth/token";
         var params = "grant_type=authorization_code";
             params += '&client_id=2';
-            params += '&client_secret=q07U8sJorHXtnt0KvBbFEXqgxmA6HoqaXv46ssK3';//PQhIMghkcKIPbNAUT0YAlhNifNCCkGpu86l0Qrd1
+            params += '&client_secret=q07U8sJorHXtnt0KvBbFEXqgxmA6HoqaXv46ssK3';//PQhIMghkcKIPbNAUT0YAlhNifNCCkGpu86l0Qrd1';//
             params += '&redirect_uri=http://localhost:3000/callback';//http://notifyme-react.ddns.net/#/main'; //http://localhost:3000/Callback.jsx';
             params += '&code='+code;
 

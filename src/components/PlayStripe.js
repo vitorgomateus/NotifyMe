@@ -15,9 +15,6 @@ class PlayStripe extends Component {
 
 
     PlayOn(objecto){
-        // enviar epp para o histórico.
-        // import {setProgHistory} from '../actions';
-        // dispatch(setProgHistory(objecto));
         console.log("PLAY Objecto: ", objecto);
     }
 
@@ -26,17 +23,6 @@ class PlayStripe extends Component {
         var horaRaw = this.props.sts;
         //console.log("PLAY HORA RAW: ", horaRaw);
         var airTime = this.props.st;
-
-
-        /*
-
-        console.log("Hora no ar, 1: "+horaRaw);
-
-        var horaStrg = this.props.at;//horaRaw.replace(" ", "T")+"Z";
-
-        console.log("horaStrg: "+horaStrg);
-
-        */
 
         var horaNoAR= new Date(horaRaw);
         //console.log("PLAY horaNoAr.newDate: ",horaNoAR);

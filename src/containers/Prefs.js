@@ -17,11 +17,6 @@ import {fetchChannels} from '../actions';
 import {fetchPrefs} from '../actions';
 import {postPref, deletePref, resetWaitPref} from '../actions';
 
-
-
-
-import _ from 'lodash';
-
 class Prefs extends Component {
 
     constructor(props) {
@@ -130,7 +125,7 @@ class Prefs extends Component {
         }
         if (!prefremoved) {
             if (userprefs.length === numDePref) {
-                swal("Já chega!","A equipa pede desculpa mas de momento não é possível adicionar mais de "+numDePref+" preferências.","warning"); //                                                    --- SWEETALERT
+                swal("Já chega!","A equipa pede desculpa mas de momento não é possível adicionar mais de "+numDePref+" preferências.","warning"); //  --- SWEETALERT
             } else {
                 //      -----------------------------------------------------------------------------------     Add Pref
                 console.log("0 PP");
@@ -149,9 +144,7 @@ class Prefs extends Component {
         var x = this.props.preferences;
         var moreprefers = x ? x.slice(0,numDePref) : ["TVI","RTPM","HOLHD"];
 
-        console.log("5.5.Co.Pf. Prefs:", moreprefers, "edit done?", this.props.wasEditDone, "wich:", this.props.wichLastEdit);/*
-        var isto = _.pull(moreprefers, ""+this.props.wichLastEdit+"");
-        console.log("5.6.Co.Pf. Prefs:", isto, "edit done?", this.props.wasEditDone, "wich:", this.props.wichLastEdit);*/
+        console.log("5.5.Co.Pf. Prefs:", moreprefers, "edit done?", this.props.wasEditDone, "wich:", this.props.wichLastEdit);
         if(!isFetching && doneWaiting) {
 
             var canaisRaw = this.props.channels.tcanais;

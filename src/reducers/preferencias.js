@@ -51,12 +51,6 @@ const preferences = (state = initState, action) => {
             var pArr = state.upreferencias;
 
             var statusPosted = (action.items.status === 200);
-            /*if(action.dito === "SICHD"){
-             //      HACKING
-             console.info("hacing eheheh", action.dito);
-             statusPosted = false;
-             }*/
-            // statusPosted = false;
 
             var novoPArr = pArr;
             if(statusPosted){novoPArr.push(action.dito)}
@@ -96,9 +90,6 @@ const preferences = (state = initState, action) => {
             console.log("action status:", action.items.status);
             console.info("3.Re.Dl.Pf. was:", dArr, "deleted?", statusDeleted, "wich:", action.dito, "will be:", novoDArr);
 
-            // HACKING
-            /*statusDeleted = false;
-             novoDArr = dArr;*/
             return Object.assign({}, state, {
                 waitingdone: true,
                 edited: statusDeleted,
