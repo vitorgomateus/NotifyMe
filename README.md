@@ -8,7 +8,7 @@ third try at a prototype for a masters in communication @DeCA, Aveiro.
     check post, delete
         Funciona mas 3:
         -Não consegui com que a mensagem do SwAl tente a alteração de novo;
-        -A página faz reload e a posição do scroll vai à vida, muito frustrante para o utilizador;
+        -A página faz reload e a posição do scroll vai à vida, muito frustrante para o utilizador; --- RESOLVIDO
         -Por alguma razão, depois de fazer o pedido de alteração à API, e antes de alterar o state com esse resultado, state já está alterado;
     css
     build

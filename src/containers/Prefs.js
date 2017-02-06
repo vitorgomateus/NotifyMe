@@ -27,7 +27,7 @@ class Prefs extends Component {
         //const htmlContent = isFetching ? <p>Loading...</p> : <ListComponent items={items} />;
 
 
-        // this.state = {waiterEdit: "niente", waiterCanal: "niente", waiterCanalId: ""};
+        this.state = {posX: 0, posY: 0};
         this.setPref = this.setPref.bind(this);
         //settings.setDomStorageEnabled(true);//                                                                ---LocalStorage---
     }
@@ -49,7 +49,15 @@ class Prefs extends Component {
 
      }*/
 
+    componentWillUnmount(){
+
+    }
+
     componentDidUpdate(){
+        var lefto = window.localStorage.getItem("posX"); //this.state.posX
+        var topo = window.localStorage.getItem("posY"); //this.state.posY
+        //console.log("WINDOW SCROLL left:", lefto, "top:", topo);
+        window.scrollTo(lefto, topo);
         //console.info("5.8.CoDidUpdate");
         var isPrevEditDone= this.props.wasEditDone;
         var prevEdit = this.props.wichLastEdit;
@@ -94,6 +102,13 @@ class Prefs extends Component {
     //ELSE adiciona canal a prefrências e manda update pa store
     setPref(canal) {
 
+        var doc = document.documentElement;
+        var left = (window.pageXOffset || doc.scrollLeft) - (doc.clientLeft || 0);
+        var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
+        //console.info("WINDOW POSITiON left:", left,"top:", top);
+        window.localStorage.setItem("posX", left);
+        window.localStorage.setItem("posY", top);
+        //this.setState({posX: left, posY: top});
 
         const {dispatch} = this.props;
         var numDePref = Constants.numPref;

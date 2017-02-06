@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5db0556c-3293-4384-992b-39e5a2202c06" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/Login.jsx" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/index.js" afterPath="$PROJECT_DIR$/src/actions/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Header.js" afterPath="$PROJECT_DIR$/src/components/Header.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Item.jsx" afterPath="$PROJECT_DIR$/src/components/Item.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Splash.js" afterPath="$PROJECT_DIR$/src/components/Splash.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/constants/actionTypes.js" afterPath="$PROJECT_DIR$/src/constants/actionTypes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/App.jsx" afterPath="$PROJECT_DIR$/src/containers/App.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/ListFunction.jsx" afterPath="$PROJECT_DIR$/src/containers/ListFunction.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Login.jsx" afterPath="$PROJECT_DIR$/src/containers/Login.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Prefs.js" afterPath="$PROJECT_DIR$/src/containers/Prefs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/eplistitem.css" afterPath="$PROJECT_DIR$/src/css/eplistitem.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/splash.css" afterPath="$PROJECT_DIR$/src/css/splash.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/stylesheet.css" afterPath="$PROJECT_DIR$/src/css/stylesheet.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/preferencias.js" afterPath="$PROJECT_DIR$/src/reducers/preferencias.js" />
     </list>
     <ignored path="third-proto.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -135,32 +121,31 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Prefs.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Prefs.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/containers/Prefs.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
-                  <caret line="158" column="55" selection-start-line="158" selection-start-column="55" selection-end-line="158" selection-end-column="55" />
+                <state relative-caret-position="102">
+                  <caret line="58" column="10" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
                   <folding>
                     <element signature="e#47#73#0" expanded="true" />
                     <element signature="e#660#716#0" expanded="false" />
-                    <element signature="e#2579#3320#0" expanded="false" />
-                    <element signature="e#3326#3392#0" expanded="false" />
-                    <element signature="e#4539#4818#0" expanded="false" />
-                    <element signature="e#5657#5816#0" expanded="false" />
-                    <element signature="e#6438#7477#0" expanded="false" />
-                    <element signature="e#7070#7444#0" expanded="false" />
-                    <element signature="e#7518#7928#0" expanded="false" />
+                    <element signature="e#2820#3561#0" expanded="false" />
+                    <element signature="e#3567#3633#0" expanded="false" />
+                    <element signature="e#6324#6483#0" expanded="false" />
+                    <element signature="e#7105#8144#0" expanded="false" />
+                    <element signature="e#7737#8111#0" expanded="false" />
+                    <element signature="e#8185#8595#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+          <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/README.md">
               <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                 <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="187">
-                    <caret line="11" column="142" selection-start-line="11" selection-start-column="142" selection-end-line="11" selection-end-column="142" />
+                  <first_editor relative-caret-position="170">
+                    <caret line="10" column="112" selection-start-line="10" selection-start-column="112" selection-end-line="10" selection-end-column="112" />
                     <folding />
                   </first_editor>
                   <second_editor />
@@ -235,9 +220,9 @@
         <option value="$PROJECT_DIR$/src/components/Item.jsx" />
         <option value="$PROJECT_DIR$/src/actions/index.js" />
         <option value="$PROJECT_DIR$/src/constants/actionTypes.js" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/reducers/preferencias.js" />
         <option value="$PROJECT_DIR$/src/containers/Prefs.js" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -492,12 +477,12 @@
       <workItem from="1485944704244" duration="29071000" />
       <workItem from="1486119105336" duration="18283000" />
       <workItem from="1486222644821" duration="33289000" />
-      <workItem from="1486376411358" duration="572000" />
+      <workItem from="1486376411358" duration="1699000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="318327000" />
+    <option name="totallyTimeSpent" value="319454000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -745,6 +730,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -801,6 +787,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="225" column="14" selection-start-line="225" selection-start-column="13" selection-end-line="225" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+            <element signature="e#156#194#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -883,17 +873,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="187">
-            <caret line="11" column="142" selection-start-line="11" selection-start-column="142" selection-end-line="11" selection-end-column="142" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1513">
@@ -922,19 +901,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Prefs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="158" column="55" selection-start-line="158" selection-start-column="55" selection-end-line="158" selection-end-column="55" />
+        <state relative-caret-position="102">
+          <caret line="58" column="10" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
           <folding>
             <element signature="e#47#73#0" expanded="true" />
             <element signature="e#660#716#0" expanded="false" />
-            <element signature="e#2579#3320#0" expanded="false" />
-            <element signature="e#3326#3392#0" expanded="false" />
-            <element signature="e#4539#4818#0" expanded="false" />
-            <element signature="e#5657#5816#0" expanded="false" />
-            <element signature="e#6438#7477#0" expanded="false" />
-            <element signature="e#7070#7444#0" expanded="false" />
-            <element signature="e#7518#7928#0" expanded="false" />
+            <element signature="e#2820#3561#0" expanded="false" />
+            <element signature="e#3567#3633#0" expanded="false" />
+            <element signature="e#6324#6483#0" expanded="false" />
+            <element signature="e#7105#8144#0" expanded="false" />
+            <element signature="e#7737#8111#0" expanded="false" />
+            <element signature="e#8185#8595#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="170">
+            <caret line="10" column="112" selection-start-line="10" selection-start-column="112" selection-end-line="10" selection-end-column="112" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
