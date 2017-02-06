@@ -6,7 +6,7 @@ const ListComponent = ({items}) => {
 
     //by Vitor
     return (
-        <div className="lista">
+        <div className="col-xs-12 item-align-center npd">
             {items.map((item, key) => {
                 return (
                         <Item key={key} item={item} />

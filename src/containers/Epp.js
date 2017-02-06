@@ -37,7 +37,7 @@ var startTimeStamp;
 //-----------------INFO Stripe
 var nomeEpp;
 var descricao;
-
+var pessoas;
 
 //-----------------Swipes
 var sX;
@@ -84,7 +84,7 @@ class Epp extends Component {
                 console.log("Move Right", sX, sY);
             }
         }
-        this.ChangeProgram(swipeMove);
+        //this.ChangeProgram(swipeMove);
         // var progArray = this.props.programs;
 
 
@@ -98,9 +98,9 @@ class Epp extends Component {
             if((novo >0 && posEpp <6)||(novo < 0 && posEpp > 0)){
                 var fP = posEpp+novo;
                 var fateId = todosProgs[fP].Id;
-                //browserHistory.push(`/epp/`+fateId+``);
+                browserHistory.push(`/epp/`+fateId+``);
                 //replace({pathname: blabla
-                browserHistory.replace({pathname: `/epp/`+fateId+``})
+               // browserHistory.replace({pathname: `/epp/`+fateId+``})
             }else{
                 swal("Não há mais :/","A equipa pede desculpa mas de momento só são gerados "+numProgramas+" sugestões. Se não concordar convide-se a comunicar com a equipa de produção, eles são mais simpáticos do que parecem :)","warning");
             }
@@ -122,15 +122,23 @@ class Epp extends Component {
      }*/
     componentWillMount(){
         this.GetProgramDetails();
+
     }
 
+    componentWillUpdate(){
+        this.GetProgramDetails();
+        /*if(!programa){
+            console.log("Should have pushed");        //      volta pà root se não houver conteúdo --- SUCCESS
+            browserHistory.push('/');
+        }*/
+    }
 // vai buscar os canais dados pela API da sapo meo      -------------- JÀ NÔ È PRECISO
 //      Afinal é só em caso a página faça refresh porque aparentemente os props não estão
 //      disponíveis quando a página faz refresh.        ----------------------------------------------------- DEV DO
 //          EDIT ---    agora também retira todos os dadozinhos para construir a view. yay
     GetProgramDetails() {
 
-        esteId= this.props.params.id;
+        esteId = this.props.params.id;
         //console.log("propId: ", esteId);
 
         //      componente sórecebe o Id, por isso vai pelos props e saca o restodos detalhes do programa
@@ -138,19 +146,16 @@ class Epp extends Component {
         console.log("EPP PROPS", this.props);
 
         todosProgs.forEach(function(cadaProg, k){
-            if(cadaProg.Id===esteId){
+            if(cadaProg.Id === esteId){
                 //console.log("EPP ID", "esteId"+esteId, "esteProgId"+cadaProg.Id, todosProgs);
                 programa = cadaProg;
                 posEpp = k;
             }
         });
+
+
+
         console.log("PROGRAMA", programa);
-        if(!programa){
-            console.log("Should have pushed");        //      volta pà home se não houver conteúdo --- SUCCESS
-            browserHistory.push('/home');
-        }
-
-
 
 
 
@@ -181,6 +186,7 @@ class Epp extends Component {
         //      -------------------------------------------------------      era fiche distinguir nome de série e de epp
         nomeEpp= programa.Title;
         descricao = programa.Synopsis;
+        pessoas = programa.Participants;
 
     }
 
@@ -200,8 +206,10 @@ class Epp extends Component {
 
                     <div>
                         <IdStripe pn={nomeProg} enu={eppNum}/>{/* es={season} */}
+
+
                         <PlayStripe ei={eppId} st={startTime} sts={startTimeStamp} item={programa}/>
-                        <InfoEpp en={nomeEpp} ed={descricao}/>
+                        <InfoEpp en={nomeEpp} ed={descricao} ep={pessoas}/>
                     </div>
                 </Swipe>
             </div>

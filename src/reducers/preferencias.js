@@ -29,7 +29,11 @@ const preferences = (state = initState, action) => {
                 upreferencias: (action.items) ? action.items : jar1
             });
 
-
+        case types.RESET_WAIT_PREF:
+            console.log("REEEESSSSEEET WAITING!!!");
+            return Object.assign({}, state, {
+                edited: true
+            });
 
         //--------------------------------------------------------------------------------------------------------------
 
@@ -47,17 +51,22 @@ const preferences = (state = initState, action) => {
             var pArr = state.upreferencias;
 
             var statusPosted = (action.items.status === 200);
+            /*if(action.dito === "SICHD"){
+             //      HACKING
+             console.info("hacing eheheh", action.dito);
+             statusPosted = false;
+             }*/
             // statusPosted = false;
 
             var novoPArr = pArr;
-            novoPArr.push(action.dito);
+            if(statusPosted){novoPArr.push(action.dito)}
             //novoPArr = (statusPosted) ? novoPArr : pArr;
             //The line above and the one below do the same thing and will redo said action. So one should not exist.
-            if(!statusPosted){_.pull(novoPArr, action.dito)}
+            // if(!statusPosted){_.pull(novoPArr, action.dito)}     //      não funciona sem a string explicitada?
 
             var scorePos = "Post :" + action.dito;
 
-            console.log("action status:", action.items.status);
+            console.log("action status:", action);
             console.info("3.Re.Po.Pf. was:", pArr, "posted?", statusPosted, "wich:", action.dito, "will be:", novoPArr);
             return Object.assign({}, state, {
                 waitingdone: true,
@@ -75,10 +84,12 @@ const preferences = (state = initState, action) => {
             var statusDeleted = (action.items.status === 200);
 
             var novoDArr = dArr;
-            _.pull(novoDArr, action.dito);
+            // _.pull(novoDArr, action.dito);
             //novoDArr = (statusDeleted) ? novoDArr : dArr;
             //The line above and the one below do the same thing and will redo said action. So one should not exist.
-            if(!statusDeleted){novoDArr.push(action.dito)}
+            // if(!statusDeleted){novoDArr.push(action.dito)}
+
+            if(statusDeleted){_.pull(novoDArr, action.dito)}
 
             var scoreDel = "Del: " + action.dito;
 
@@ -87,7 +98,7 @@ const preferences = (state = initState, action) => {
 
             // HACKING
             /*statusDeleted = false;
-            novoDArr = dArr;*/
+             novoDArr = dArr;*/
             return Object.assign({}, state, {
                 waitingdone: true,
                 edited: statusDeleted,

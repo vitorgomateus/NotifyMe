@@ -6,6 +6,7 @@ import {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router';
 import Splash from '../components/Splash';
+import SearchInput, {createFilter} from 'react-search-input'
 import swal from 'sweetalert';
 import '../../node_modules/sweetalert/dist/sweetalert.css';
 import '../css/prefs.css';
@@ -14,56 +15,49 @@ import Constants from '../constants/constNum';
 
 import {fetchChannels} from '../actions';
 import {fetchPrefs} from '../actions';
-import {postPref, deletePref} from '../actions';
+import {postPref, deletePref, resetWaitPref} from '../actions';
+
+
+
+
+import _ from 'lodash';
 
 class Prefs extends Component {
 
-    // quando cria cria o state limpo
     constructor(props) {
         super(props);
 
-        //tirado de Cont/List.jsx from Ex. Lá estava em render()
-        //const tcanais = this.props.channels;
-        //const htmlContent = isFetching ? <p>Loading...</p> : <ListComponent items={items} />;
-
-
-        this.state = {posX: 0, posY: 0};
+        this.state = {posX: 0, posY: 0, searchTerm: ''};
         this.setPref = this.setPref.bind(this);
-        //settings.setDomStorageEnabled(true);//                                                                ---LocalStorage---
+        this.searchUpdated = this.searchUpdated.bind(this);
+        this.setCoords = this.setCoords.bind(this);
+        this.shoot = this.shoot.bind(this);
     }
 
 
 
     componentWillMount() {
-        //console.log(this.props, "PREFS-CDM props");
 
         const {dispatch} = this.props;
         dispatch(fetchPrefs());
+        dispatch(resetWaitPref());
         dispatch(fetchChannels());
     }
-    /* componentWillUpdate() { dispatch(fechPrefs()) ---> keepsdoing many fetch
 
-
-     componentDidMount(){
-     console.log("5.8.CoDidMount");
-
-     }*/
 
     componentWillUnmount(){
 
     }
 
     componentDidUpdate(){
-        var lefto = window.localStorage.getItem("posX"); //this.state.posX
-        var topo = window.localStorage.getItem("posY"); //this.state.posY
-        //console.log("WINDOW SCROLL left:", lefto, "top:", topo);
+        var lefto = this.state.posX;
+        var topo = this.state.posY;
         window.scrollTo(lefto, topo);
-        //console.info("5.8.CoDidUpdate");
         var isPrevEditDone= this.props.wasEditDone;
         var prevEdit = this.props.wichLastEdit;
 
+        var porra = this;
         if(!isPrevEditDone){
-            //console.log("P.R. Wich Pref Edited:", prevEdit, "\nIs: ", isPrevEditDone);
             swal("Ooops...","Houve um problema com o servidor e não foi possível realizar a última alteração que fez. \n\n Por favor tente outra vez dentro de momentos.","warning");
             // swal({
             //         title: "Ooops...",
@@ -78,90 +72,72 @@ class Prefs extends Component {
             //     function(){
             //         this.setPref(prevEdit);
             //     });
-        }
 
+            swal({
+                    title: "Ooops...",
+                    text: "Houve um problema com o servidor e não foi possível realizar a última alteração que fez. \n\n Quer tentar outra vez?",
+                    type: "warning",
+                    showCancelButton: false,
+                    confirmButtonColor: "#00847a",
+                    confirmButtonText: "Amigos na mesma.",
+                    closeOnConfirm: true
+
+                },
+                function(){
+                    console.log("WAINTG FINISH?", isPrevEditDone);
+                    porra.shoot();
+                });
+        }
     }
 
-    /*
-     //isto possivelmente deixará de existir. aqui só se coordena as preferÊncias com a localStorage, poruqe na API são feitas por cadaacção nos botões
-     updatePrefs(uprefs, uprefsId) {
-     //console.log("P1.PREFS setItem", "upprefs", uprefs, "upprefsId", uprefsId);
-     window.localStorage.removeItem("userPrefs");
-     window.localStorage.removeItem("userPrefsId");
-     window.localStorage.setItem("userPrefs", JSON.stringify(uprefs));//                                       ---LocalStorage
-     window.localStorage.setItem("userPrefsId", JSON.stringify(uprefsId));//                                       ---LocalStorage
+    shoot(){
+        const {dispatch} = this.props;
+        dispatch(resetWaitPref());
+    }
 
-     //    this.forceUpdate();
-     const {dispatch} = this.props;
-     //dispatch(fetchPrefs());
-     }*/
-
+    setCoords(){
+        var doc = document.documentElement;
+        var left = (window.pageXOffset || doc.scrollLeft) - (doc.clientLeft || 0);
+        var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
+        window.localStorage.setItem("posX", left);
+        window.localStorage.setItem("posY", top);
+        this.setState({posX: left, posY: top});
+    }
     //chamado no click deum botão, recebe a sigla do canal desse butão
     //confirma se ja tem a preferência  -> retira o canal das preferenias
     //ELSE confirma se ja tem 4 preferÊncias  -> alert('max 4!')
     //ELSE adiciona canal a prefrências e manda update pa store
     setPref(canal) {
+        this.setCoords();
 
-        var doc = document.documentElement;
-        var left = (window.pageXOffset || doc.scrollLeft) - (doc.clientLeft || 0);
-        var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
-        //console.info("WINDOW POSITiON left:", left,"top:", top);
-        window.localStorage.setItem("posX", left);
-        window.localStorage.setItem("posY", top);
-        //this.setState({posX: left, posY: top});
 
         const {dispatch} = this.props;
         var numDePref = Constants.numPref;
 
         var prefremoved = false;
-        //var userprefs = this.state.prefers;//["RTP1","TVI","RTPM","SPTV3"];
-        var userprefs = this.props.preferences; //JSON.parse(window.localStorage.getItem("userPrefs"));                   ---LocalStorage
-        //var userprefsIds = this.props.preferences.upreferenciasId;
-        //console.log("P4.PREFS setPref", "upprefs", userprefs, "upprefsId", userprefsIds);
+        var userprefs = this.props.preferences;
 
 
-        if(userprefs){
+        if(userprefs && canal!=="OOOOO"){
             userprefs.forEach((itemo, u) => {
                 if (itemo === canal) {
                     //      ---------------------------------------------------------------------------      Remove Pref
                     console.log("0 DP");
-                    //userprefs.splice(u, 1);
-                    //userprefsIds.splice(u, 1);
                     prefremoved = true;
-                    /*
-                     // console.log("Pref removing2");
-                     this.setState({
-                     waiterEdit: "remover",
-                     waiterCanal: canal,
-                     waiterCanalId: canalId
-                     })
-                     .then();*/
                     dispatch(deletePref(canal));
                 }
             });
         }
         if (!prefremoved) {
-            //if(userprefs)
             if (userprefs.length === numDePref) {
-                //alert("Máximo 4 preferÊncias");
                 swal("Já chega!","A equipa pede desculpa mas de momento não é possível adicionar mais de "+numDePref+" preferências.","warning"); //                                                    --- SWEETALERT
             } else {
                 //      -----------------------------------------------------------------------------------     Add Pref
                 console.log("0 PP");
-                //userprefs.push(canal);
-                //userprefsIds.push(canalId);
-
 
                 dispatch(postPref(canal));
-                //console.log("Pref Adding2");
-                /*this.setState({
-                 waiterEdit: "adicionar",
-                 waiterCanal: canal,
-                 waiterCanalId: canalId
-                 });*/
             }
         }
-        //this.updatePrefs(userprefs, userprefsIds);
     }
 
     render() {
@@ -173,16 +149,21 @@ class Prefs extends Component {
         var x = this.props.preferences;
         var moreprefers = x ? x.slice(0,numDePref) : ["TVI","RTPM","HOLHD"];
 
-        console.log("5.5.Co.Pf. Prefs:", this.props.preferences, "edit done?", this.props.wasEditDone, "wich:", this.props.wichLastEdit);
-
+        console.log("5.5.Co.Pf. Prefs:", moreprefers, "edit done?", this.props.wasEditDone, "wich:", this.props.wichLastEdit);/*
+        var isto = _.pull(moreprefers, ""+this.props.wichLastEdit+"");
+        console.log("5.6.Co.Pf. Prefs:", isto, "edit done?", this.props.wasEditDone, "wich:", this.props.wichLastEdit);*/
         if(!isFetching && doneWaiting) {
 
-            const channels = this.props.channels.tcanais.map((item, i) => {
+            var canaisRaw = this.props.channels.tcanais;
+
+            var canaisSearch = canaisRaw.filter(createFilter(this.state.searchTerm, 'CallLetter'));
+
+
+            const channels = canaisSearch.map((item, i) => {
 
                 var classer = "btn-sm btn-default";
 
                 var canalCallLetter = item.CallLetter;
-                var canalCatalogNumber = item.CatalogOrderNumber;
 
 
 
@@ -199,7 +180,6 @@ class Prefs extends Component {
                     <div key={i} className="col-xs-4 col-sm-4 col-md-3 col-lg-2 celulas">
                         <button id={canalCallLetter} type="button" className={ classer } onClick={() => this.setPref(canalCallLetter)}>
                             {item.Name}<br/>
-                            {/*{moreprefers?"true":"false"}*/}
                         </button>
                     </div>
                 );
@@ -207,12 +187,22 @@ class Prefs extends Component {
 
             return (
                 <div id="layout-content" className="prefs-wrapper">
-                    <h2>Destaque os seus canais favoritos:</h2>
+                    <h2 className="canaisFav">Destaque os seus canais favoritos:</h2>
+                    <p className="canaisSel">{"'"+
+                    this.props.preferences.map((word)=>{
+                        console.info("word",word);
+
+                        return (word===",")?" ":(" "+word+" ")
+                    })+"'"
+                    }</p>
+                    <p className="canaisSel">(máx.: {numDePref})</p>
                     <Link to="/home">
-                        <button type="button" className="btn btn-primary">Finalizar Escolha</button>
+                        <button type="button" className="btn btn-primary btn-prefs" onClick={() => this.setCoords()}>Finalizar Escolha</button>
                     </Link>
-                    <p>(máx.: {})</p>
-                    <div className="prefs-list">{ channels }</div>
+                    <div className="prefs-list">
+                        <SearchInput className="search-input" onChange={this.searchUpdated} />
+                        { channels }
+                    </div>
                 </div>
             );
         }else{
@@ -225,16 +215,10 @@ class Prefs extends Component {
         }
     }
 
-    /*render() {
 
-     return (
-     <div className="prefs">
-     <form action="#" method="post">
-     <ItemList products={CHANNELS} />
-     </form>
-     </div>
-     );
-     }*/
+    searchUpdated (term) {
+        this.setState({searchTerm: term})
+    }
 }
 
 Prefs.propTypes = {
@@ -246,8 +230,6 @@ Prefs.propTypes = {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    //console.info('PREFS-STP state', state);
-    //console.log('PREFS-STP ownprops', ownProps);
     return {channels: state.channels, preferences: state.preferences.upreferencias, waited: state.preferences.waitingdone, wasEditDone: state.preferences.edited, wichLastEdit: state.preferences.lastedit}
 }
 

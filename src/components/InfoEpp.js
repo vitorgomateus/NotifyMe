@@ -13,6 +13,7 @@ class InfoEpp extends Component {
         var escritor;
         var actores;
         var descricao = this.props.ed;
+        var people = (this.props.ep) ? <p><b>Participantes</b><br/>{this.props.ep}</p> : "";
 
 
         return(
@@ -24,16 +25,18 @@ class InfoEpp extends Component {
                     </p>
                 </div>
                 <div className="epprow more">
-                    <p>{genero}</p>
+                    {people}
+                    {/*<p>{genero}</p>
                     <p><b>Director</b><br/>
                         {director}</p>
                     <p><b>Escritores</b><br/>
                         {escritor}</p>
                     <p><b>Actores</b><br/>
                         {actores}</p>
+
                     <p><b>Sinopse</b><br/>
                         Vivamus in mi eu magna lacinia ultricies sit amet ut est. Donec rutrum eget turpis non maximus. Vestibulum sapien tortor, sagittis eu mi id, rutrum imperdiet magna. Maecenas volutpat viverra pretium. Nam ultricies dapibus lacus, vel laoreet odio rhoncus vel.
-                    </p>
+                    </p>*/}
                 </div>
             </div>
         );

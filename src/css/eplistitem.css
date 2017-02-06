@@ -8,6 +8,7 @@
 }
 
 /*liscomp > ItemList.ja*/
+.
 .lista{
     text-align: center;
     max-width: 1000px;
@@ -22,12 +23,15 @@
     width: 100%;
 }
 
+.lista-title{
+    z-index: -1;
+}
+
 a{
     width: 100%;
 }
 
 .linhaTxt{
-    position: relative;
     text-align: left;
     vertical-align: middle;
     padding-left: 20px;
@@ -52,14 +56,9 @@ hr{
 }
 
 
-.item-right{
+.time{
     padding-left: 50%;
     text-align: right;
-}
-
-.item-bottom{
-    position: absolute;
-    bottom: 0;
 }
 
 @media (min-width: 768px) {
@@ -80,3 +79,90 @@ hr{
             borderBottomColor: "white",
             borderBottomWidth: 5
         }*/
+
+
+@media (max-width: 2560px) {
+    .programText{
+        font-size:2.0em;
+    }
+}
+
+@media (max-width: 1440px) {
+    .programText{
+        font-size: 2.0em;
+    }
+}
+
+@media (max-width: 1024px) {
+    .programText{
+        font-size:1.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    .programText{
+        font-size:1.5em;
+    }
+
+    .imageResize{
+        width: 500px;
+    }
+
+
+}
+
+@media (max-width: 425px) {
+    .programText{
+        font-size:1.4em;
+    }
+    .imageResize{
+        width: 300px;
+    }
+}
+
+@media (max-width: 375px) {
+    .programText{
+        font-size:1.0em;
+    }
+    .imageResize{
+        width: 300px;
+    }
+}
+
+@media (max-width: 320px) {
+    .programText{
+        font-size:0.8em;
+    }
+    .imageResize{
+        width: 300px;
+    }
+}
+
+.item-align-center{
+    text-align: center;
+}
+
+.item-align-left{
+    text-align: left;
+}
+.item-align-right{
+    text-align: right;
+}
+
+.smallMediumDiv{
+    padding-top: 2.0em;
+}
+
+.item-max-width{
+    max-width: 386px;
+}
+
+.imgCenter{
+    text-align: center;
+}
+
+#row{
+    margin-right: 0px;
+    margin-left: 0px;
+}
+

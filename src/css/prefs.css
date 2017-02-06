@@ -40,7 +40,7 @@
 
 .prefs-list{
     text-align: center;
-    margin-top: 24px;
+    margin-top: 48px;
 }
 
 h2{
@@ -74,4 +74,18 @@ por:
         min-height: 64px;
     }
 
+}
+
+.canaisFav{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.canaisSel{
+    margin-bottom: 0.2em;
+}
+
+.btn-prefs{
+    margin: 6px;
+    margin-bottom: 24px;
 }

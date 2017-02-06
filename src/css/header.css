@@ -3,11 +3,13 @@
     margin: 12px 10px;
     max-width: 20px;
 }
-
+.container-fluid{
+    background-color: #00a0b3;
+}
 .headerLogo {
     /*animation: App-logo-spin infinite 20s linear;
     height: 20px;*/
-    width: 25%;
+    width: 66%;
     position: relative;
     left: 26%;
     top: 15px;
@@ -17,28 +19,124 @@
     color: white;
 }
 
+.floater{
+    position: absolute;
+}
+
+.altura{
+    height: 60px;
+}
+
+.botao{
+    position: absolute;
+    top: -55px;
+}
+
+.cima{
+    z-index: 3;
+}
+
+#links{
+    color: white;
+}
+
+@media (max-width: 319px){
+    #title {
+        font-size: 0.9em;
+        color: white;
+        text-align: center;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+    #title {
+        font-size: 1.0em;
+        color: white;
+        text-align: center;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 424px) {
+    #title {
+        font-size: 1.1em;
+        color: white;
+        text-align: center;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+    #title {
+        font-size: 1.3em;
+        color: white;
+        text-align: center;
+    }
+    #links{
+        font-size: 1.4em;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    #title {
+        font-size: 1.4em;
+        color: white;
+        text-align: center;
+    }
+    #links{
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    #title {
+        font-size: 1.6em;
+        color: white;
+        text-align: center;
+    }
+    #links{
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 2559px) {
+    #title {
+        font-size: 2.3em;
+        color: white;
+        text-align: center;
+    }
+
+    #links{
+        font-size: 1.8em;
+    }
+}
+
+@media (min-width: 2560px){
+    #title {
+        font-size: 2.8em;
+        color: white;
+        text-align: center;
+    }
+    #links{
+        font-size: 2.2em;
+    }
+}
+
+#navbar{
+    font-size: 22px;
+}
+
+.navbar-header {
+    padding: 0.4em;
+    text-align: center;
+    width: 100%;
+}
+.navbar-brand {float:none;}
+
 .navbar-toggle {
     z-index:3;
     border-width: 0;
 }
 
-.navbar-collapse{
-    padding-right: 0;
-}
-
 @media (min-width: 768px) {
-    .headerLogo {
-        /*animation: App-logo-spin infinite 20s linear;
-        height: 20px;*/
-        position: absolute;
-        left: 43%;
-        top: 15px;
-        font-size: 25px;
-        margin :0 auto;
-        font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        color: white;
-    }
-
     .navbar-collapse{
         float: right;
     }

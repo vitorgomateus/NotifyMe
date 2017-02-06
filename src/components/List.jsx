@@ -19,9 +19,8 @@ class List extends Component {
 
         //console.log('LIST RENDER props', this.props);
         if (!isFetching) {
-            //console.log('LIST RENDER propsYAYAYAYAYAYA', this.props);
             return (
-                <div className="mainContainer">
+                <div className="col-xs-12 item-align-center npd">
                     <ListComponent items={this.props.programs}/>
                 </div>
             );

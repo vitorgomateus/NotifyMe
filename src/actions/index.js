@@ -50,7 +50,12 @@ export function requestPreferences() {
         type: types.REQUEST_PREFS
     }
 }
-
+export function resetWaitPref() {
+    // console.info('action requestContactById');
+    return {
+        type: types.RESET_WAIT_PREF
+    }
+}
 export function receivePreferences(json) {
     //console.info('ACTION receivePreferences', json);
     var _ = require('lodash');
@@ -109,16 +114,21 @@ export function postPref(data) {
         var form = new FormData();
         form.append('id_programa', data);
 
-        return fetch(`http://samuelbf94.ddns.net/api/regpref`, {
-            method: 'POST',
-            body: form
-        })
-            .then(
-                response => {
-                    console.info("1.9.Th.Po.Pf.-");
-                    dispatch(receivePostPref(response, data))
-                }
-            );
+        if(data === "SICHD"){
+            var response = {"status": 400};
+            dispatch(receivePostPref(response, data));
+        }else {
+            return fetch(`http://samuelbf94.ddns.net/api/regpref`, {
+                method: 'POST',
+                body: form
+            })
+                .then(
+                    response => {
+                        console.info("1.9.Th.Po.Pf.-");
+                        dispatch(receivePostPref(response, data))
+                    }
+                );
+        }
     }
 }
 
@@ -127,14 +137,18 @@ export function deletePref( data) {
         dispatch(requestEditPref());
 
         console.log("1.8.Th.Dl.Pf. wich:", data);
-
-        return fetch(`http://samuelbf94.ddns.net/api/delpref/${data}`, {
-            method: 'DELETE'
-        })
-            .then(response => {
-                console.info("1.9.Th.Dl.Pf.-");
-                dispatch(receiveDeletePref(response, data))
-            });
+        if(data === "SPTV"){
+            var response = {"status": 400};
+            dispatch(receiveDeletePref(response, data));
+        }else {
+            return fetch(`http://samuelbf94.ddns.net/api/delpref/${data}`, {
+                method: 'DELETE'
+            })
+                .then(response => {
+                    console.info("1.9.Th.Dl.Pf.-");
+                    dispatch(receiveDeletePref(response, data))
+                });
+        }
     }
 }
 

@@ -8,7 +8,15 @@ class IdStripe extends Component {
     render (){
 
         var progNome = this.props.pn;
-        var episodio = this.props.enu;
+
+        var episodio = (this.props.enu) ?
+            <div className="row epprow eppidrow">
+                <div className="col-xs-8 eppnum">
+                    {/*<p>Temporada :P{this.props.se}</p>*/}
+                    <p>Ep. {this.props.enu}</p>
+                </div>
+                <div className="col-xs-4"></div>
+            </div> : "";
 
         //console.log("EPP ID", progNome, episodio);
 
@@ -21,13 +29,7 @@ class IdStripe extends Component {
                     </div>
                 </div>
 
-                <div className="row epprow eppidrow">
-                    <div className="col-xs-8 eppnum">
-                        <p>Temporada :P{/*{this.props.se}*/}</p>
-                        <p>Ep. {episodio}</p>
-                    </div>
-                    <div className="col-xs-4"></div>
-                </div>
+                {episodio}
 
             </div>
         );

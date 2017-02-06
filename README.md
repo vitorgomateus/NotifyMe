@@ -5,6 +5,7 @@ third try at a prototype for a masters in communication @DeCA, Aveiro.
 
     login
     swipe
+    search bar em Prefs.jsx
     check post, delete
         Funciona mas 3:
         -Não consegui com que a mensagem do SwAl tente a alteração de novo;

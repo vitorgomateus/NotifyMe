@@ -159,82 +159,33 @@ class ListFunction extends Component {
                 var startString= `http://services.online.meo.pt/Data/2013/11/programs/EpgLiveChannelPrograms?$top=4&$orderby=StartDate%20asc&$filter=CallLetter%20eq%20%27`;
                 var totalProgrString = ``+startString +``+prefCallLetter+``+ intervaloDatas+``;
                 k.push(totalProgrString);
-                //console.log("2.LIST_FUNC pref_ITE fetchP_St"+j+": ", totalProgrString);
-                //dispatch(fetchPrograms(totalProgrString));
 
             });
             var startString= `http://services.online.meo.pt/Data/2013/11/programs/EpgLiveChannelPrograms?$top=4&$orderby=StartDate%20asc&$filter=CallLetter%20eq%20%27`;
             var totalProgrString = ``+startString +``+moreprefers[0]+``+ intervaloDatas+``;
             k.push(totalProgrString);
-            //console.log("2.2.2.LIST_FUNC pref_ITE fetchP_St: ", totalProgrString);
             dispatch(fetchPrograms(totalProgrString));
 
-            //console.log("2.2.LIST_FUNC k:",k);
-            /*
-             sA = k[0];
-             dispatch(fetchPrograms(sA));
-             sB = k[1];
-             dispatch(fetchPrograms(sB));
-             sC = k[2];
-             dispatch(fetchPrograms(sC));
-             sD = k[3];
-             dispatch(fetchPrograms(sD));*/
 
         }
-
-        // ---------------------------------------------------- iterar pelas preferências para fazer calls à API da sapo
-        // -------------------------------------------------------- e sacar a programação de cada canal dentro das prefs
-        //var falso = false;
-        /*if(falso) {
-         y.map((canal, i) => {
-
-         return $.getJSON('http://services.online.meo.pt/Data/2013/11/programs/EpgLiveChannelPrograms?$orderby=StartDate%20asc&$filter=CallLetter%20eq%20%27' + canal + intervaloDatas)
-         .then((data) => {
-         var p = this.state.foundPrograms;
-         p = p ? p : [];
-         var w = data.GetProgramListByChannelDateIntervalResponse.GetProgramListByChannelDateIntervalResult.Program;
-         //console.log("w de "+i+": "+w);
-         var f = w.splice(0, 2);
-         //console.log("Devia confirmar isto, mas está a funcionar.\nOs parametros estão a funcionar ao contrário do que li na net mas olha, amigos na mesma.\nw.unspliced: \n"+w+"\n FFF.spliced: \n"+i+f);
-         for (var j = 0; j < f.length; j++) {
-         //console.log(w[j].Flags);
-         delete f[j].Flags;
-         delete f[j].Values;
-         p.push(f[j]);
-         }
-         //console.log(p);
-         this.setState({foundPrograms: p});    // ---------------- os programas encontrados entram no state
-
-         }).fail(()=> {
-         console.log("getJSON FAILED MISERABLY" + i);
-         this.setState({requestSuccess: false});
-
-         });
-         });
-         }*/
-
     }
 
     render() {
         var userNome = window.localStorage.getItem("userName");
 
-        //console.log('LIST_FUNC RENDER props', this.props.preferences);
-        //this.ProgrList();
-
         var prefsReady = !this.props.preferences.isFetchingPrefs;
         var quntPrefs = this.props.preferences.upreferencias.length;
-        //console.log('4.LIST_FUNC RENDER props', this.props);
 
         if (prefsReady) {
             if(quntPrefs===0){
                 return (
-                    <div>
+                    <div className="container">
                         <h2 className="lista-title">Defina as suas preferências para ver uma lista de programas</h2>
                     </div>
                 );
             }else {
                 return (
-                    <div className="prefs-wrapper">
+                    <div className="container">
                         <h2 className="lista-title">Olá {userNome}<br/>a sua programação de agora</h2>
                         <List />
                     </div>
@@ -243,12 +194,10 @@ class ListFunction extends Component {
         } else {
             return (
                 <div className="progrsLoading">
-                    <h2 className="lista-title">Loading Programs</h2>{/*style="position:relative;z-index:10;"*/}
-                    {/*<Splash />*/}
+                    <h2 className="lista-title">Loading Programs</h2>
                 </div>
             );
         }
-        /*return <Main items={this.props}/>*/
     }
 }
 
@@ -261,8 +210,6 @@ ListFunction.propTypes = {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    //console.info('container List mapStateToProps state', state);
-    //console.log('3.LIST_FUNC-STP props', ownProps);
     return {preferences: state.preferences};
 }
 
