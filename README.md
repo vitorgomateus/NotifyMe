@@ -1,5 +1,7 @@
 ﻿# NotifyMe
-third try at a prototype for a masters in communication @DeCA, Aveiro.
+android app to detect users near a TV (bt beacon)
+
+experimental prototipe developed for a masters @DeCA, Aveiro, Portugal
 
 ##TODO:
 
